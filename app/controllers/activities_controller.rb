@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: [:show, :edit]
+  before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
     @activities = Activity.all
@@ -18,9 +18,17 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    if @activity.update()
+    if @activity.update(activity_params)
+    redirect_to activity_path(@activity)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
+  def destroy
+    @activity.destroy
+    redirect_to activity_path, status: :see_other
+  end
 
   private
 
