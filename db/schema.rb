@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_08_30_085219) do
 
   # These are extensions that must be enabled in order to support this database
@@ -35,6 +36,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_085219) do
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "number_people"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "activity_id", null: false
+    t.index ["activity_id"], name: "index_bookings_on_activity_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+  
   create_table "dog_categories", force: :cascade do |t|
     t.bigint "dog_id", null: false
     t.bigint "category_id", null: false
@@ -96,6 +108,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_085219) do
   add_foreign_key "dog_categories", "categories"
   add_foreign_key "dog_categories", "dogs"
   add_foreign_key "activities", "users"
+  add_foreign_key "bookings", "activities"
+  add_foreign_key "bookings", "users"
   add_foreign_key "activity_categories", "activities"
   add_foreign_key "activity_categories", "categories"
   add_foreign_key "dogs", "users"
