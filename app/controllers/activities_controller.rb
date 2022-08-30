@@ -19,7 +19,7 @@ class ActivitiesController < ApplicationController
 
   def update
     if @activity.update(activity_params)
-    redirect_to activity_path(@activity)
+      redirect_to activity_path(@activity)
     else
       render :new, status: :unprocessable_entity
     end
