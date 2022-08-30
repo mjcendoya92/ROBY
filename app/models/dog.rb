@@ -6,10 +6,10 @@ class Dog < ApplicationRecord
 
   GENDER = [male, female]
 
-  validation :name, presence: true
-  validation :breed, presence: true
-  validation :age, presence: true, numericality: { only_integer: true }
-  validation :sex, presence: true, inclusion: { in: GENDER }
-  validation :description, presence: true, length: { minimum: 15 }
+  validates :name, presence: true
+  validates :breed, presence: true
+  validates :age, presence: true, numericality: { only_integer: true }
+  validates :sex, presence: true, inclusion: { in: GENDER }
+  validates :description, presence: true, length: { minimum: 15 }
 
 end
