@@ -1,0 +1,8 @@
+<%= simple_form_for(dog) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :breed %>
+  <%= f.input :age %>
+  <%= f.select :sex, collection: ['male', 'female']%>
+  <%= f.input :description, placeholder: "Describe your dog" %>
+  <%= f.submit %>
+<% end %>

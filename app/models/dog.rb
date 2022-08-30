@@ -4,7 +4,7 @@ class Dog < ApplicationRecord
   has_many :dog_categories
   has_many :categories, through: :dog_categories
 
-  GENDER = [male, female]
+  GENDER = ["male", "female"]
 
   validates :name, presence: true
   validates :breed, presence: true

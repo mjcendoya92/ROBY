@@ -15,7 +15,7 @@ class DogsController < ApplicationController
   end
 
   def show
-    @dog = Dog.find_by(user: current_user)
+    @dogs = Dog.where(user: current_user)
   end
 
   private
