@@ -10,9 +10,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
 
-  validation :name, presence: true, length: { minimum: 3}
-  validation :location, presence: true
-  validation :bio, presence: true, length: { minimum: 10}
-  validation :email, uniqueness: true
+  validates :name, presence: true, length: { minimum: 3}
+  validates :location, presence: true
+  validates :bio, presence: true, length: { minimum: 10}
+  validates :email, uniqueness: true
 
 end
