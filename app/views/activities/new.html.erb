@@ -1,0 +1,15 @@
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :start_time %>
+  <%= f.input :end_time %>
+  <%= f.input :dog_limit %>
+  <%= f.input :people_limit %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Go back to activity index", activities_path %>
