@@ -1,20 +1,29 @@
-<h1>Este es mi perfil</h1>
+
+<div>
+  <h1>Welcome to your profile</h1>
+  <img src="assets/germany.png" alt="" width = "50px" >
+  <h2>Bienvenido, <%= current_user.name %> </h2>
+  <h2><%= current_user.bio %></h2>
+</div>
 
 
 
 
-<% @dogs.each do |dog| %>
-  <ul>
-    <li><%= dog.name %></li>
-    <li><%= dog.breed %></li>
-    <li><%= dog.age %></li>
-    <li><%= dog.sex %></li>
-    <li><%= dog.description %></li>
-    <% if dog.photo.attached? %>
-      <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  </ul>
-<% end %>
+<div>
+  <% @dogs.each do |dog| %>
+    <ul>
+      <li><%= dog.name %></li>
+      <li><%= dog.breed %></li>
+      <li><%= dog.age %></li>
+      <li><%= dog.sex %></li>
+      <li><%= dog.description %></li>
+      <% if dog.photo.attached? %>
+        <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 
 
 
