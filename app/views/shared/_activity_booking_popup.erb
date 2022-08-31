@@ -1,0 +1,29 @@
+ <!-- Create booking button trigger modal -->
+<button type="button" class="btn btn-primary activity-show-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">
+I want to go!
+</button>
+
+<!-- Booking modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="bookingModalLabel">Book your activity</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="booking-container">
+        <h3> <strong><%= @activity.name %> </strong> </h3>
+        <h3> <%= @activity.start_date.strftime("Start date: %b %d") %></h3>
+        <h3><%= @activity.end_date.strftime("End date: %b %d") %> </h3>
+        <h3> <%= @activity.start_time.strftime("Start time: %H:%M") %> | <%= @activity.end_time.strftime("End time: %H:%M") %> </h3>
+        <h3> 📍<%= @activity.location %> </h3>
+        <%= simple_form_for [@activity, @booking] do |f| %>
+          <h3><%= f.input :number_people %> </h3>
+          <%= f.submit class: "btn btn-primary", data: {bs_dismiss: "modal"}%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

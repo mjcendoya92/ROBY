@@ -1,0 +1,23 @@
+.show-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.show-info-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.show-image-banner {
+  height: 250px;
+}
+
+.activity-show-btn {
+  margin-top: 25px;
+  border-radius: 5px;
+  padding: 10px 0;
+}
