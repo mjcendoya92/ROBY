@@ -510,7 +510,8 @@ puts "13th activity"
 Activity.create!([{ name: "Morning Retiro and Coffee Break",
   category: "Walks",
   location: "Principe Pio",
-  description: "Take a walk around Parque de Retiro in the morning before work. Coffee is included in the price.",
+  description: "Take a walk around Parque de Retiro in the morning before work.
+  Coffee is included in the price.",
   start_date: "13/09/22",
   end_date: "13/09/22",
   start_time: "08:00",
@@ -522,3 +523,53 @@ Activity.create!([{ name: "Morning Retiro and Coffee Break",
   }])
 
 puts "14th activity"
+
+Activity.create!([{ name: "Walk on Calle Bravo Murillo",
+  category: "Walks",
+  location: "Cuatro Caminos",
+  description: "Take a stroll down the beautiful and peaceful Calle Bravo Murillo with us.",
+  start_date: "21/09/22",
+  end_date: "21/09/22",
+  start_time: "19:00",
+  end_time: "20:00",
+  dog_limit: 5,
+  people_limit: 10,
+  price: 0,
+  user: User.all.sample
+  }])
+
+puts "15th activity"
+
+Activity.create!([{ name: "Sunset Stroll",
+  category: "Walks",
+  location: "Cerro de Tio Pio",
+  description: "Take a walk around Cerro de Tio Pio park with us, and then walk up
+  the hill to enjoy the sunset with great views of Madrid.",
+  start_date: "22/09/22",
+  end_date: "22/09/22",
+  start_time: "18:30",
+  end_time: "20:00",
+  dog_limit: 10,
+  people_limit: 15,
+  price: 0,
+  user: User.all.sample
+  }])
+
+puts "16th activity"
+
+Activity.create!([{ name: "Morning Retiro and Coffee Break",
+  category: "Walks",
+  location: "Principe Pio",
+  description: "Take a walk around Parque de Retiro in the morning before work.
+  Coffee is included in the price.",
+  start_date: "13/09/22",
+  end_date: "13/09/22",
+  start_time: "08:00",
+  end_time: "09:00",
+  dog_limit: 10,
+  people_limit: 15,
+  price: 3,
+  user: User.all.sample
+  }])
+
+puts "17th activity"
