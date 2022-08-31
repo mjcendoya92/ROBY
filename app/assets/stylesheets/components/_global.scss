@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  color: $black-ish;
+  // ALL the text is black
+  color: $black-ish !important;
 }
 
 h1, h2, h3, h4 {
@@ -14,5 +15,4 @@ p {
 
 a{
   text-decoration: none;
-  color:$black-ish;
 }
