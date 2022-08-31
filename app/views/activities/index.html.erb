@@ -1,3 +1,12 @@
 <h1>This is the index</h1>
 
-<%= link_to "Go to an activity", activity_path(@activity) %>
+<% @activities.each do |activity| %>
+  <%= link_to activity_path(activity) do %>
+    <p>Name: <%= activity.name %> </p>
+    <p>Location: <%= activity.location %> </p>
+    <p>Description: <%= activity.description %> </p>
+    <p>Price: <%= activity.price %> </p>
+  <% end %>
+<% end %>
+
+<%= link_to "Create a new activity", new_activity_path %>

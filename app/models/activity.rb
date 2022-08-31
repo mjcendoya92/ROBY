@@ -1,5 +1,4 @@
 class Activity < ApplicationRecord
-
   belongs_to :user
   has_many :activity_categories, dependent: :destroy
   has_many :categories, through: :activity_categories
@@ -18,5 +17,4 @@ class Activity < ApplicationRecord
   validates :dog_limit, presence: true, numericality: { only_integer: true }
   validates :people_limit, presence: true, numericality: { only_integer: true }
   validates :price, presence: true, numericality: { only_integer: true }
-
 end

@@ -1,1 +1,9 @@
 <h1>This is the show page for an activity</h1>
+
+<h1> <%= @activity.name %> </h1>
+<p> <%= @activity.location %> </p>
+<p> <%= @activity.description %> </p>
+<p> <%= @activity.price %> </p>
+
+
+<%= link_to "Go back to activity index", activities_path %>
