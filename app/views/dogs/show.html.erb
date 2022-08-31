@@ -5,9 +5,11 @@
 <%= link_to "Back to my profile", profile_path %>
 
 <% @dogs.each do |dog| %>
-  <%= dog.name %>
-  <%= dog.breed %>
-  <%= dog.age %>
-  <%= dog.sex %>
-  <%= dog.description %>
+  <ul>
+    <li><%= dog.name %></li>
+    <li><%= dog.breed %></li>
+    <li><%= dog.age %></li>
+    <li><%= dog.sex %></li>
+    <li><%= dog.description %></li>
+  </ul>
 <% end %>
