@@ -1,16 +1,35 @@
-<p>Dog profile<p>
 
-<p>Aqui viene la carta de mi perrete</p>
-
-<%= link_to "Back to my profile", profile_path %>
-
-<ul>
-  <li><%= @dog.name %></li>
-  <li><%= @dog.breed %></li>
-  <li><%= @dog.age %></li>
-  <li><%= @dog.sex %></li>
-  <li><%= @dog.description %></li>
+<div class="show-container">
   <% if @dog.photo.attached? %>
     <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
-</ul>
+
+
+  <h1 class="title-show"><%= @dog.name %></h1>
+
+  <div class="dog-card" style="width: 18rem;">
+    <div class="dog-card-body">
+      <p class="dog-card-title"><strong>Breed:</strong></p>
+      <p class="dog-card-text"><%= @dog.breed %></p>
+    </div>
+  </div>
+
+  <div class="dog-show-card">
+    <p><strong>Age:</strong></p>
+    <%= @dog.age %>
+  </div>
+
+  <div class="dog-show-card">
+    <p><strong>Sex:</strong></p>
+    <%= @dog.sex %>
+  </div>
+
+  <div class = "description-card">
+    <p><strong>Description:</strong></p>
+    <p><%= @dog.description %></p>
+  </div>
+
+
+
+  <%= link_to "Owner profile", profile_path %>
+</div>
