@@ -1,35 +1,34 @@
 
 <div class="show-container">
-  <% if @dog.photo.attached? %>
-    <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-
-
-  <h1 class="title-show"><%= @dog.name %></h1>
-
-  <div class="dog-card" style="width: 18rem;">
+  <img src="" class="background-show-dog"/>
+  <div class="show-container-dog-header">
+    <% if @dog.photo.attached? %>
+        <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <h1 class="title-show"><%= @dog.name %></h1>
+  <div class="container-dog-show-info">
     <div class="dog-card-body">
       <p class="dog-card-title"><strong>Breed:</strong></p>
       <p class="dog-card-text"><%= @dog.breed %></p>
     </div>
+
+    <div class="dog-show-card">
+      <p><strong>Age:</strong></p>
+      <%= @dog.age %>
+    </div>
+
+    <div class="dog-show-card">
+      <p><strong>Sex:</strong></p>
+      <%= @dog.sex %>
+    </div>
+
+    <div class = "description-card">
+      <p><strong>Description:</strong></p>
+      <p><%= @dog.description %></p>
+    </div>
   </div>
 
-  <div class="dog-show-card">
-    <p><strong>Age:</strong></p>
-    <%= @dog.age %>
-  </div>
-
-  <div class="dog-show-card">
-    <p><strong>Sex:</strong></p>
-    <%= @dog.sex %>
-  </div>
-
-  <div class = "description-card">
-    <p><strong>Description:</strong></p>
-    <p><%= @dog.description %></p>
-  </div>
-
-
-
-  <%= link_to "Owner profile", profile_path %>
+  <button class="btn-primary">
+    <%= link_to "Owner profile", profile_path %>
+  </button>
 </div>
