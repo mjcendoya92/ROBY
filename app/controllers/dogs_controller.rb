@@ -15,7 +15,7 @@ class DogsController < ApplicationController
   end
 
   def show
-    @dog = Dog.find_by(user: current_user)
+    @dogs = Dog.where(user: current_user)
   end
 
   private
@@ -23,4 +23,5 @@ class DogsController < ApplicationController
   def dog_params
     params.require(:dog).permit(:name, :breed, :age, :sex, :description)
   end
+
 end
