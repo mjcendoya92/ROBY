@@ -16,10 +16,13 @@
   <div class ="activities-carousel-container">
     <h3>Activities you might like:</h3>
     <div class = "activities-home-container">
-      <% @activities.slice(0,4).each do |activity| %>
+      <% @activities.slice(0,3).each do |activity| %>
       <%= link_to activity_path(activity) do %>
             <div class="activities-home-card">
-              <img class="activities-image-card" src="" alt="">
+            <%# <% if activity.photo.attached? %>
+              <%# <%= cl_image_path activity.photo.key, height: 50, crop: :fill %>
+              <%# <img class="activities-image-card" src="#" alt=""> %>
+            <%# <%end %>
               <div class="activities-home-card-information">
                 <div class="activities-home-card-container">
                   <h3 class="activities-home-card"><%= activity.name %> </h3>
