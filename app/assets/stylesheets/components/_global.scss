@@ -2,19 +2,29 @@
   margin: 0;
   padding: 0;
   color: $black-ish;
+  //overflow-x: hidden;
+}
+
+html {
+  background-color: #FAFAFA;
+  // ALL the text is black
+  color: $black-ish !important;
 }
 
 h1, h2, h3, h4 {
   font-family: $headers-font;
+  margin: 0;
+  padding: 0;
 }
 
 p {
   font-family: $body-font;
+  margin: 0;
+  padding: 0;
 }
 
 a{
   text-decoration: none;
-  color:$black-ish;
 }
 
 ul{
