@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  // ALL the text is black
+  color: $black-ish !important;
+}
+
+h1, h2, h3, h4 {
+  font-family: $headers-font;
+}
+
+p {
+  font-family: $body-font;
+}
+
+a{
+  text-decoration: none;
+}

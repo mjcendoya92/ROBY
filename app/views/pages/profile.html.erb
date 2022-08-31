@@ -5,16 +5,12 @@
     </div>
   </div>
 
-    <div class = "user-info">
-      <div class = "user-imgs">
-        <div class = "profile-img">
-          <%#= @user.profile_img %>
-        </div>
 
         <div class = "profile-dog-img">
           <%#= @dog.profile_dog_img %>
         </div>
       </div>
+
 
       <div class ="names-container">
         <div class = "profile-user-name">
@@ -62,3 +58,24 @@
   </div>
 
 </div>
+
+
+
+<% @dogs.each do |dog| %>
+  <ul>
+    <li><%= dog.name %></li>
+    <li><%= dog.breed %></li>
+    <li><%= dog.age %></li>
+    <li><%= dog.sex %></li>
+    <li><%= dog.description %></li>
+    <% if dog.photo.attached? %>
+      <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+<%= link_to "Create a dog", new_dog_path  %>
+
+

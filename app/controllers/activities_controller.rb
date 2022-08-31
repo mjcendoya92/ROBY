@@ -9,6 +9,16 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
   end
 
+  def create
+    @activity = Activity.new(activity_params)
+    @activity.user = current_user
+    if @activity.save
+      redirect_to activity_path(@activity)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     @user_booking = Booking.find_by(user: current_user, activity: @activity)
     @booking = Booking.new

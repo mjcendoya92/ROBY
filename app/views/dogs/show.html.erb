@@ -4,12 +4,13 @@
 
 <%= link_to "Back to my profile", profile_path %>
 
-<% @dogs.each do |dog| %>
-  <ul>
-    <li><%= dog.name %></li>
-    <li><%= dog.breed %></li>
-    <li><%= dog.age %></li>
-    <li><%= dog.sex %></li>
-    <li><%= dog.description %></li>
-  </ul>
-<% end %>
+<ul>
+  <li><%= @dog.name %></li>
+  <li><%= @dog.breed %></li>
+  <li><%= @dog.age %></li>
+  <li><%= @dog.sex %></li>
+  <li><%= @dog.description %></li>
+  <% if @dog.photo.attached? %>
+    <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+</ul>
