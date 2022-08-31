@@ -7,6 +7,8 @@
 
 html {
   background-color: #FAFAFA;
+  // ALL the text is black
+  color: $black-ish !important;
 }
 
 h1, h2, h3, h4 {
@@ -23,5 +25,4 @@ p {
 
 a{
   text-decoration: none;
-  color:$black-ish;
 }

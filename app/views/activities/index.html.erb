@@ -1,1 +1,25 @@
-<h1>This is the index</h1>
+<h1>Activities:</h1>
+
+<div class="index-cards-container">
+    <% @activities.each do |activity| %>
+      <%= link_to activity_path(activity) do %>
+        <div class ="index-cards">
+          <div class="index-card-container-left">
+            <img class="index-image-cards" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+          </div>
+          <div class="index-card-container-right">
+            <div class="index-card-info">
+              <p><%= activity.name %> </p>
+              <p><%= activity.start_date %></p>
+              <p>📍<%= activity.location %> </p>
+              <p>$<%= activity.price %> </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
+<%= link_to "Create a new activity", new_activity_path %>

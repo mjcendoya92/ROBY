@@ -1,0 +1,40 @@
+.index-cards-container {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+.index-cards-container a {
+  text-decoration: none;
+  color: black;
+}
+
+.index-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fefefe;
+  margin-top: 25px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  height: 170px;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+}
+
+.index-card-container-left {
+  width: 45%;
+  padding: 5px;
+}
+
+.index-card-container-right {
+  width: 55%;
+  margin-left: 5px;
+}
+
+.index-image-cards {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid black;
+}

@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @activities = Activity.all
   end
+
+  def profile
+    @dogs = current_user.dogs
+  end
+
 end
