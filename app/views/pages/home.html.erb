@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>gilipichis!!!</p>
+<div class = "container-home">
+  <div class="home-search">
+    <h3 id="search-title">Find new activities</h3>
+    <form class = "search-form">
+    <input type="text" placeholder="Find an Activity" id="search-bar">
+    <button type="submit" id="search-button"><h3>Search</h3></button>
+    </form>
+  </div>
+
+  <div class ="map-container">
+    <div class = "map-placeholder">
+      <img src="https://res.cloudinary.com/mariacend1910/image/upload/v1661949273/madrid_map_mjuxsv.png">
+    </div>
+  </div>
+
+  <div class ="activities-carousel-container">
+    <h3>Activities you might like:</h3>
+    <div class = "activities-home-container">
+      <% @activities.slice(0,3).each do |activity| %>
+      <%= link_to activity_path(activity) do %>
+            <div class="activities-home-card">
+            <%# <% if activity.photo.attached? %>
+              <%# <%= cl_image_path activity.photo.key, height: 50, crop: :fill %>
+              <%# <img class="activities-image-card" src="#" alt=""> %>
+            <%# <%end %>
+              <div class="activities-home-card-information">
+                <div class="activities-home-card-container">
+                  <h3 class="activities-home-card"><%= activity.name %> </h3>
+                </div>
+              </div>
+            </div>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+</div>

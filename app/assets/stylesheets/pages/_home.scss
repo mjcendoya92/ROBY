@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.container-home{
+  width: 100%;
+}
+
+#search-title{
+  margin: 5px 0;
+}
+
+.search-form{
+  width: 100%;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search-bar{
+  border-radius: 5px;
+  width: 70%;
+  border: 1px solid #FCCB62;
+  padding: 10px 0px;
+  font-family: $headers-font;
+}
+
+#search-button{
+  border-radius: 5px;
+  border: 1px solid #FCCB62;
+  background-color:#FCCB62;
+  padding: 10px;
+}
