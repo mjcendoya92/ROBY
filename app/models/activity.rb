@@ -1,12 +1,12 @@
 class Activity < ApplicationRecord
-  geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
-
   belongs_to :user
   has_many :activity_categories, dependent: :destroy
   has_many :categories, through: :activity_categories
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 15 }

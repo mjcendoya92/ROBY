@@ -3,11 +3,11 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
-
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
+        lng: activity.longitude,
+        image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
       }
     end
   end

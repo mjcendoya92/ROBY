@@ -3,6 +3,7 @@
   justify-content: space-between;
   height: 90px;
   align-items: center;
+
 }
 
 .logo-container{
@@ -46,12 +47,14 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  z-index:500;
 }
 
 .nav-menu > li{
   font-size: x-large;
   font-weight: bold;
   margin: 7% 0% ;
+
 }
 
 .active{

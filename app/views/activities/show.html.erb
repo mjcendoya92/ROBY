@@ -34,7 +34,9 @@
     <div class="activity-show-info-cards">
       <h3>People limit: <strong><%= @activity.people_limit %> </strong></h3>
     </div>
-
+    <%#-------MAP------%>
+    <%= render "shared/map" %>
+    <%#-------MAP------%>
     <% if !@user_booking %>
       <%= render "shared/activity_booking_popup" %>
     <% else %>
