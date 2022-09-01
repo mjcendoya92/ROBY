@@ -61,11 +61,17 @@
   transition: all 0.5s ease;
   width: 100vw;
   height: 100vh;
-  background-color: #2B3E4F;
+  background-color: #2B3E4F ;
 }
 
 .navbar-button{
   background-color: #fccb62;
   width: 70vw;
-  border-radius: 20px;
+  border-radius: 8px;
+  color: black !important;
+  padding: 5px;
+}
+
+.black{
+  color: black;
 }
