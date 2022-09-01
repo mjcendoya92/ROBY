@@ -25,9 +25,6 @@ class ActivitiesController < ApplicationController
     @comment = Comment.new
   end
 
-  def edit
-  end
-
   def update
     if @activity.update(activity_params)
       redirect_to activity_path(@activity)

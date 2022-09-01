@@ -38,8 +38,7 @@
     <% if !@user_booking %>
       <%= render "shared/activity_booking_popup" %>
     <% else %>
-      <p>The edit and cancel buttons will go here</p>
-      <%# <%= render "shared/activity_edit_or_delete_booking_popup" %>
+      <%= render "shared/activity_edit_or_delete_booking_popup" %>
     <% end %>
 
     <%= render "shared/activity_comment_popup" %>
