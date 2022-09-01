@@ -26,11 +26,24 @@
   </div>
 </div>
 
-<div class="test">
-  <div class = "profile-btns-container">
-    <%= link_to "Edit Profile", "#", class: "small-btn" %>
-    <%= link_to "Add Dog", "#", class: "small-btn" %>
-  </div>
+
+      <div class ="names-container">
+        <div class = "profile-user-name">
+          <%= current_user.name %>
+        </div>
+        <div class = "profile-dog-name">
+          <% current_user.dogs.each do |dog| %>
+            <%= dog.name  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class = "profile-btns-container">
+      <%= link_to "Edit Profile", "#", class: "small-btn" %>
+      <%= link_to "Add Dog", new_dog_path, class: "small-btn" %>
+    </div>
+
 
   <div class = "info-cards-container">
     <div class ="index-cards">
@@ -56,7 +69,7 @@
       <%#import 5 friend images here%>
       </div>
     </div>
-    <%= link_to "Create New Activity", "#", class: "large-btn" %>
+    <%= link_to "Create New Activity", new_activity_path, class: "large-btn" %>
   </div>
 
   <div class = "profile-activities-container">
