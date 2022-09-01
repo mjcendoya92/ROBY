@@ -1,37 +1,37 @@
 
 <div class="show-container">
-  <img src="" class="background-show-dog"/>
+  <div class="background-show-dog"></div>
   <div class="show-container-dog-header">
-    <div class="dog-avatar">
-      <% if @dog.photo.attached? %>
-        <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    </div>
-    <h1 class="title-show" style="text-align: right; margin-right: 50px; margin-bottom: 50px; margin-top: 10px;"><%= @dog.name %></h1>
+    <% if @dog.photo.attached? %>
+      <%= cl_image_tag @dog.photo.key, class:"dog-avatar"%>
+    <% end %>
+    <h1 class="title-show"><strong><%= @dog.name %></strong></h1>
+  </div>
   <div class="container-dog-show-info">
     <div class="dog-card-body">
-      <p class="dog-card-title"><strong>Breed:</strong></p>
+      <h2 class="dog-card-title"><strong>Breed:</strong></h2>
       <p class="dog-card-text"><%= @dog.breed %></p>
     </div>
 
-    <div class="dog-card-body">
-      <p class="dog-card-title"><strong>Age:</strong></p>
-      <p class="dog-card-text"><%= @dog.age %>
+    <div class="dog-card-doble">
+      <div class="dog-card-body doble">
+        <h2 class="dog-card-title"><strong>Age:</strong></h2>
+        <p class="dog-card-text"><%= @dog.age %>
+      </div>
+
+      <div class="dog-card-body doble">
+        <h2 class="dog-card-title"><strong>Sex:</strong></h2>
+        <p class="dog-card-text"><%= @dog.sex %>
+      </div>
     </div>
 
     <div class="dog-card-body">
-      <p class="dog-card-title"><strong>Sex:</strong></p>
-      <p class="dog-card-text"><%= @dog.sex %>
-    </div>
-
-    <div class="dog-card-body">
-      <p class="dog-card-title"><strong>Description:</strong></p>
+      <h2 class="dog-card-title"><strong>Description:</strong></h2>
       <p class="dog-card-text"><%= @dog.description %></p>
     </div>
   </div>
 
-
-  <button type="button" class="btn btn-primary">
-    <%= link_to "Visit owner profile", profile_path %>
-  </button>
+  <div class="d-grid gap-2 show-dog-btn">
+      <%= link_to "Visit owner profile", profile_path, class:"btn btn-primary btn-lg" %>
+  </div>
 </div>
