@@ -1,5 +1,7 @@
 <h1>Activities:</h1>
-
+<%#-------MAP------%>
+<%= render "shared/map" %>
+<%#-------MAP------%>
 <div class="index-cards-container">
     <% @activities.each do |activity| %>
       <%= link_to activity_path(activity) do %>
