@@ -22,6 +22,7 @@ class ActivitiesController < ApplicationController
   def show
     @user_booking = Booking.find_by(user: current_user, activity: @activity)
     @booking = Booking.new
+    @comment = Comment.new
   end
 
   def edit
