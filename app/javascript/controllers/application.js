@@ -7,9 +7,9 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
-window.onload = function(){
+document.addEventListener("turbo:load", function(){
   initFlatpickr();
-}
+})
 
 
 
