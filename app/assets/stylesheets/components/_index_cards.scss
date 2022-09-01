@@ -12,13 +12,12 @@
 
 .index-cards {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
   background-color: #fefefe;
   margin-top: 25px;
   padding: 10px 10px;
   border-radius: 4px;
-  height: 170px;
+  height: auto;
   box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
@@ -40,9 +39,19 @@
   border: 1px solid black;
 }
 
+
+.h1 {
+  font-style: bold;
+  font-family: $headers-font;
+}
+
+.p {
+  font-family: $body-font;
+
 .index-card-info {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: space-between;
+
 }
