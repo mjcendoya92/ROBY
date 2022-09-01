@@ -3,12 +3,12 @@
   <div class="profile-imgs-container">
     <div class = "profile-banner-img">
       <% if current_user.banner_photo.attached? %>
-        <%= cl_image_tag current_user.banner_photo.key, crop: :fill %>
+        <%= cl_image_tag current_user.banner_photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
     </div>
     <div class = "profile-user-img">
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, crop: :fill %>
+        <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
     </div>
     <div class = "profile-dog-img">
