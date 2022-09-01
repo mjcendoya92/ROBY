@@ -1,4 +1,92 @@
-<h1>Este es mi perfil</h1>
+
+<div class = "profile-container">
+  <div class="profile-imgs-container">
+    <div class = "profile-banner-img">
+      <%#= @user.profile_banner_img %>
+    </div>
+  </div>
+
+
+<div>
+  <h1>Welcome to your profile</h1>
+  <img src="assets/germany.png" alt="" width = "50px" >
+  <h2>Bienvenido, <%= current_user.name %> </h2>
+  <h2><%= current_user.bio %></h2>
+</div>
+
+        <div class = "profile-dog-img">
+          <%#= @dog.profile_dog_img %>
+        </div>
+      </div>
+
+
+      <div class ="names-container">
+        <div class = "profile-user-name">
+          <%= @user.name %>
+        </div>
+
+        <div class = "profile-dog-name">
+          <%= @dog.name %>
+        </div>
+      </div>
+    </div>
+
+    <div class = "profile-btns-container">
+      <%= link_to "Edit Profile", "#", class: "small-btn" %>
+      <%= link_to "Add Dog", "#", class: "small-btn" %>
+    </div>
+
+  <div class = "info-cards-container">
+    <div class = "about-us-card">
+      <h2><strong>About Me:</strong></h2>
+      <p><%= user.bio %></p>
+    </div>
+    <div class = "location-card">
+      <h2><strong>Location:</strong></h2>
+      <p><%= user.location %></p>
+    </div>
+    <div class = "user-map">
+    </div>
+  </div>
+
+  <div class = "friends-container">
+    <h2>Friends:</h2>
+    <div class = "row">
+      <div class="col-12 col-lg-6">
+      <%#import 5 friend images here%>
+      </div>
+    </div>
+    <%= link_to "Create New Activity", "#", class: "large-btn" %>
+  </div>
+
+
+  <div class = "profile-activities-container">
+    <h2>Attending activities:</h2>
+    <%#attending activities card carousel here%>
+  </div>
+
+</div>
+
+
+
+
+<div>
+  <% @dogs.each do |dog| %>
+    <ul>
+      <li><%= dog.name %></li>
+      <li><%= dog.breed %></li>
+      <li><%= dog.age %></li>
+      <li><%= dog.sex %></li>
+      <li><%= dog.description %></li>
+      <% if dog.photo.attached? %>
+        <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+
+
 
 <%= link_to "Create a dog", new_dog_path  %>
 
