@@ -1,54 +1,54 @@
 
-<div class="main-navbar-container">
+<div class="main-navbar-container" data-controller="navbar">
   <div class="logo-container">
       <img src="<%="assets/logo.png"%>" class="logo" alt="">
   </div>
 
-  <div class="menu-icon">
-    <i class="fa-solid fa-bars"></i>
+  <div class="menu-icon" data-action="click->navbar#handleClick" data-navbar-target="icon">
+    <i class="fa-solid fa-bars" data-navbar-target="font" data-action="click->navbar#changeIcon"></i>
   </div>
 
-  <ul class="nav-menu">
+  <ul class="nav-menu" data-navbar-target="list">
     <% if user_signed_in? %>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Home", root_path, class: "" %></button>
+        <button class="navbar-button"><%= link_to "Home", root_path, class: "black" %></button>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "My Profile", profile_path, class: "" %></button>
+        <button class="navbar-button"><%= link_to "My Profile", profile_path, class: "black" %></button>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Find an activity", activities_path, class: "" %></button>
+        <button class="navbar-button"><%= link_to "Find an activity", activities_path, class: "black" %></button>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "My dog(s)", "#", class: "" %></button>
+        <button class="navbar-button"><%= link_to "My dog(s)", "#", class: "black" %></button>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Create a new activity", new_activity_path, class: "" %></button>
+        <button class="navbar-button"><%= link_to "Create a new activity", new_activity_path, class: "black" %></button>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Logout", destroy_user_session_path, class: "" %></button>
+        <button class="navbar-button"><%= link_to "Logout", destroy_user_session_path, class: "black" %></button>
       </li>
 
     <% else %>
       <li class="">
-        <button class="navbar-button"><%= link_to "Login", new_user_session_path, class: "" %></button>
+        <button class="navbar-button"><%= link_to "Login", new_user_session_path, class: "black" %></button>
       </li>
     <% end %>
   </ul>
 </div>
 
 
- <script>
+ <%# <script>
         let icon = document.querySelector(".menu-icon")
         let list = document.querySelector(".nav-menu")
 
-        let font = document.getElementById("d-menu")
+        let font = document.querySelector(".fa-solid")
 
         icon.addEventListener("click", () => {
             list.classList.toggle("active");
@@ -63,4 +63,4 @@
                 font.classList.add('fa-bars');
   }
         })
-    </script>
+    </script> %>
