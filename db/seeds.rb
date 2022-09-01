@@ -68,10 +68,9 @@ puts emi.email
 
 grace = User.new({ name: "Grace",
   location: "Estrecho",
-  bio: "Looking to find other dog owners who want to go on weekend trips around the
-  Community of Madrid",
+  bio: "Searching for social activites around the city for my dog and I to attend.",
   email: "Grace@roby.com",
-  password: "123456"
+  password: "123456",
   })
 
 grace.save
@@ -104,6 +103,7 @@ fanny = User.new({ name: "Fanny",
   so I am looking for social events to make friends with dogs!",
   email: "fanny@roby.com",
   password: "123456"
+  
   })
 
 fanny.save

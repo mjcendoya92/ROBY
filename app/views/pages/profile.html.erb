@@ -2,22 +2,30 @@
 <div class = "profile-container">
   <div class="profile-imgs-container">
     <div class = "profile-banner-img">
-      <%#= @user.profile_banner_img %>
+      <% if current_user.banner_photo.attached? %>
+        <%= cl_image_tag current_user.banner_photo.key, crop: :fill %>
+      <% end %>
+    </div>
+    <div class = "profile-user-img">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, crop: :fill %>
+      <% end %>
+    </div>
+    <div class = "profile-dog-img">
+      <%#= current_user.profile_dog_img %>
     </div>
   </div>
-
-        <div class = "profile-dog-img">
-          <%#= @dog.profile_dog_img %>
-        </div>
-      </div>
+</div>
 
 
       <div class ="names-container">
         <div class = "profile-user-name">
-          <%= @user.name %>
+          <%= current_user.name %>
         </div>
         <div class = "profile-dog-name">
-          <%= @dog.name %>
+          <% current_user.dogs.each do |dog| %>
+            <%= dog.name  %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -28,20 +36,24 @@
     </div>
 
   <div class = "info-cards-container">
-    <div class = "about-us-card">
-      <h2><strong>About Me:</strong></h2>
-      <p><%= user.bio %></p>
+    <div class ="index-cards">
+      <div class = "user-bio-card">
+        <h3><strong>Bio:</strong></h3>
+        <p><%= current_user.bio %></p>
+      </div>
     </div>
-    <div class = "location-card">
-      <h2><strong>Location:</strong></h2>
-      <p><%= user.location %></p>
+    <div class ="index-cards">
+      <div class = "user-location-card">
+        <h3><strong>Location:</strong></h3>
+        <p><%= current_user.location %></p>
+      </div>
     </div>
-    <div class = "user-map">
-    </div>
+      <div class = "user-map">
+      </div>
   </div>
 
   <div class = "friends-container">
-    <h2>Friends:</h2>
+    <h3><strong>Friends:</strong></h3>
     <div class = "row">
       <div class="col-12 col-lg-6">
       <%#import 5 friend images here%>
@@ -52,31 +64,8 @@
 
 
   <div class = "profile-activities-container">
-    <h2>Attending activities:</h2>
+    <h3><strong>Attending activities:</strong></h3>
     <%#attending activities card carousel here%>
   </div>
 
 </div>
-
-
-
-
-<div>
-  <% @dogs.each do |dog| %>
-    <ul>
-      <li><%= dog.name %></li>
-      <li><%= dog.breed %></li>
-      <li><%= dog.age %></li>
-      <li><%= dog.sex %></li>
-      <li><%= dog.description %></li>
-      <% if dog.photo.attached? %>
-        <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
-
-
-
-
-<%= link_to "Create a dog", new_dog_path  %>
