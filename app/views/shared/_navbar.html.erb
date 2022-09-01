@@ -30,6 +30,10 @@
       <% end %>
 
       <li class="">
+        <button class="navbar-button"><%= link_to "My dog(s)", dog_path(current_user.dogs.first), class: "black" %></button>
+      </li>
+
+      <li class="">
         <button class="navbar-button"><%= link_to "Create a new activity", new_activity_path, class: "black" %></button>
       </li>
 
