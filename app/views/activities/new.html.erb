@@ -9,7 +9,11 @@
   <%= f.input :dog_limit %>
   <%= f.input :people_limit %>
   <%= f.input :price %>
-  <%= f.submit %>
+  <div class="d-grid gap-2 show-dog-btn">
+    <%= f.submit class:"btn btn-primary btn-lg" %>
+  </div>
 <% end %>
 
-<%= link_to "Go back to activity index", activities_path %>
+<div class="d-grid gap-2 show-dog-btn">
+    <%= link_to "Go back to activity index", activities_path, class:"btn btn-primary btn-lg" %>
+</div>
