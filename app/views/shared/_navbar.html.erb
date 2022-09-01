@@ -24,7 +24,7 @@
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "My dog(s)", "#", class: "black" %></button>
+        <button class="navbar-button"><%= link_to "My dog(s)", dog_path(current_user.dogs.first), class: "black" %></button>
       </li>
 
       <li class="">
