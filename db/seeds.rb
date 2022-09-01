@@ -103,7 +103,7 @@ fanny = User.new({ name: "Fanny",
   so I am looking for social events to make friends with dogs!",
   email: "fanny@roby.com",
   password: "123456"
-  
+
   })
 
 fanny.save
@@ -403,7 +403,7 @@ Activity.create!([{ name: "Leash Training",
 puts "tenth activity"
 
 Activity.create!([{ name: "Circular Campo",
-  category: "Hikes",
+  category: "Hike",
   location: "Casa de Campo",
   description: "This hike is route around Casa de Campo of 11.7 km. There are many hills and rocky
   terrain, not reccomended for small dogs.",
@@ -420,7 +420,7 @@ Activity.create!([{ name: "Circular Campo",
 puts "tenth activity"
 
 Activity.create!([{ name: "Seven Peaks",
-  category: "Hikes",
+  category: "Hike",
   location: "Parque Nacional de la Sierra de Guadarrama",
   description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
   from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
@@ -437,7 +437,7 @@ Activity.create!([{ name: "Seven Peaks",
 puts "Eleventh activity"
 
 Activity.create!([{ name: "Seven Peaks",
-  category: "Hikes",
+  category: "Hike",
   location: "Parque Nacional de la Sierra de Guadarrama",
   description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
   from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
@@ -454,7 +454,7 @@ Activity.create!([{ name: "Seven Peaks",
 puts "Eleventh activity"
 
 Activity.create!([{ name: "Camino de los Campamentos",
-  category: "Hikes",
+  category: "Hike",
   location: "Cercedilla",
   description: "This easy trail is great for getting some fresh air outside of the city. Price Includes transportation
   from the center of Madrid and a meal after the hike. It is reccomended to bring some healthy snacks for during the hike!.
@@ -492,7 +492,7 @@ Activity.create!([{ name: "Camino de los Campamentos",
 puts "12th activity"
 
 Activity.create!([{ name: "Madrid Rio",
-  category: "Walks",
+  category: "Walk",
   location: "Principe Pio",
   description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",
   start_date: "07/10/22",
@@ -508,7 +508,7 @@ Activity.create!([{ name: "Madrid Rio",
 puts "13th activity"
 
 Activity.create!([{ name: "Morning Retiro and Coffee Break",
-  category: "Walks",
+  category: "Walk",
   location: "Principe Pio",
   description: "Take a walk around Parque de Retiro in the morning before work.
   Coffee is included in the price.",
@@ -525,7 +525,7 @@ Activity.create!([{ name: "Morning Retiro and Coffee Break",
 puts "14th activity"
 
 Activity.create!([{ name: "Walk on Calle Bravo Murillo",
-  category: "Walks",
+  category: "Walk",
   location: "Cuatro Caminos",
   description: "Take a stroll down the beautiful and peaceful Calle Bravo Murillo with us.",
   start_date: "21/09/22",
@@ -541,7 +541,7 @@ Activity.create!([{ name: "Walk on Calle Bravo Murillo",
 puts "15th activity"
 
 Activity.create!([{ name: "Sunset Stroll",
-  category: "Walks",
+  category: "Walk",
   location: "Cerro de Tio Pio",
   description: "Take a walk around Cerro de Tio Pio park with us, and then walk up
   the hill to enjoy the sunset with great views of Madrid.",
@@ -558,7 +558,7 @@ Activity.create!([{ name: "Sunset Stroll",
 puts "16th activity"
 
 Activity.create!([{ name: "Morning Retiro and Coffee Break",
-  category: "Walks",
+  category: "Walk",
   location: "Principe Pio",
   description: "Take a walk around Parque de Retiro in the morning before work.
   Coffee is included in the price.",
@@ -573,3 +573,9 @@ Activity.create!([{ name: "Morning Retiro and Coffee Break",
   }])
 
 puts "17th activity"
+
+Category.create!([{ name: "Walk" }])
+Category.create!([{ name: "Hike" }])
+Category.create!([{ name: "Social" }])
+Category.create!([{ name: "Romantic" }])
+Category.create!([{ name: "Hike" }])

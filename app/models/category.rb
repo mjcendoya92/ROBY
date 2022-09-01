@@ -5,6 +5,7 @@ class Category < ApplicationRecord
   has_many :dogs, through: :dog_categories
   has_many :activities, through: :activity_categories
 
-  validates :name, presence: true
+  CATEGORIES = ["Social", "Training", "Hike", "Walk", "Small dogs"]
 
+  validates :name, presence: true
 end
