@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    @booking = Booking.find(params[:booking_id])
-    @comment = Comment.new(review_params)
-    @comment.booking = @booking
+    @activity = Activity.find(params[:activity_id])
+    @comment = Comment.new(comment_params)
+    @comment.user = current_user
+    @comment.activity = @activity
     if @comment.save
-      redirect_to activity_path(booking.activity)
+      redirect_to activity_path(@activity)
     else
+      @booking = Booking.new
       render "activities/show", status:
       :unprocessable_entity
     end
@@ -14,6 +16,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :activity_id, :user_id)
+    params.require(:comment).permit(:content)
   end
 end

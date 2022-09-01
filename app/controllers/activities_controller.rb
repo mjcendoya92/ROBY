@@ -3,6 +3,13 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
+      }
+    end
   end
 
   def new
@@ -22,6 +29,7 @@ class ActivitiesController < ApplicationController
   def show
     @user_booking = Booking.find_by(user: current_user, activity: @activity)
     @booking = Booking.new
+    @comment = Comment.new
   end
 
   def edit

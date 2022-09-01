@@ -5,6 +5,9 @@ class Activity < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 15 }
   validates :location, presence: true

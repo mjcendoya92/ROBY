@@ -1,7 +1,10 @@
 // Specific CSS for your home-page
 .container-home{
   width: 100%;
-  overflow-x:hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
 }
 
 #search-title{
@@ -20,9 +23,10 @@
 #search-bar{
   border-radius: 5px;
   width: 70%;
-  border: 1px solid #FCCB62;
+  border: 2px solid #FCCB62;
   padding: 10px 0px;
   font-family: $headers-font;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
 #search-button{

@@ -1,0 +1,65 @@
+.activity-show-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.activity-show-info-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 25px;
+}
+
+.activity-show-image-banner {
+  height: 270px;
+}
+
+.activity-show-btn {
+  margin-top: 25px;
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+.activity-show-title {
+  margin-top: 20px;
+}
+
+.activity-show-attendees {
+  margin-top: 35px;
+}
+
+.activity-show-users-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.activity-show-attendees-avatars {
+  padding: 10px;
+  border: 2px solid red;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.activity-show-info-cards {
+  background-color: #fefefe;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.activity-show-comments {
+  margin-top: 30px;
+}
+
+.activity-show-comment-card {
+  background-color: #fbfbfb;
+  margin-bottom: 60px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 25px;
+}

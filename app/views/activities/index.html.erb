@@ -1,5 +1,7 @@
 <h1>Activities:</h1>
-
+<%#-------MAP------%>
+<%= render "shared/map" %>
+<%#-------MAP------%>
 <div class="index-cards-container">
     <% @activities.each do |activity| %>
       <%= link_to activity_path(activity) do %>
@@ -9,10 +11,13 @@
           </div>
           <div class="index-card-container-right">
             <div class="index-card-info">
-              <p><%= activity.name %> </p>
-              <p><%= activity.start_date %></p>
-              <p>📍<%= activity.location %> </p>
-              <p>$<%= activity.price %> </p>
+              <h3><strong><%= activity.name %></strong></h3>
+              <div class="date-and-location-index">
+                <%= activity.start_date %>
+                <br>
+                📍<%= activity.location %>
+              </div>
+              $<%= activity.price %>
             </div>
           </div>
         </div>

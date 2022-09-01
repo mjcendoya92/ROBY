@@ -1,9 +1,63 @@
-<h1>This is the show page for an activity</h1>
+<div class="activity-show-container">
+  <img class="activity-show-image-banner" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+  <div class="activity-show-info-container">
 
-<h1> <%= @activity.name %> </h1>
-<p> <%= @activity.location %> </p>
-<p> <%= @activity.description %> </p>
-<p> <%= @activity.price %> </p>
+    <div class="activity-show-title">
+      <h1> <strong><%= @activity.name %> </strong></h1>
+      <br>
+      <h3> <%= @activity.description %> </h3>
+    </div>
 
+    <div class="activity-show-attendees">
+      <h2><strong>Attendees:</strong></h2>
+      <div class="activity-show-users-container">
+        <% @activity.bookings.each do |booked| %>
+          <%# this will be the users image %>
+          <div class="activity-show-attendees-avatars"><%= booked.user.name %></div>
+        <% end %>
+      </div>
+    </div>
 
-<%= link_to "Go back to activity index", activities_path %>
+    <div class="activity-show-info-cards">
+      <h3><strong><%= @activity.start_date.strftime("%b %d") %> - <%= @activity.end_date.strftime("%b %d") %></strong></h3>
+      <p> <%= @activity.start_time.strftime("%H:%M") %> - <%= @activity.end_time.strftime("%H:%M") %> </p>
+    </div>
+
+    <div class="activity-show-info-cards">
+      <h3><strong>📍<%= @activity.location %></strong> </h3>
+    </div>
+
+    <div class="activity-show-info-cards">
+      <h3><strong>$<%= @activity.price %></strong></h3>
+    </div>
+
+    <div class="activity-show-info-cards">
+      <h3>People limit: <strong><%= @activity.people_limit %> </strong></h3>
+    </div>
+    <%#-------MAP------%>
+    <%= render "shared/map" %>
+    <%#-------MAP------%>
+    <% if !@user_booking %>
+      <%= render "shared/activity_booking_popup" %>
+    <% else %>
+      <p>The edit and cancel buttons will go here</p>
+      <%# <%= render "shared/activity_edit_or_delete_booking_popup" %>
+    <% end %>
+
+    <%= render "shared/activity_comment_popup" %>
+
+    <div class="activity-show-comments">
+      <h3><strong>Comments:</strong></h3>
+      <% @activity.comments.each do |comment| %>
+        <div class="activity-show-comment-card">
+          <h3>"<%= comment.content %>"</h3>
+          <br>
+          <p>- <%= comment.user.name %><p>
+        </div>
+      <% end %>
+    </div>
+
+   <%= link_to "Go back to activity index", activities_path %>
+
+  </div>
+</div>
