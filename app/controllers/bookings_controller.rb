@@ -1,6 +1,5 @@
-
 class BookingsController < ApplicationController
-  before_action :set_activity, only: [:create, :edit, :update]
+  before_action :set_activity, only: [:create]
 
   def create
     @booking = Booking.new(booking_params)
@@ -19,7 +18,7 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find_by(activity: @activity, user: current_user)
+    @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to activities_path(@activity)
   end

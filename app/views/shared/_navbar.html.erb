@@ -1,5 +1,5 @@
-
 <div class="main-navbar-container" data-controller="navbar">
+
   <div class="logo-container">
       <img src="<%="assets/logo.png"%>" class="logo" alt="">
   </div>
@@ -23,8 +23,14 @@
         <button class="navbar-button"><%= link_to "Find an activity", activities_path, class: "black" %></button>
       </li>
 
+      <% if current_user.dogs %>
+        <li class="">
+          <button class="navbar-button"><%= link_to "My dog(s)", , class: "black" %></button>
+        </li>
+      <% end %>
+
       <li class="">
-        <button class="navbar-button"><%= link_to "My dog(s)", "#", class: "black" %></button>
+        <button class="navbar-button"><%= link_to "My dog(s)", dog_path(current_user.dogs.first), class: "black" %></button>
       </li>
 
       <li class="">
@@ -42,25 +48,3 @@
     <% end %>
   </ul>
 </div>
-
-
- <%# <script>
-        let icon = document.querySelector(".menu-icon")
-        let list = document.querySelector(".nav-menu")
-
-        let font = document.querySelector(".fa-solid")
-
-        icon.addEventListener("click", () => {
-            list.classList.toggle("active");
-        })
-
-        font.addEventListener("click", () =>{
-            if (font.classList.contains('fa-bars')) {
-                font.classList.remove('fa-bars');
-                font.classList.add('fa-xmark');
-            } else {
-                font.classList.remove('fa-xmark');
-                font.classList.add('fa-bars');
-  }
-        })
-    </script> %>

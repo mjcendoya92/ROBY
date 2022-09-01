@@ -47,9 +47,22 @@
 
 .p {
   font-family: $body-font;
-  }
+}
+
+
 .index-card-info {
   height: 100%;
   display: flex;
   flex-direction: column;
-  }
+
+
+  //align-items: space-between;
+
+}
+
+.map-index-container {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
