@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    # Make a connection to create categories.
   end
 
   def create

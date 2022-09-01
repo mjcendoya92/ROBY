@@ -236,8 +236,15 @@ benji = Dog.new({ name: "Benji",
 benji.save
 puts benji.name
 
+Category.create!([{ name: "Walk" }])
+Category.create!([{ name: "Hike" }])
+Category.create!([{ name: "Social" }])
+Category.create!([{ name: "Romantic" }])
+Category.create!([{ name: "Hike" }])
+puts "Created categories"
+
 Activity.create!([{ name: "Puppy Birthday",
-  category: "Social",
+  category: Category.all.sample.name,
   location: "Parque de Retiro",
   description: "Come join Rex while celebrating his 2nd birthday!
   Party attire for dogs is strongly reccomended!",
@@ -254,7 +261,7 @@ Activity.create!([{ name: "Puppy Birthday",
   puts "first activity"
 
 Activity.create!([{ name: "Agility Training",
-  category: "Training",
+  category: Category.all.sample.name,
   location: "Parque de Berlin",
   description: "Meet with experienced trainers and learn some new agility skills!",
   start_date: "08/10/22",
@@ -270,7 +277,7 @@ Activity.create!([{ name: "Agility Training",
   puts "second activity"
 
 Activity.create!([{ name: "Coffees and Canines",
-  category: "Social",
+  category: Category.all.sample.name,
   location: "Cafe Federal",
   description: "Join us at this cafe with your dogs and enjoy some
   morning coffee with good company. Coffee is included in the price.",
@@ -287,7 +294,7 @@ Activity.create!([{ name: "Coffees and Canines",
   puts "third activity"
 
 Activity.create!([{ name: "Cocktails and Wagging Tails",
-  category: "Social",
+  category: Category.all.sample.name,
   location: "Barbara Ann",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
@@ -573,9 +580,3 @@ Activity.create!([{ name: "Morning Retiro and Coffee Break",
   }])
 
 puts "17th activity"
-
-Category.create!([{ name: "Walk" }])
-Category.create!([{ name: "Hike" }])
-Category.create!([{ name: "Social" }])
-Category.create!([{ name: "Romantic" }])
-Category.create!([{ name: "Hike" }])
