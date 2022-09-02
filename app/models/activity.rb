@@ -4,6 +4,7 @@ class Activity < ApplicationRecord
   has_many :categories, through: :activity_categories
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
   # accepts_nested_attributes_for :activity_categories
 
   geocoded_by :location
