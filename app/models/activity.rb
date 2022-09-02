@@ -5,6 +5,7 @@ class Activity < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
+  # accepts_nested_attributes_for :activity_categories
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
@@ -15,9 +16,6 @@ class Activity < ApplicationRecord
   validates :start_date, :end_date, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true, comparison: { greater_than: :start_time }
-
-  #validates :category # inclusion to be created
-
   validates :dog_limit, presence: true, numericality: { only_integer: true }
   validates :people_limit, presence: true, numericality: { only_integer: true }
   validates :price, presence: true, numericality: { only_integer: true }

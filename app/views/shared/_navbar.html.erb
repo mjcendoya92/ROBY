@@ -12,34 +12,51 @@
     <% if user_signed_in? %>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Home", root_path, class: "black" %></button>
+        <%= link_to root_path, class: "black" do%>
+          <button class="navbar-button">Home</button>
+        <% end %>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "My Profile", profile_path, class: "black" %></button>
+        <%= link_to profile_path, class: "black" do %>
+          <button class="navbar-button">My Profile</button>
+        <% end %>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Find an activity", activities_path, class: "black" %></button>
+        <%= link_to activities_path, class: "black" do %>
+          <button class="navbar-button">Find an activity</button>
+        <% end %>
       </li>
 
-      <% if current_user.dogs %>
+      <% unless current_user.dogs.first.nil? %>
         <li class="">
-          <button class="navbar-button"><%= link_to "My dog(s)", dog_path(current_user.dogs.first), class: "black" %></button>
+
+          <%= link_to dog_path(current_user.dogs.first), class: "black" do %>
+            <button class="navbar-button">My dog(s)</button>
+          <% end %>
+
         </li>
       <% end %>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Create a new activity", new_activity_path, class: "black" %></button>
+
+        <%= link_to new_activity_path, class: "black" do %>
+          <button class="navbar-button">Create a new activity</button>
+        <% end %>
       </li>
 
       <li class="">
-        <button class="navbar-button"><%= link_to "Logout", destroy_user_session_path, class: "black" %></button>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "black"  do %>
+          <button class="navbar-button">Log out</button>
+        <% end %>
       </li>
 
     <% else %>
       <li class="">
-        <button class="navbar-button"><%= link_to "Login", new_user_session_path, class: "black" %></button>
+        <%= link_to new_user_session_path, class: "black" do %>
+          <button class="navbar-button">Login</button>
+        <% end %>
       </li>
     <% end %>
   </ul>

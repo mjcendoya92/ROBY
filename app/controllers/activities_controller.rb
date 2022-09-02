@@ -10,10 +10,18 @@ class ActivitiesController < ApplicationController
         image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
       }
     end
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR location ILIKE :query"
+      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @activities = Activity.all
+    end
   end
 
   def new
     @activity = Activity.new
+    # @activity.categories.name
   end
 
   def create
@@ -30,6 +38,14 @@ class ActivitiesController < ApplicationController
     @user_booking = Booking.find_by(user: current_user, activity: @activity)
     @booking = Booking.new
     @comment = Comment.new
+
+    @markers =
+    [{
+      lat: @activity.latitude,
+      lng: @activity.longitude,
+      info_window: render_to_string(partial: "info_window", locals: {activity: @activity}),
+      image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
+    }]
   end
 
   def update
@@ -52,6 +68,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :start_date, :end_date, :start_time, :end_time, :dog_limit, :people_limit, :price, :status, :photo)
+    params.require(:activity).permit(:name, :description, :location, :start_date, :end_date, :start_time, :end_time, :dog_limit, :people_limit, :price, :status, :photo, activity_categories: { category_id: [] })
   end
 end

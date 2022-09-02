@@ -1,6 +1,7 @@
 User.destroy_all
 Dog.destroy_all
 Activity.destroy_all
+Category.destroy_all
 puts "database_clean"
 require "open-uri"
 
@@ -237,9 +238,16 @@ benji = Dog.new({ name: "Benji",
 benji.save
 puts benji.name
 
+Category.create!([{ name: "Small dogs" }])
+Category.create!([{ name: "Big Dogs" }])
+Category.create!([{ name: "Competition dogs" }])
+Category.create!([{ name: "Puppies" }])
+puts "Created categories"
+
+
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/descarga_28_wd7igy.jpg")
 activity = Activity.create!({ name: "Puppy Birthday",
-  category: "Social",
+  category: Category.all.sample.name,
   location: "Parque de Retiro",
   description: "Come join Rex while celebrating his 2nd birthday!
   Party attire for dogs is strongly reccomended!",
@@ -256,9 +264,10 @@ activity.photo.attach(io: activity_image_url, filename: "puppybd.png", content_t
 activity.save
 puts "first activity"
 
+
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109734/agility_u4j8im.jpg")
 activity = Activity.create!({ name: "Agility Training",
-  category: "Training",
+  category: Category.all.sample.name,
   location: "Parque de Berlin",
   description: "Meet with experienced trainers and learn some new agility skills!",
   start_date: "08/10/22",
@@ -274,9 +283,10 @@ activity.photo.attach(io: activity_image_url, filename: "agility.png", content_t
 activity.save
   puts "second activity"
 
+
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
 activity = Activity.create!({ name: "Coffees and Canines",
-  category: "Social",
+  category: Category.all.sample.name,
   location: "Cafe Federal",
   description: "Join us at this cafe with your dogs and enjoy some
   morning coffee with good company. Coffee is included in the price.",
@@ -293,9 +303,10 @@ activity.photo.attach(io: activity_image_url, filename: "coffees.png", content_t
 activity.save
   puts "third activity"
 
+
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/cocktails_djuxxk.jpg")
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
-  category: "Social",
+  category: Category.all.sample.name,
   location: "Barbara Ann",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
@@ -416,7 +427,7 @@ Activity.create!([{ name: "Leash Training",
 puts "tenth activity"
 
 Activity.create!([{ name: "Circular Campo",
-  category: "Hikes",
+  category: "Hike",
   location: "Casa de Campo",
   description: "This hike is route around Casa de Campo of 11.7 km. There are many hills and rocky
   terrain, not reccomended for small dogs.",
@@ -433,7 +444,7 @@ Activity.create!([{ name: "Circular Campo",
 puts "tenth activity"
 
 Activity.create!([{ name: "Seven Peaks",
-  category: "Hikes",
+  category: "Hike",
   location: "Parque Nacional de la Sierra de Guadarrama",
   description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
   from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
@@ -450,7 +461,7 @@ Activity.create!([{ name: "Seven Peaks",
 puts "Eleventh activity"
 
 Activity.create!([{ name: "Seven Peaks",
-  category: "Hikes",
+  category: "Hike",
   location: "Parque Nacional de la Sierra de Guadarrama",
   description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
   from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
@@ -467,7 +478,7 @@ Activity.create!([{ name: "Seven Peaks",
 puts "Eleventh activity"
 
 Activity.create!([{ name: "Camino de los Campamentos",
-  category: "Hikes",
+  category: "Hike",
   location: "Cercedilla",
   description: "This easy trail is great for getting some fresh air outside of the city. Price Includes transportation
   from the center of Madrid and a meal after the hike. It is reccomended to bring some healthy snacks for during the hike!.
@@ -505,7 +516,7 @@ Activity.create!([{ name: "Camino de los Campamentos",
 puts "12th activity"
 
 Activity.create!([{ name: "Madrid Rio",
-  category: "Walks",
+  category: "Walk",
   location: "Principe Pio",
   description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",
   start_date: "07/10/22",
@@ -521,7 +532,7 @@ Activity.create!([{ name: "Madrid Rio",
 puts "13th activity"
 
 Activity.create!([{ name: "Morning Retiro and Coffee Break",
-  category: "Walks",
+  category: "Walk",
   location: "Principe Pio",
   description: "Take a walk around Parque de Retiro in the morning before work.
   Coffee is included in the price.",
@@ -538,7 +549,7 @@ Activity.create!([{ name: "Morning Retiro and Coffee Break",
 puts "14th activity"
 
 Activity.create!([{ name: "Walk on Calle Bravo Murillo",
-  category: "Walks",
+  category: "Walk",
   location: "Cuatro Caminos",
   description: "Take a stroll down the beautiful and peaceful Calle Bravo Murillo with us.",
   start_date: "21/09/22",
@@ -554,7 +565,7 @@ Activity.create!([{ name: "Walk on Calle Bravo Murillo",
 puts "15th activity"
 
 Activity.create!([{ name: "Sunset Stroll",
-  category: "Walks",
+  category: "Walk",
   location: "Cerro de Tio Pio",
   description: "Take a walk around Cerro de Tio Pio park with us, and then walk up
   the hill to enjoy the sunset with great views of Madrid.",
@@ -571,7 +582,7 @@ Activity.create!([{ name: "Sunset Stroll",
 puts "16th activity"
 
 Activity.create!([{ name: "Morning Retiro and Coffee Break",
-  category: "Walks",
+  category: "Walk",
   location: "Principe Pio",
   description: "Take a walk around Parque de Retiro in the morning before work.
   Coffee is included in the price.",

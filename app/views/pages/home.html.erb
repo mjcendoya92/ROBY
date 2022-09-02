@@ -1,10 +1,16 @@
 <div class = "container-home">
+
   <div class="home-search">
     <h2 id="search-title">Find new activities</h2>
-    <form class = "search-form">
-    <input type="text" placeholder="Find an Activity" id="search-bar">
-    <button type="submit" id="search-button"><h3>Search</h3></button>
-    </form>
+      <div class = "search-form">
+        <%= form_with url: activities_path, method: :get, class: "search-bar d-flex" do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "search-form-bar",
+          placeholder: "Find an activity" %>
+          <%= submit_tag "Search", class: "search-button" %>
+        <% end %>
+      </div>
   </div>
 
   <%#-------MAP------%>

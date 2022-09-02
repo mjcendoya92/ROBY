@@ -1,0 +1,23 @@
+.profile-btns-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.profile-btns-container a {
+  width: 40%;
+}
+
+.profile-buttons {
+  color: rgb(31, 28, 28);
+  padding: 15px;
+  border-radius: 15px;
+  width: 70px;
+  height: auto;
+  background: #fccb62;
+  transition: background 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: $headers-font;
+}
