@@ -10,7 +10,7 @@ static targets = ["icon", "list", "font"]
   }
 
   handleClick(){
-    this.listTarget.classList.toggle("active")
+    this.listTarget.classList.toggle("nav-active")
   }
 
   changeIcon(){
