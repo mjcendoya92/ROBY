@@ -1,10 +1,12 @@
-<h1>Activities:</h1>
-<%#-------MAP------%>
-<div class ="map-index-container">
+<div class="index-activity-page-container">
+  <h2><strong>Find an activity:</strong></h2>
+  <br>
+  <%#-------MAP------%>
+  <div class ="map-index-container">
   <%= render "shared/map" %>
-</div>
-<%#-------MAP------%>
-<div class="index-cards-container">
+  </div>
+  <%#-------MAP------%>
+  <div class="index-cards-container">
     <% @activities.each do |activity| %>
       <%= link_to activity_path(activity) do %>
         <div class ="index-cards">
@@ -31,7 +33,4 @@
       <% end %>
     <% end %>
   </div>
-
-
-
-<%= link_to "Create a new activity", new_activity_path %>
+</div>
