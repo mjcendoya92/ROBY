@@ -1,41 +1,39 @@
 <div class = "profile-container">
-  <div class="profile-imgs-container">
-    <div class = "profile-banner-img">
-      <% if current_user.banner_photo.attached? %>
-        <%= cl_image_tag current_user.banner_photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    </div>
-    <div class = "profile-user-img">
+<div class="profile-banner-container">
+  <% if current_user.banner_photo.attached? %>
+    <%= cl_image_tag current_user.banner_photo.key, class: "profile-banner-img" %>
+  <% end %>
+</div>
+  <div class="profile-imgs-names-container">
+    <div class="profile-img-container">
+      <%# profile user img %>
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag current_user.photo.key, class:"profile-user-img" %>
+      <% end %>
+      <%# profile user DOG img %>
+      <% current_user.dogs.each do |dog| %>
+        <% if dog.photo.attached?  %>
+          <%= cl_image_tag dog.photo.key, crop: :fill, class: "profile-dog-img" %>
+        <% end %>
       <% end %>
     </div>
-    <div class = "profile-dog-img">
+    <div class ="profile-names-container">
+      <h1 class="profile-user-name"><%= current_user.name %></h1>
       <% current_user.dogs.each do |dog| %>
-            <% if dog.photo.attached?  %>
-              <%= cl_image_tag dog.photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-          <% end %>
+        <h3 class="profile-dog-name"><%= dog.name %></h3>
+      <% end %>
     </div>
   </div>
 </div>
 
-      <div class ="names-container">
-        <div class = "profile-user-name">
-          <%= current_user.name %>
-        </div>
-        <div class = "profile-dog-name">
-          <% current_user.dogs.each do |dog| %>
-            <%= dog.name  %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+
+
 
     <div class = "profile-btns-container">
-      <%= link_to "Edit Profile", "#", class: "small-btn" %>
-      <%= link_to "Add Dog", "#", class: "small-btn" %>
+    <%= link_to "Edit Profile", "#", class: "btn btn-primary btn-sm" %>
+      <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm" %>
     </div>
+
 
   <div class = "info-cards-container">
     <div class ="index-cards">
@@ -61,13 +59,11 @@
       <%#import 5 friend images here%>
       </div>
     </div>
-    <%= link_to "Create New Activity", "#", class: "large-btn" %>
+    <%= link_to "Create New Activity", new_activity_path, class: "large-btn" %>
   </div>
-
 
   <div class = "profile-activities-container">
     <h3><strong>Attending activities:</strong></h3>
     <%#attending activities card carousel here%>
   </div>
-
 </div>

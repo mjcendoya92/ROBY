@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    # @activity.categories.name
   end
 
   def create
@@ -60,6 +61,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :location, :start_date, :end_date, :start_time, :end_time, :dog_limit, :people_limit, :price, :status)
+    params.require(:activity).permit(:name, :description, :location, :start_date, :end_date, :start_time, :end_time, :dog_limit, :people_limit, :price, :status, activity_categories: { category_id: [] })
   end
 end
