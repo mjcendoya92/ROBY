@@ -13,7 +13,11 @@
       <div class="activity-show-users-container">
         <% @activity.bookings.each do |booked| %>
           <%# this will be the users image %>
-          <div class="activity-show-attendees-avatars"><%= booked.user.name %></div>
+          <%= link_to profile_path do %>
+            <div class="activity-show-attendees-avatars">
+              <%= booked.user.name %>
+             </div>
+          <% end %>
         <% end %>
       </div>
     </div>
