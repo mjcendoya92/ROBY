@@ -50,10 +50,24 @@
   text-align: end;
 }
 
-.profile-user-name{
-
+.friends-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.profile-dog-name{
-
+.btn-primary {
+  color: rgb(31, 28, 28);
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
+  background: #fccb62;
+  transition: background 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: $headers-font;
 }
+
+.profile-activities-container {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  }

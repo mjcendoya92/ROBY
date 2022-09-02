@@ -9,7 +9,7 @@
   width: 40%;
 }
 
-.btn-primary {
+.profile-buttons {
   color: rgb(31, 28, 28);
   padding: 15px;
   border-radius: 15px;
@@ -19,9 +19,4 @@
   font-size: 18px;
   font-weight: 600;
   font-family: $headers-font;
-}
-
-.btn-primary:hover {
-  background: #84631c;
-  color: rgb(33, 30, 30);
 }
