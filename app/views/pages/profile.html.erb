@@ -27,21 +27,11 @@
 </div>
 
 
-      <div class ="names-container">
-        <div class = "profile-user-name">
-          <%= current_user.name %>
-        </div>
-        <div class = "profile-dog-name">
-          <% current_user.dogs.each do |dog| %>
-            <%= dog.name  %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+
 
     <div class = "profile-btns-container">
-      <%= link_to "Edit Profile", "#", class: "small-btn" %>
-      <%= link_to "Add Dog", new_dog_path, class: "small-btn" %>
+    <%= link_to "Edit Profile", "#", class: "btn btn-primary btn-sm" %>
+      <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm" %>
     </div>
 
 
