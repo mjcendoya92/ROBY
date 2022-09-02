@@ -14,6 +14,5 @@ class PagesController < ApplicationController
 
   def profile
     @dogs = current_user.dogs
-    @dog = Dog.find_by(user: current_user)
   end
 end
