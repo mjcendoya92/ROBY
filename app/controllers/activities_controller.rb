@@ -10,6 +10,13 @@ class ActivitiesController < ApplicationController
         image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
       }
     end
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR location ILIKE :query"
+      @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @activities = Activity.all
+    end
   end
 
   def new
