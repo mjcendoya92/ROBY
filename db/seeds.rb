@@ -2,6 +2,7 @@ User.destroy_all
 Dog.destroy_all
 Activity.destroy_all
 puts "database_clean"
+require "open-uri"
 
 gonzalo = User.new({ name: "Gonzalo",
   location: "Legazpi",
@@ -103,7 +104,7 @@ fanny = User.new({ name: "Fanny",
   so I am looking for social events to make friends with dogs!",
   email: "fanny@roby.com",
   password: "123456"
-  
+
   })
 
 fanny.save
@@ -236,7 +237,8 @@ benji = Dog.new({ name: "Benji",
 benji.save
 puts benji.name
 
-Activity.create!([{ name: "Puppy Birthday",
+activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/descarga_28_wd7igy.jpg")
+activity = Activity.create!([{ name: "Puppy Birthday",
   category: "Social",
   location: "Parque de Retiro",
   description: "Come join Rex while celebrating his 2nd birthday!
@@ -250,10 +252,12 @@ Activity.create!([{ name: "Puppy Birthday",
   price: 0,
   user: User.all.sample
   }])
+activity.photo.attach(io: activity_image_url, filename: "puppybd.png", content_type: "image/png")
+activity.save
+puts "first activity"
 
-  puts "first activity"
-
-Activity.create!([{ name: "Agility Training",
+activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109734/agility_u4j8im.jpg")
+activity = Activity.create!([{ name: "Agility Training",
   category: "Training",
   location: "Parque de Berlin",
   description: "Meet with experienced trainers and learn some new agility skills!",
@@ -266,10 +270,12 @@ Activity.create!([{ name: "Agility Training",
   price: 50,
   user: User.all.sample
   }])
-
+activity.photo.attach(io: activity_image_url, filename: "agility.png", content_type: "image/png")
+activity.save
   puts "second activity"
 
-Activity.create!([{ name: "Coffees and Canines",
+activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
+activity = Activity.create!([{ name: "Coffees and Canines",
   category: "Social",
   location: "Cafe Federal",
   description: "Join us at this cafe with your dogs and enjoy some
@@ -283,10 +289,12 @@ Activity.create!([{ name: "Coffees and Canines",
   price: 3,
   user: User.all.sample
   }])
-
+activity.photo.attach(io: activity_image_url, filename: "coffees.png", content_type: "image/png")
+activity.save
   puts "third activity"
 
-Activity.create!([{ name: "Cocktails and Wagging Tails",
+activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/cocktails_djuxxk.jpg")
+activity = Activity.create!([{ name: "Cocktails and Wagging Tails",
   category: "Social",
   location: "Barbara Ann",
   description: "Join us for a night out at a dog-friendly cocktail bar.
@@ -300,10 +308,12 @@ Activity.create!([{ name: "Cocktails and Wagging Tails",
   price: 10,
   user: User.all.sample
   }])
-
+activity.photo.attach(io: activity_image_url, filename: "cocktails.png", content_type: "image/png")
+activity.save
 puts "fourth activity"
 
-Activity.create!([{ name: "Pups in the Park",
+activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/pups_in_the_park_pzcvps.jpg")
+activity = Activity.create!([{ name: "Pups in the Park",
   category: "Social",
   location: "Parque de Retiro",
   description: "Enjoy your sunday with other dogs and dog lovers in the park.",
@@ -316,10 +326,12 @@ Activity.create!([{ name: "Pups in the Park",
   price: 0,
   user: User.all.sample
   }])
-
+activity.photo.attach(io: activity_image_url, filename: "pupspark.png", content_type: "image/png")
+activity.save
 puts "fifth activity"
 
-Activity.create!([{ name: "Perrito Party",
+activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/perrito_party_d7ztyb.jpg")
+activity = Activity.create!([{ name: "Perrito Party",
   category: "Social",
   location: "Madrid Rio",
   description: "This is an outdoor social event for small dogs.",
@@ -332,7 +344,8 @@ Activity.create!([{ name: "Perrito Party",
   price: 0,
   user: User.all.sample
   }])
-
+activity.photo.attach(io: activity_image_url, filename: "party.png", content_type: "image/png")
+activity.save
 puts "Sixth activity"
 
 Activity.create!([{ name: "Puppy Obedience Training",
