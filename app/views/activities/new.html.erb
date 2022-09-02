@@ -5,7 +5,6 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :location %>
-  <%= f.select :category %>
   <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
   <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
   <%= f.input :start_time %>
@@ -13,6 +12,10 @@
   <%= f.input :dog_limit %>
   <%= f.input :people_limit %>
   <%= f.input :price %>
+  <%= f.simple_fields_for :activity_categories do |p| %>
+      <%= p.input :category_id, collection: Category.all, as: :check_boxes %>
+  <% end %>
+
   <div class="d-grid gap-2 show-dog-btn">
     <%= f.submit class:"btn btn-primary btn-lg" %>
   </div>

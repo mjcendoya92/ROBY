@@ -4,6 +4,7 @@ class Activity < ApplicationRecord
   has_many :categories, through: :activity_categories
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  # accepts_nested_attributes_for :activity_categories
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
