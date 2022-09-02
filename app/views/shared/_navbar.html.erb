@@ -31,13 +31,16 @@
 
       <% unless current_user.dogs.first.nil? %>
         <li class="">
+
           <%= link_to dog_path(current_user.dogs.first), class: "black" do %>
             <button class="navbar-button">My dog(s)</button>
           <% end %>
+
         </li>
       <% end %>
 
       <li class="">
+
         <%= link_to new_activity_path, class: "black" do %>
           <button class="navbar-button">Create a new activity</button>
         <% end %>
@@ -48,6 +51,7 @@
           <button class="navbar-button">Log out</button>
         <% end %>
       </li>
+      
     <% else %>
       <li class="">
         <%= link_to new_user_session_path, class: "black" do %>

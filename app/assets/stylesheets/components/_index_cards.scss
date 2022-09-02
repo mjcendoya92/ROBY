@@ -49,11 +49,14 @@
   font-family: $body-font;
 }
 
+
 .index-card-info {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+
+
+  //align-items: space-between;
 
 }
 
@@ -62,3 +65,4 @@
   width: 100%;
   margin-bottom: 10px;
 }
+
