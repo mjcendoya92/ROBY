@@ -9,7 +9,11 @@
       <%= link_to activity_path(activity) do %>
         <div class ="index-cards">
           <div class="index-card-container-left">
-            <%= cl_image_tag activity.photo.key, class:"index-image-cards"%>
+            <% if activity.photo.attached? %>
+              <%= cl_image_tag activity.photo.key, class:"index-image-cards"%>
+            <% else %>
+              <img class="index-image-cards" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+            <% end %>
           </div>
           <div class="index-card-container-right">
             <div class="index-card-info">

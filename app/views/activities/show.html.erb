@@ -1,5 +1,9 @@
 <div class="activity-show-container">
-  <img class="activity-show-image-banner" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+  <% if @activity.photo.attached? %>
+    <%= cl_image_tag @activity.photo.key, class:"activity-show-image-banner"%>
+  <% else %>
+    <img class="activity-show-image-banner" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+  <% end %>
   <div class="activity-show-info-container">
 
     <div class="activity-show-title">

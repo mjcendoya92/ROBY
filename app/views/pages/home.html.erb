@@ -23,16 +23,18 @@
     <h2 class = "activies-carousel-title">Activities you might like:</h2>
     <div class = "activities-home-slider">
       <% @activities.slice(0,6).each do |activity| %>
-      <%= link_to activity_path(activity) do %>
+        <%= link_to activity_path(activity) do %>
           <div class="activity-home-card">
-            <%# <% if activity.photo.attached? %>
-              <%# <%= cl_image_path activity.photo.key, height: 50, crop: :fill %>
-            <div class="activities-card-image">
-              <img src="#" alt="#">
-            </div>
-            <%# <%end %>
+            <%# <div class="activities-card-image"> %>
+            <% if activity.photo.attached? %>
+              <%= cl_image_tag activity.photo.key, class:"activities-card-image"%>
+            <% else %>
+              <img class="activities-card-image" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+            <% end %>
+            <%# </div> %>
             <div class="activity-card-title">
-                <%= activity.name %>
+                <h3> <strong><%= activity.name %> </strong></h3>
+                <p class="home-location-text">📍<%= activity.location %></p>
             </div>
           </div>
         <%end%>

@@ -244,7 +244,6 @@ Category.create!([{ name: "Competition dogs" }])
 Category.create!([{ name: "Puppies" }])
 puts "Created categories"
 
-
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/descarga_28_wd7igy.jpg")
 activity = Activity.create!({ name: "Puppy Birthday",
   category: Category.all.sample.name,
