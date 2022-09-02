@@ -12,9 +12,11 @@
         <%= cl_image_tag current_user.photo.key, class:"profile-user-img" %>
       <% end %>
       <%# profile user DOG img %>
-      <% if @dog.photo.attached? %>
-          <%= link_to dog_path(@dog) do %>
-            <%= cl_image_tag @dog.photo.key, crop: :fill, class: "profile-dog-img" %>
+      <% current_user.dogs.each do |dog| %>
+        <% if dog.photo.attached? %>
+            <%= link_to dog_path(dog) do %>
+              <%= cl_image_tag dog.photo.key, crop: :fill, class: "profile-dog-img" %>
+          <% end %>
         <% end %>
       <% end %>
     </div>
