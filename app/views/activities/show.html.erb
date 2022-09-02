@@ -1,5 +1,9 @@
 <div class="activity-show-container">
-  <img class="activity-show-image-banner" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+  <% if @activity.photo.attached? %>
+    <%= cl_image_tag @activity.photo.key, class:"activity-show-image-banner"%>
+  <% else %>
+    <img class="activity-show-image-banner" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+  <% end %>
   <div class="activity-show-info-container">
 
     <div class="activity-show-title">
@@ -13,7 +17,11 @@
       <div class="activity-show-users-container">
         <% @activity.bookings.each do |booked| %>
           <%# this will be the users image %>
-          <div class="activity-show-attendees-avatars"><%= booked.user.name %></div>
+          <%= link_to profile_path do %>
+            <div class="activity-show-attendees-avatars">
+              <%= booked.user.name %>
+             </div>
+          <% end %>
         <% end %>
       </div>
     </div>

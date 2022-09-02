@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .activity-show-info-container {
@@ -15,6 +16,8 @@
 
 .activity-show-image-banner {
   height: 270px;
+  width: 390px;
+  object-fit: cover;
 }
 
 .activity-show-btn {
@@ -39,9 +42,10 @@
 
 .activity-show-attendees-avatars {
   padding: 10px;
-  border: 2px solid red;
+  border: 2px solid $yellow;
+  background-color: $yellow;
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 6px;
 }
 
 .activity-show-info-cards {

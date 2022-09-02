@@ -1,8 +1,10 @@
 <div class="main-navbar-container" data-controller="navbar">
 
-  <div class="logo-container">
-      <img src="<%="assets/logo.png"%>" class="logo" alt="">
-  </div>
+  <%= link_to root_path do %>
+    <div class="logo-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/005/484/042/original/dog-logo-illustration-free-vector.jpg" class="logo" alt="">
+    </div>
+  <% end %>
 
   <div class="menu-icon" data-action="click->navbar#handleClick" data-navbar-target="icon">
     <i class="fa-solid fa-bars" data-navbar-target="font" data-action="click->navbar#changeIcon"></i>
