@@ -12,26 +12,34 @@
 
 .search-form{
   width: 100%;
-  display:flex;
+/*   display:flex;
   flex-direction:row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
-#search-bar{
+
+.search-form-bar{
   border-radius: 5px;
-  width: 70%;
+  width: 75%;
   border: 2px solid #FCCB62;
   padding: 10px 0px;
   font-family: $headers-font;
   box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
 }
 
-#search-button{
+.search-button{
   border-radius: 5px;
   border: 1px solid #FCCB62;
   background-color:#FCCB62;
   padding: 10px;
+  font-weight: bold;
+  font-family: $headers-font;
+}
+
+.d-flex {
+  align-items: center;
+  justify-content: space-between;
 }
 
 // .activities-home-container{
