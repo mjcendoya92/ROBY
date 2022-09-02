@@ -4,6 +4,7 @@
     <%= cl_image_tag current_user.banner_photo.key, class: "profile-banner-img" %>
   <% end %>
 </div>
+
   <div class="profile-imgs-names-container">
     <div class="profile-img-container">
       <%# profile user img %>
@@ -13,10 +14,11 @@
       <%# profile user DOG img %>
       <% current_user.dogs.each do |dog| %>
         <% if dog.photo.attached?  %>
-          <%= cl_image_tag dog.photo.key, crop: :fill, class: "profile-dog-img" %>
+        <%= link_to current_user.dogs cl_image_tag dog.photo.key, crop: :fill, class: "profile-dog-img" %>
         <% end %>
       <% end %>
     </div>
+
     <div class ="profile-names-container">
       <h1 class="profile-user-name"><%= current_user.name %></h1>
       <% current_user.dogs.each do |dog| %>
@@ -26,14 +28,10 @@
   </div>
 </div>
 
-
-
-
     <div class = "profile-btns-container">
-    <%= link_to "Edit Profile", "#", class: "btn btn-primary btn-sm" %>
-      <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm" %>
+    <%= link_to "Edit Profile", "#", class: "btn btn-primary btn-sm profile-buttons" %>
+    <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm profile-buttons" %>
     </div>
-
 
   <div class = "info-cards-container">
     <div class ="index-cards">
@@ -52,15 +50,16 @@
       </div>
   </div>
 
-  <div class = "friends-container">
-    <h3><strong>Friends:</strong></h3>
-    <div class = "row">
-      <div class="col-12 col-lg-6">
+<div class = "friends-container">
+  <h3><strong>Friends:</strong></h3>
+  <div class = "row">
+  <div class="col-12 col-lg-6">
       <%#import 5 friend images here%>
-      </div>
     </div>
-    <%= link_to "Create New Activity", new_activity_path, class: "large-btn" %>
+    </div>
   </div>
+
+  <%= link_to "Create New Activity", new_activity_path, class: "btn btn-primary btn-sm" %>
 
   <div class = "profile-activities-container">
     <h3><strong>Attending activities:</strong></h3>
