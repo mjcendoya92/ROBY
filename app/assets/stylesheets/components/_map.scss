@@ -4,3 +4,12 @@
   border-radius: 10px;
   border: 2px solid #FCCB62;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
