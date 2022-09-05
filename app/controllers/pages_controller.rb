@@ -16,5 +16,7 @@ class PagesController < ApplicationController
 
   def profile
     @dogs = current_user.dogs
+    #@activity = Activity.find(params[:id])
+    @user_booking = Booking.where(user: current_user)
   end
 end
