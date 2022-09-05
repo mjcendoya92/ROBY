@@ -7,6 +7,7 @@ class PagesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
+        info_window: render_to_string(partial: "activities/info_window", locals: { activity: activity }),
         image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
       }
     end
