@@ -18,10 +18,20 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
   end
 
+  def edit
+    @dog = Dog.find(params[:id])
+  end
+
+  def update
+    @dog = Dog.find(params[:id])
+    @dog.update(dog_params)
+    redirect_to dogs_path(@dog)
+  end
+
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :breed, :age, :sex, :description, :photo)
+    params.require(:dog).permit(:name, :breed, :age, :sex, :description, :photo, extra_photos: [])
   end
 
 end
