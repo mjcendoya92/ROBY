@@ -40,34 +40,13 @@
     <%= f.submit %>
   <% end %>
 
-  <% @dog.extra_photos.each do |extra_photo| %>
-    <%= cl_image_tag extra_photo.key, crop: :fill %>
-  <% end %>
-
-
-
-
-
-
   <div class="photo-dog-card-doble">
-    <div class="dog-card-body doble">
-      <div class="photos-show-dog1">
-        <%# <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662385908/golden-retriever_fizcka.jpg" alt="golden retreiver"> %>
+    <% @dog.extra_photos.each do |extra_photo| %>
+      <div class="photos-show-dog">
+        <%= cl_image_tag extra_photo.key, crop: :fill %>
       </div>
-    </div>
-
-    <div class="dog-card-body doble">
-      <div class="photos-show-dog2"></div>
-    </div>
+    <% end %>
   </div>
 
-  <div class="photo-dog-card-doble">
-    <div class="dog-card-body doble">
-      <div class="photos-show-dog3"></div>
-  </div>
 
-    <div class="dog-card-body doble">
-      <div class="photos-show-dog4"></div>
-    </div>
-  </div>
 </div>

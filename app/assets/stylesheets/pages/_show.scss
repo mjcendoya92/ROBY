@@ -77,12 +77,15 @@
 }
 
 .photo-dog-card-doble{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 10px;
+  //justify-content: space-between;
 }
 
-.photos-show-dog1{
-  background-image: url(https://res.cloudinary.com/dbksvt70i/image/upload/v1662385908/golden-retriever_fizcka.jpg);
+.photos-show-dog img{
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
 }
