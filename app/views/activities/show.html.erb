@@ -14,16 +14,25 @@
 
     <div class="activity-show-attendees">
       <h2><strong>Attendees:</strong></h2>
-      <div class="activity-show-users-container">
-        <% @activity.bookings.each do |booked| %>
-          <%# this will be the users image %>
-          <%= link_to profile_path do %>
-            <div class="activity-show-attendees-avatars">
-              <%= booked.user.name %>
-             </div>
+      <% if @activity.bookings.empty? %>
+        There are no attendees confirmed yet.
+      <% else %>
+        <div class="activity-show-users-container">
+          <% @activity.bookings.each do |booked| %>
+            <%= link_to profile_path do %>
+              <div class= activity-show-attendees-avatar-box>
+                <% if booked.user.photo.attached? %>
+                  <%= cl_image_tag booked.user.photo.key, class:"rounded-circle image-avatar-show" %>
+                  <p class="activity-show-avatar-text"><%= booked.user.name %> </p>
+                <% else %>
+                  <img class="rounded-circle image-avatar-show" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="">
+                  <p class="activity-show-avatar-text"><%= booked.user.name %> </p>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
 
     <div class="activity-show-info-cards">
