@@ -1,0 +1,31 @@
+.booking-popup{
+  text-align: center;
+}
+
+.booking-popup-titles{
+  font-weight: 900;
+}
+
+.booking-btn{
+  margin-right: 10px;
+}
+
+.dog-image-popup{
+  height: 120px;
+  width: 120px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.container-btn-form-popup{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 130px 60px;
+  justify-items: center;
+  gap: 10px
+}
+
+.btns-booking{
+  // width: 90%;
+}
