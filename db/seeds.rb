@@ -5,6 +5,10 @@ Category.destroy_all
 puts "database_clean"
 require "open-uri"
 
+general = Chatroom.new(name: "General")
+
+general.save
+
 gonzalo = User.new({ name: "Gonzalo",
   location: "Legazpi",
   bio: "I love exploring the city with my family and dog!",

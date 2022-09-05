@@ -21,7 +21,6 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    # @activity.categories.name
   end
 
   def create
@@ -38,6 +37,9 @@ class ActivitiesController < ApplicationController
     @user_booking = Booking.find_by(user: current_user, activity: @activity)
     @booking = Booking.new
     @comment = Comment.new
+    @message = Message.new
+
+    @chatroom = @activity.chatroom || Chatroom.create(name: @activity.name, activity: @activity)
 
     @markers =
     [{
@@ -46,6 +48,8 @@ class ActivitiesController < ApplicationController
       info_window: render_to_string(partial: "info_window", locals: {activity: @activity}),
       image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
     }]
+
+
   end
 
   def update

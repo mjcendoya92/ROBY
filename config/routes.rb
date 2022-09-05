@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :activities do
     resources :bookings, only: [:new, :create]
     resources :comments, only: [:create]
+    resources :chatroom, only: [:create]
   end
   resources :bookings, only: [:edit, :update, :destroy]
   resources :dogs, only: [:show, :create, :new]
