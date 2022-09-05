@@ -4,23 +4,27 @@
 </button>
 
 <!-- Booking modal -->
-<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+<div class="modal fade booking-popup" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="bookingModalLabel">Book your activity</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h2 class="modal-title booking-popup-titles" id="bookingModalLabel">Do you want to join this activity?</h2>
       </div>
       <div class="modal-body">
         <div class="booking-container">
-          <h3> <strong><%= @activity.name %> </strong> </h3>
-          <h3> <%= @activity.start_date.strftime("Start date: %b %d") %></h3>
-          <h3><%= @activity.end_date.strftime("End date: %b %d") %> </h3>
-          <h3> <%= @activity.start_time.strftime("Start time: %H:%M") %> | <%= @activity.end_time.strftime("End time: %H:%M") %> </h3>
-          <h3> 📍<%= @activity.location %> </h3>
+          <h3 class="booking-popup-titles"> <%= @activity.name %></h3>
+          <p> <%= @activity.start_date.strftime("%b %d") %></p>
+          <%# <h3><%= @activity.end_date.strftime("End date: %b %d")  </h3> %>
+          <p> <%= @activity.start_time.strftime("%H:%M") %> - <%= @activity.end_time.strftime("%H:%M") %> </p>
+          <p> &#128205; <%= @activity.location %> </p> <br>
           <%= simple_form_for [@activity, @booking] do |f| %>
-            <h3><%= f.input :number_people %> </h3>
-            <%= f.submit class: "btn btn-primary", data: {bs_dismiss: "modal"}%>
+            <h3 class="booking-popup-titles"><%= f.input :number_people, label: "How many people are coming?" %> </h3>
+            <div class="container-btn-form-popup">
+              <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662369521/descarga_15_otn97c.jpg" alt="Happy dog" class="dog-image-popup">
+              <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662374827/images_17_a91gme.jpg" alt="Confused dog" class="dog-image-popup">
+              <%= f.submit class: "btn btn-primary booking-btn btns-booking", data: {bs_dismiss: "modal"}%>
+              <button type="button" class="btn btn-primary btns-booking " data-bs-dismiss="modal" aria-label="Close">Maybe later</button>
+            </div>
           <% end %>
         </div>
       </div>
