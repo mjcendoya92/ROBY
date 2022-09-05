@@ -19,4 +19,7 @@ class PagesController < ApplicationController
     #@activity = Activity.find(params[:id])
     @user_booking = Booking.where(user: current_user)
   end
+
+  def landing
+  end
 end

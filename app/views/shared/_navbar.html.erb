@@ -1,6 +1,6 @@
 <div class="main-navbar-container" data-controller="navbar">
 
-  <%= link_to root_path do %>
+  <%= link_to home_path do %>
     <div class="logo-container">
         <img src="https://res.cloudinary.com/mariacend1910/image/upload/v1662368952/Roby_dog_uezddt.svg" class="logo" alt="">
     </div>
@@ -14,7 +14,7 @@
     <% if user_signed_in? %>
 
       <li class="">
-        <%= link_to root_path, class: "navbar-logo" do %>
+        <%= link_to home_path, class: "navbar-logo" do %>
           <img class="navbar-logo" src="https://res.cloudinary.com/mariacend1910/image/upload/v1662369317/Roby_white_zmjqae.svg" alt="">
         <% end %>
       </li>
