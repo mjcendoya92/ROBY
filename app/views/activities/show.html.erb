@@ -57,12 +57,17 @@
 
     <div class="activity-show-comments">
       <h3><strong>Comments:</strong></h3>
-      <% @activity.comments.each do |comment| %>
-        <div class="activity-show-comment-card">
-          <h3>"<%= comment.content %>"</h3>
-          <br>
-          <p>- <%= comment.user.name %><p>
-        </div>
+      <% if @activity.comments.empty? %>
+        <br>
+        No comments yet.
+      <% else %>
+        <% @activity.comments.each do |comment| %>
+          <div class="activity-show-comment-card">
+            <h3>"<%= comment.content %>"</h3>
+            <br>
+            <p>- <%= comment.user.name %><p>
+          </div>
+        <% end %>
       <% end %>
     </div>
 

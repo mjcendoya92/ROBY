@@ -12,9 +12,15 @@
 
 
 .logo{
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
+  margin-left: 20px;
 }
+
+.navbar-logo {
+  width: 150px;
+}
+
 
 .menu-icon{
   z-index: 1000;
@@ -71,7 +77,8 @@
   width: 70vw;
   border-radius: 8px;
   color: black !important;
-  padding: 5px;
+  padding: 8px;
+  font-size: 20px;
 }
 
 .black{
