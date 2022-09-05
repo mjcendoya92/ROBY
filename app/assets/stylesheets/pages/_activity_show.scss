@@ -40,12 +40,24 @@
   margin-top: 10px;
 }
 
-.activity-show-attendees-avatars {
-  padding: 10px;
-  border: 2px solid $yellow;
-  background-color: $yellow;
+.activity-show-attendees-avatar-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
   margin: 10px;
-  border-radius: 6px;
+  text-align: center;
+}
+
+.image-avatar-show {
+  height: 50px;
+  width: 50px;
+  border: 2px solid $yellow;
+}
+
+.activity-show-avatar-text {
+  margin-top: 5px;
 }
 
 .activity-show-info-cards {
