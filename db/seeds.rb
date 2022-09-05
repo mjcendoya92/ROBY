@@ -5,7 +5,7 @@ Category.destroy_all
 puts "database_clean"
 require "open-uri"
 
-general = Chatroom.new(name: "General")
+general = Chatroom.new(name: "General chat")
 
 general.save
 
