@@ -3,20 +3,21 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
-    @markers = @activities.geocoded.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { activity: activity }),
-        image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
-      }
-    end
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR location ILIKE :query"
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
     else
       @activities = Activity.all
+    end
+    
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { activity: activity }),
+        image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1662372896/dog_pin_2_kgunoh.svg")
+      }
     end
   end
 
@@ -45,7 +46,7 @@ class ActivitiesController < ApplicationController
       lat: @activity.latitude,
       lng: @activity.longitude,
       info_window: render_to_string(partial: "info_window", locals: { activity: @activity }),
-      image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1661948505/images_5_ugq1bx.png")
+      image_url: helpers.asset_url("https://res.cloudinary.com/mariacend1910/image/upload/v1662372896/dog_pin_2_kgunoh.svg")
     }]
   end
 
