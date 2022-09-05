@@ -20,11 +20,19 @@
           <div class="index-card-container-right">
             <div class="index-card-info">
               <h3><strong><%= activity.name %></strong></h3>
+              <div class="activity-show-users-container">
+                <% @activity.bookings.each do |booked| %>
+                  <%= link_to profile_path do %>
+                    <div class="activity-show-attendees-avatars">
+                      <%= booked.user.name %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
               <div class="date-and-location-index">
-                <p><%= activity.start_date.strftime("%b %d") %></p>
+                <p><%= activity.start_date.strftime("%m/%d/%y") %></p>
                 <p><%= activity.location %>📍</p>
               </div>
-              <p><strong>$<%= activity.price %></strong></p>
               <%# <br>
               <%= activity.category %>
             </div>

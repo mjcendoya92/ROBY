@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+    @user_booking = Booking.find_by(user: current_user, activity: @activity)
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR location ILIKE :query"
@@ -10,7 +11,7 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all
     end
-    
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
