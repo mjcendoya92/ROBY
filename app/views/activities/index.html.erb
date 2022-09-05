@@ -1,9 +1,22 @@
+<div class="home-search">
+  <h2 id="search-title">Find a new activity</h2>
+    <div class = "search-form">
+      <%= form_with url: activities_path, method: :get, class: "search-bar d-flex" do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "search-form-bar",
+          placeholder: "Find an activity" %>
+          <%= submit_tag "Search", class: "search-button" %>
+      <% end %>
+    </div>
+</div>
+
 <div class="index-activity-page-container">
-  <h2><strong>Find an activity:</strong></h2>
-  <br>
+  <%#<h2><strong>Find an activity:</strong></h2> %>
+
   <%#-------MAP------%>
   <div class ="map-index-container">
-  <%= render "shared/map" %>
+    <%= render "shared/map" %>
   </div>
   <%#-------MAP------%>
   <div class="index-cards-container">

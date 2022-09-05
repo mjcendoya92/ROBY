@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "pages#landing"
   get "profile", to: "pages#profile"
+  get "home", to: "pages#home"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :activities do
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     resources :chatroom, only: [:create]
   end
   resources :bookings, only: [:edit, :update, :destroy]
-  resources :dogs, only: [:show, :create, :new]
+  resources :dogs, only: [:show, :create, :new, :edit, :update]
   resources :users, only: [:show]
 
   resources :chatrooms, only: :show do

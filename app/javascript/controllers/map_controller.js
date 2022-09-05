@@ -28,7 +28,7 @@ export default class extends Controller {
       customMarker.style.backgroundImage = `url('${marker.image_url}')`
       customMarker.style.backgroundSize = "contain"
       customMarker.style.width = "25px"
-      customMarker.style.height = "25px"
+      customMarker.style.height = "40px"
       new mapboxgl.Marker(customMarker)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)

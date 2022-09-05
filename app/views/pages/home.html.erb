@@ -1,5 +1,8 @@
 <div class = "container-home">
 
+  <div class = "animation">
+  </div>
+
   <div class="home-search">
     <h2 id="search-title">Find new activities</h2>
       <div class = "search-form">
@@ -33,8 +36,8 @@
             <% end %>
             <%# </div> %>
             <div class="activity-card-title">
-                <h3> <strong><%= activity.name %> </strong></h3>
-                <p class="home-location-text">📍<%= activity.location %></p>
+              <h3> <strong><%= activity.name %> </strong></h3>
+              <p class="home-location-text">📍<%= activity.location %></p>
             </div>
           </div>
         <%end%>
@@ -45,4 +48,37 @@
     <%= link_to "Come to the global chat!!", chatroom_path(Chatroom.first), class: "btn-primary"%>
   </div>
 
+<<<<<<< HEAD
+=======
+
+  <h2 class = "categories-cards-title"><strong>Top Categories for you:</strong></h2>
+  <div class = "categories-container">
+    <div class = "categories-card-homepage">
+      <img class = "category-card-image" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1662381416/dog-paw-1553507816_c4s5qg.jpg" alt = # >
+      <div class="category-card-title">
+        <h3><strong> Category 1 </strong></h3>
+      </div>
+    </div>
+    <div class = "categories-card-homepage">
+      <img class = "category-card-image" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1662381416/dog-paw-1553507816_c4s5qg.jpg" alt = # >
+      <div class="category-card-title">
+        <h3><strong> Category 2 </strong></h3>
+      </div>
+    </div>
+    <div class = "categories-card-homepage">
+      <img class = "category-card-image" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1662381416/dog-paw-1553507816_c4s5qg.jpg" alt = # >
+      <div class="category-card-title">
+        <h3><strong> Category 3 </strong></h3>
+      </div>
+    </div>
+    <div class = "categories-card-homepage">
+      <img class = "category-card-image" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1662381416/dog-paw-1553507816_c4s5qg.jpg" alt = # >
+      <div class="category-card-title">
+        <h3><strong> Category 4 </strong></h3>
+      </div>
+    </div>
+  </div>
+
+  <%#= link_to "Come to the global chat!!", chatroom_path(Chatroom.first) %>
+>>>>>>> 9c2d70fdc63129525f76ded25aec77b6d506ad15
 </div>

@@ -1,8 +1,8 @@
 <div class="main-navbar-container" data-controller="navbar">
 
-  <%= link_to root_path do %>
+  <%= link_to home_path do %>
     <div class="logo-container">
-        <img src="https://static.vecteezy.com/system/resources/previews/005/484/042/original/dog-logo-illustration-free-vector.jpg" class="logo" alt="">
+        <img src="https://res.cloudinary.com/mariacend1910/image/upload/v1662368952/Roby_dog_uezddt.svg" class="logo" alt="">
     </div>
   <% end %>
 
@@ -14,8 +14,8 @@
     <% if user_signed_in? %>
 
       <li class="">
-        <%= link_to root_path, class: "black" do%>
-          <button class="navbar-button">Home</button>
+        <%= link_to home_path, class: "navbar-logo" do %>
+          <img class="navbar-logo" src="https://res.cloudinary.com/mariacend1910/image/upload/v1662369317/Roby_white_zmjqae.svg" alt="">
         <% end %>
       </li>
 
@@ -30,14 +30,6 @@
           <button class="navbar-button">Find an activity</button>
         <% end %>
       </li>
-
-      <% unless current_user.dogs.first.nil? %>
-        <li class="">
-          <%= link_to dog_path(current_user.dogs.first), class: "black" do %>
-            <button class="navbar-button">My dog(s)</button>
-          <% end %>
-        </li>
-      <% end %>
 
       <li class="">
         <%= link_to new_activity_path, class: "black" do %>

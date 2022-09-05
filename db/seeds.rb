@@ -251,7 +251,7 @@ puts "Created categories"
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/descarga_28_wd7igy.jpg")
 activity = Activity.create!({ name: "Puppy Birthday",
   category: Category.all.sample.name,
-  location: "Retiro Park Madrid",
+  location: "Retiro Park, Madrid",
   description: "Come join Rex while celebrating his 2nd birthday!
   Party attire for dogs is strongly reccomended!",
   start_date: "12/11/2022",
@@ -271,7 +271,7 @@ puts "first activity"
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109734/agility_u4j8im.jpg")
 activity = Activity.create!({ name: "Agility Training",
   category: Category.all.sample.name,
-  location: "Berlin Park Madrid",
+  location: "Berlin Park, Madrid",
   description: "Meet with experienced trainers and learn some new agility skills!",
   start_date: "08/10/22",
   end_date: "08/10/22",
@@ -290,7 +290,7 @@ activity.save
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
 activity = Activity.create!({ name: "Coffees and Canines",
   category: Category.all.sample.name,
-  location: "Cafe Federal Madrid",
+  location: "Cafe Federal, Madrid",
   description: "Join us at this cafe with your dogs and enjoy some
   morning coffee with good company. Coffee is included in the price.",
   start_date: "09/11/22",
@@ -310,7 +310,7 @@ activity.save
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/cocktails_djuxxk.jpg")
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
   category: Category.all.sample.name,
-  location: "Antonio Lopez Street Madrid",
+  location: "Antonio López Street, Madrid",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
   start_date: "15/10/22",
@@ -329,7 +329,7 @@ puts "fourth activity"
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/pups_in_the_park_pzcvps.jpg")
 activity = Activity.create!({ name: "Pups in the Park",
   category: "Social",
-  location: "Retiro Park Madrid",
+  location: "Royal Botanical Garden, Madrid",
   description: "Enjoy your sunday with other dogs and dog lovers in the park.",
   start_date: "16/10/22",
   end_date: "16/10/22",
@@ -364,7 +364,7 @@ puts "Sixth activity"
 
 Activity.create!({ name: "Puppy Obedience Training",
   category: "Training",
-  location: "Casa de Campo Madrid",
+  location: "Casa de Campo, Madrid",
   description: "Learn some basic obedience skills for you and your puppy with a
   licensed trainer.",
   start_date: "09/10/22",
@@ -381,7 +381,7 @@ puts "seventh activity"
 
 Activity.create!({ name: "Behavioral Dog Training",
   category: "Training",
-  location: "Retiro Park Madrid",
+  location: "Retiro Park, Madrid",
   description: "Unlearn bad habits such as diggging, excessive barking or
   accidents in the house with a specialty licesned trainer.",
   start_date: "15/09/22",
@@ -398,7 +398,7 @@ puts "eighth activity"
 
 Activity.create!([{ name: "Potty Training",
   category: "Training",
-  location: "Parque del Oeste Madrid",
+  location: "Parque del Oeste, Madrid",
   description: "Learn potty training tips and skills and how to implement them with your dog.",
   start_date: "16/09/22",
   end_date: "16/09/22",
@@ -414,7 +414,7 @@ puts "ninth activity"
 
 Activity.create!([{ name: "Leash Training",
   category: "Training",
-  location: "San Isidro Park Madrid",
+  location: "San Isidro Park, Madrid",
   description: "Having trouble taking your dog on walks? This course is designed to help dogs and
   their owners optimize their walks!",
   start_date: "09/08/22",
@@ -431,7 +431,7 @@ puts "tenth activity"
 
 Activity.create!([{ name: "Circular Campo",
   category: "Hike",
-  location: "Casa de Campo Madrid",
+  location: "Casa de Campo, Madrid",
   description: "This hike is route around Casa de Campo of 11.7 km. There are many hills and rocky
   terrain, not reccomended for small dogs.",
   start_date: "20/09/22",
@@ -520,7 +520,7 @@ puts "12th activity"
 
 Activity.create!([{ name: "Madrid Rio",
   category: "Walk",
-  location: "Principe Pio Madrid",
+  location: "Principe Pio, Madrid",
   description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",
   start_date: "07/10/22",
   end_date: "07/10/22",
@@ -536,7 +536,7 @@ puts "13th activity"
 
 Activity.create!([{ name: "Morning Retiro and Coffee Break",
   category: "Walk",
-  location: "Principe Pio Madrid",
+  location: "Principe Pio, Madrid",
   description: "Take a walk around Parque de Retiro in the morning before work.
   Coffee is included in the price.",
   start_date: "13/09/22",
@@ -553,7 +553,7 @@ puts "14th activity"
 
 Activity.create!([{ name: "Walk on Calle Bravo Murillo",
   category: "Walk",
-  location: "Cuatro Caminos Madrid",
+  location: "Cuatro Caminos, Madrid",
   description: "Take a stroll down the beautiful and peaceful Calle Bravo Murillo with us.",
   start_date: "21/09/22",
   end_date: "21/09/22",
@@ -569,7 +569,7 @@ puts "15th activity"
 
 Activity.create!([{ name: "Sunset Stroll",
   category: "Walk",
-  location: "Cerro de Tio Pio Madrid",
+  location: "Cerro de Tio Pio, Madrid",
   description: "Take a walk around Cerro de Tio Pio park with us, and then walk up
   the hill to enjoy the sunset with great views of Madrid.",
   start_date: "22/09/22",
@@ -586,7 +586,7 @@ puts "16th activity"
 
 Activity.create!([{ name: "Morning Retiro and Coffee Break",
   category: "Walk",
-  location: "Principe Pio Madrid",
+  location: "Principe Pio, Madrid",
   description: "Take a walk around Parque de Retiro in the morning before work.
   Coffee is included in the price.",
   start_date: "13/09/22",

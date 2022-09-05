@@ -34,4 +34,19 @@
   <div class="d-grid gap-2 show-dog-btn">
       <%= link_to "Visit owner profile", profile_path, class:"btn btn-primary btn-lg" %>
   </div>
+
+  <%= simple_form_for(@dog) do |f| %>
+    <%= f.input :extra_photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit %>
+  <% end %>
+
+  <div class="photo-dog-card-doble">
+    <% @dog.extra_photos.each do |extra_photo| %>
+      <div class="photos-show-dog">
+        <%= cl_image_tag extra_photo.key, crop: :fill %>
+      </div>
+    <% end %>
+  </div>
+
+
 </div>
