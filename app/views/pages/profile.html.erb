@@ -37,25 +37,23 @@
   <div class = "info-cards-container">
     <div class ="index-cards">
       <div class = "user-bio-card">
-        <h3><strong>Bio:</strong></h3>
+        <h2><strong>Bio:</strong></h2>
         <p><%= current_user.bio %></p>
       </div>
     </div>
     <div class ="index-cards">
       <div class = "user-location-card">
-        <h3><strong>Location:</strong></h3>
+        <h2><strong>Location:</strong></h2>
         <p><%= current_user.location %></p>
       </div>
     </div>
-      <div class = "user-map">
-      </div>
   </div>
 
 <div class = "friends-container">
-  <h3><strong>Friends:</strong></h3>
+  <h2><strong>Friends:</strong></h2>
   <div class = "friends-container-imgs">
     <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
-    <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
+    <img class ="friends-pic" src = "https://res.cloudinary.com/dbksvt70i/image/upload/v1662368560/71086635_10156517273123513_1258792263769653248_n_qe31uw.jpg" />
     <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
     <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
     <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
@@ -66,7 +64,12 @@
   <%= link_to "Create New Activity", new_activity_path, class: "btn btn-primary btn-sm" %>
 
   <div class = "profile-activities-container">
-    <h3><strong>Attending activities:</strong></h3>
-    <%#attending activities card carousel here%>
+    <h2><strong>Attending activities:</strong></h2>
+    <%# if activity.photo.attached? %>
+      <%#= cl_image_tag activity.photo.key, class:"profile-activities-cards"%>
+    <%# else %>
+      <%# img class="profile-activities-cards" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
+    <% end %>
+    <h3><strong><%#= activity.name %></strong></h3>
   </div>
 </div>

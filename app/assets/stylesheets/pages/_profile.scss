@@ -85,7 +85,13 @@
 }
 
   .friends-pic {
-    height: 75px;
-    width: 75px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
+    border: 1px $navy-blue solid;
+  }
+
+  .profile-activities-cards {
+    width: 120px;
+    height: 90px;
   }
