@@ -36,12 +36,24 @@
   </div>
 
   <div class="d-grid gap-2 show-dog-btn">
-      <%= link_to "Visit owner profile", profile_path, class:"btn btn-primary btn-lg" %>
+    <% if @dog.user.id == current_user.id %>
+      <%= link_to "Back to my profile", profile_path, class:"btn btn-primary btn-lg" %>
+    <% else  %>
+      <%= link_to "Visit owner profile", user_path(@dog.user), class:"btn btn-primary btn-lg" %>
+    <% end %>
   </div>
+
 
   <%= simple_form_for(@dog) do |f| %>
     <%= f.input :extra_photos, as: :file, input_html: { multiple: true }, placeholder: "Add more photos os your dog" %>
     <%= f.submit %>
+
+  <% if @dog.user.id == current_user.id %>
+    <%= simple_form_for(@dog) do |f| %>
+      <%= f.input :extra_photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit %>
+    <% end %>
+
   <% end %>
 
   <div class="photo-dog-card-doble">
