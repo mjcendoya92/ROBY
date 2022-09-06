@@ -5,9 +5,6 @@
   margin-top: 30px;
 }
 
-.index-cards-container {
-}
-
 .index-cards-container a {
   text-decoration: none;
   margin: 0;
@@ -17,36 +14,35 @@
 .index-cards {
   display: flex;
   align-items: left;
-  height: 175px;
+  height: auto;
   background-color: #fefefe;
-  border-radius: 5px;
+  border-radius: 7px;
   box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
   width: 100%;
-  margin-top: 25px;
-  border-right: 12px solid $pink-red;
+  margin-top: 35px;
+  border-right: 14px solid $pink-red;
 }
 
 .index-card-container-left {
-  width: 45%;
+  width: 47%;
 }
 
 .index-card-container-right {
-  width: 55%;
+  width: 53%;
   margin-left: 10px;
-  margin-top: 5px;
-  height: 175px;
+  height: auto;
   padding: 10px;
   font-size: 4vw;
+  padding: 20px 10px;
 }
 
 .index-image-cards {
   width: 100%;
-  height: 175px;
+  height: 100%;
   object-fit: cover;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
-
 
 .h1 {
   font-style: bold;
@@ -65,12 +61,42 @@
 }
 
 .date-and-location-index {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
+  letter-spacing: 0.4px;
 }
 
 .map-index-container {
   height: 250px;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.activity-index-users-container {
+  display: flex;
+  margin-top: 8px;
+}
+
+.activity-index-attendees-avatar-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  margin-left: 7px;
+  text-align: center;
+}
+
+.image-avatar-index {
+  height: 25px;
+  width: 25px;
+  border: 1px solid $yellow;
+}
+
+.activity-card-price {
+  color: $pink-red;
+  font-weight: 800;
+}
+
+.index-card-title {
+  font-size: 100%;
 }
