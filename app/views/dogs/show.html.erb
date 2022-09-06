@@ -5,7 +5,7 @@
     <% if @dog.photo.attached? %>
       <%= cl_image_tag @dog.photo.key, class:"dog-avatar"%>
     <% end %>
-    <h1 class="title-show"><strong><%= @dog.name %></strong></h1>
+    <h1 class="title-show"><%= @dog.name %></h1>
   </div>
   <div class="container-dog-show-info">
     <div class="dog-card-body">
