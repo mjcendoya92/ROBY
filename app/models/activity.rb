@@ -5,7 +5,7 @@ class Activity < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
-  has_one :chatroom
+  has_one :chatroom, dependent: :destroy
   # accepts_nested_attributes_for :activity_categories
 
   geocoded_by :location
