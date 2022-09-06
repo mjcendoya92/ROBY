@@ -45,7 +45,7 @@
                 <% end %>
               </div>
               <div class="date-and-location-index">
-                <p><%= activity.location %>📍</p>
+                <p><%= activity.location %></p>
                 <p><%= activity.start_date.strftime("%d/%m/%y") %></p>
               </div>
               <div class="activity-card-price">
@@ -55,8 +55,11 @@
                   $<%= activity.price %>
                 <% end %>
               </div>
-              <%# <br>
-              <%= activity.category %>
+              <div class="index-card-categories-container">
+                <% activity.categories.each do |category| %>
+                  <h3 class="index-card-category-tag"><%= category.name %> </h3>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>

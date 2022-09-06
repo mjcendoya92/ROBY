@@ -30,6 +30,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
+      @categories = Category.where(id: params[:activity][:category_ids])
+      @categories.each do |category|
+        ActivityCategory.create(category: category, activity: @activity)
+      end
       redirect_to activity_path(@activity)
     else
       render :new, status: :unprocessable_entity
@@ -68,9 +72,11 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    if @activity.user == current_user
+    if @activity.user.id == current_user.id
       @activity.destroy
       redirect_to home_path, status: :see_other
+    else
+      redirect_to home_path, status: :see_other, notice: "You are not allowed to do this"
     end
   end
 

@@ -3,6 +3,7 @@
   align-items: center;
   flex-direction: column;
   margin-top: 30px;
+  margin-bottom: 70px;
 }
 
 .index-cards-container a {
@@ -31,9 +32,8 @@
   width: 53%;
   margin-left: 10px;
   height: auto;
-  padding: 10px;
   font-size: 4vw;
-  padding: 20px 10px;
+  padding: 15px 10px;
 }
 
 .index-image-cards {
@@ -63,7 +63,7 @@
 .date-and-location-index {
   margin-top: 10px;
   margin-bottom: 10px;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.1px;
 }
 
 .map-index-container {
@@ -99,4 +99,20 @@
 
 .index-card-title {
   font-size: 100%;
+}
+
+.index-card-categories-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.index-card-category-tag {
+  background-color: $yellow;
+  border-radius: 18px;
+  padding: 5px 10px;
+  font-size: 8px;
+  color: white;
+  margin-right: 6px;
+  width: auto;
 }
