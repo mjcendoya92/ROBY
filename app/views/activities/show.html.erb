@@ -45,12 +45,25 @@
     </div>
 
     <div class="activity-show-info-cards">
-      <h3><strong>$<%= @activity.price %></strong></h3>
+      <h3><strong>Price:</strong></h3>
+      <% if @activity.price == 0 %>
+        <h3>Free</h3>
+      <% else %>
+        $<%= @activity.price %></strong></h3>
+      <% end %>
     </div>
 
     <div class="activity-show-info-cards">
       <h3>People limit: <strong><%= @activity.people_limit %> </strong></h3>
     </div>
+
+    <div class="activity-show-info-cards">
+      <% @activity.categories.each do |category| %>
+        <h3><%= category.name %> </h3>
+      <% end %>
+    </div>
+
+
     <%#-------MAP------%>
     <div class = "map-showpage-container" >
       <%= render "shared/map" %>
@@ -65,7 +78,7 @@
     <%= render "shared/activity_comment_popup" %>
 
     <%= render "shared/activity_chatroom_popup" %>
-    
+
     <div class="activity-show-comments">
       <h3><strong>Comments:</strong></h3>
       <% if @activity.comments.empty? %>
