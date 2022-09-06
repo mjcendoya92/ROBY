@@ -8,8 +8,10 @@ class ActivitiesController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query OR location ILIKE :query"
       @activities = Activity.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @activities = Activity.all
+    end
+
+    if params[:category].present?
+      @activities = @activities.joins(:activity_categories).where(activity_categories: { category_id: params[:category] })
     end
 
     @markers = @activities.geocoded.map do |activity|
