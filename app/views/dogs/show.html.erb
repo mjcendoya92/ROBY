@@ -48,12 +48,13 @@
     <%= f.input :extra_photos, as: :file, input_html: { multiple: true }, placeholder: "Add more photos os your dog" %>
     <%= f.submit %>
 
-  <% if @dog.user.id == current_user.id %>
-    <%= simple_form_for(@dog) do |f| %>
-      <%= f.input :extra_photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit %>
-    <% end %>
 
+    <% if @dog.user.id == current_user.id %>
+      <%= simple_form_for(@dog) do |f| %>
+        <%= f.input :extra_photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit %>
+      <% end %>
+    <% end %>
   <% end %>
 
   <div class="photo-dog-card-doble">
