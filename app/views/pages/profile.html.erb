@@ -19,6 +19,33 @@
             <% end %>
           <% end %>
         <% end %>
+      <% end %>
+    </div>
+
+    <div class ="profile-names-container">
+      <h1 class="profile-user-name"><%= current_user.name %></h1>
+      <% current_user.dogs.each do |dog| %>
+        <h3 class="profile-dog-name"><%= dog.name %></h3>
+      <% end %>
+    </div>
+  </div>
+</div>
+    <div class = "profile-btns-container">
+      <%= link_to "Edit Profile", "", class: "btn btn-primary btn-sm profile-buttons" %>
+      <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm profile-buttons" %>
+    </div>
+
+  <div class = "info-cards-container">
+    <div class ="index-cards">
+      <div class = "user-bio-card">
+        <h2><strong>Bio:</strong></h2>
+        <h3><%= current_user.bio %></h3>
+      </div>
+    </div>
+    <div class ="index-cards">
+      <div class = "user-location-card">
+        <h2><strong>Location:</strong></h2>
+        <h3><%= current_user.location %></h3>
       </div>
 
       <div class ="profile-names-container">
@@ -26,6 +53,7 @@
         <% current_user.dogs.each do |dog| %>
           <h3 class="profile-dog-name"><%= dog.name %></h3>
         <% end %>
+
       </div>
     </div>
   </div>
