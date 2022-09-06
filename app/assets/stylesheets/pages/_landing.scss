@@ -1,0 +1,31 @@
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.landing-page-content {
+  align-items: column;
+  margin-top: 100px;
+}
+
+.robycircle {
+  margin-top: 50px;
+  animation: flip 6s infinite;
+}
+
+.enter {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: $navy-blue;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}

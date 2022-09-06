@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar" unless controller_name == "pages" && action_name == "landing" %>
     <div class = "container">
       <%= render "shared/flashes" %>
       <%= yield %>
