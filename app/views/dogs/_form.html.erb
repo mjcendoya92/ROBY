@@ -5,5 +5,6 @@
   <%= f.select :sex, collection: ['male', 'female']%>
   <%= f.input :description, placeholder: "Describe your dog" %>
   <%= f.input :photo, as: :file  %>
+  <%= f.input :background_photo, as: :file  %>
   <%= f.submit %>
 <% end %>

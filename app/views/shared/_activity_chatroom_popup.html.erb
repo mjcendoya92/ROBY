@@ -1,11 +1,10 @@
-<button type="button" class="btn btn-primary activity-show-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Go to chat
-</button>
+<button type="button" class="btn btn-primary activity-show-btn" data-bs-toggle="modal" data-bs-target="#chatModal">
+Go to chat</button>
 
 <!-- Modal -->
-<div class="modal fade probando" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog ">
-    <div class="modal-content ">
+<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content probando">
       <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel"><strong><%= @activity.name %> chat</h4></strong>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -23,13 +22,13 @@
           <div class="desenlace">
             <%= simple_form_for [@chatroom, @message],
               html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-            %>
-            <%= f.input :content,
+              %>
+              <%= f.input :content,
               label: false,
               placeholder: "Message",
               wrapper_html: {class: "flex-grow-1 user-input-field"}
-            %>
-            <%= f.submit "Send", class: "btn btn-primary mb-3 chat-button" %>
+              %>
+              <%= f.submit "Send", class: "btn btn-primary mb-3 chat-button" %>
             <% end %>
           </div>
         </div>

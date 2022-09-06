@@ -70,11 +70,6 @@
     </div>
 
 
-
-
-
-
-
     <%#-------MAP------%>
     <div class = "map-showpage-container" >
       <%= render "shared/map" %>
@@ -89,6 +84,14 @@
     <%= render "shared/activity_comment_popup" %>
 
     <%= render "shared/activity_chatroom_popup" %>
+
+    <% if @activity.user.id == current_user.id %>
+      <%= render "shared/edit_activity" %>
+    <% end %>
+
+    <%= render "shared/delete_activity" %>
+
+    <%# <button class="btn btn-danger activity-show-btn"><%= link_to "Delete activity", home_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
 
     <div class="activity-show-comments">
       <h3><strong>Comments:</strong></h3>
@@ -105,9 +108,5 @@
         <% end %>
       <% end %>
     </div>
-
-
   </div>
-
-
 </div>

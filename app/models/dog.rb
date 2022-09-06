@@ -1,5 +1,6 @@
 class Dog < ApplicationRecord
   has_one_attached :photo
+  has_one_attached :background_photo
   has_many_attached :extra_photos
 
   belongs_to :user

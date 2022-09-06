@@ -55,7 +55,9 @@
   text-align: end;
 }
 
-.index-cards {
+
+.profile-cards {
+  padding: 15px;
 }
 
 .friends-container {
@@ -63,7 +65,7 @@
   margin-bottom: 20px;
 }
 
-.btn-primary {
+.profile-buttons {
   color: rgb(31, 28, 28);
   padding: 15px;
   border-radius: 15px;
@@ -74,6 +76,7 @@
   font-weight: 600;
   font-family: $headers-font;
   height: auto;
+  margin-bottom: 15px;
 }
 
 .profile-activities-container {
@@ -92,41 +95,41 @@
   width: 100%;
 }
 
-  .friends-pic {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    border: 1px $navy-blue solid;
-  }
+.friends-pic {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 1px $navy-blue solid;
+}
 
-  .profile-activities-container {
-  width: 100%;
-  height: 270px;
+.profile-activities-container, .activities-created-container {
+width: 100%;
+height: 270px;
+display: flex;
+overflow-x: scroll;
+padding: 10px;
+}
+
+.profile-activities-cards {
   display: flex;
-  overflow-x: scroll;
+  flex-direction: column;
+  width: 200px;
+  height: 250px;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
+  margin-right: 10px;
   padding: 10px;
-  }
+  border-radius: 4px;
+  background-color: #fefefe;
+  text-align: center;
+}
 
-  .profile-activities-cards {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: 250px;
-    box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
-    margin-right: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: #fefefe;
-    text-align: center;
-  }
+.img-card-profile{
+  margin-bottom: 15px;
+}
 
-  .img-card-profile{
-    margin-bottom: 15px;
-  }
-
-  .btn-primary {
-    margin-bottom: 15px;
-  }
+.activity-profile-titles {
+  margin-top: 20px;
+}
 
 .dots {
   color: rgb(178, 178, 178);

@@ -1,0 +1,36 @@
+<!-- Edit booking button trigger modal -->
+<button type="button" class="btn btn-primary activity-show-btn" data-bs-toggle="modal" data-bs-target="#editActivityModal">
+  <strong>Edit my activity</strong>
+</button>
+
+<!-- Edit booking modal -->
+<div class="modal fade" id="editActivityModal" tabindex="-1" aria-labelledby="editActivityModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editActivityModalLabel">Edit or delete your activity</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="booking-container">
+          <%= simple_form_for @activity, data: { turbo:false } do |f| %>
+            <h3><%= f.input :name %> </h3>
+            <h3><%= f.input :description %> </h3>
+            <h3><%= f.input :location, input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"},
+            wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %></h3>
+            <h3><%= f.input :start_date, as: :string, input_html: {class: "datepicker"}  %></h3>
+            <h3><%= f.input :end_date, as: :string, input_html: {class: "datepicker"}  %></h3>
+            <h3><%= f.input :start_time %></h3>
+            <h3><%= f.input :end_time %></h3>
+            <h3><%= f.input :dog_limit %></h3>
+            <h3><%= f.input :people_limit %></h3>
+            <h3><%= f.input :price %></h3>
+            <h3><%= f.input :photo, as: :file %></h3>
+            <%= f.submit class: "btn btn-primary", data: {bs_dismiss: "modal"}%>
+            <%  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
