@@ -30,6 +30,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
+      @categories = Category.where(id: params[:activity][:category_ids])
+      @categories.each do |category|
+        ActivityCategory.create(category: category, activity: @activity)
+      end
       redirect_to activity_path(@activity)
     else
       render :new, status: :unprocessable_entity
