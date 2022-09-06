@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all
     end
-    
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
@@ -62,9 +62,15 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def destroy
-    @activity.destroy
-    redirect_to activity_path, status: :see_other
+    if @activity.user == current_user
+      @activity.destroy
+      redirect_to home_path, status: :see_other
+    end
   end
 
   private
