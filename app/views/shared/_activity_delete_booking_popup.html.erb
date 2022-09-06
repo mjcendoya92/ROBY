@@ -1,0 +1,21 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary activity-show-btn" data-bs-toggle="modal" data-bs-target="#cancelBooking"><strong>Cancel booking</strong>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cancelBooking" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to cancel this booking?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-footer">
+        <%= link_to booking_path(@user_booking), data: { turbo: true, "turbo-method": :delete } do %>
+          <button type="button" class="btn btn-primary bg-danger">Cancel</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
