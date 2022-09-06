@@ -1,7 +1,7 @@
 <div class="booking-container">
   <h2>Do you want to join this activity?</h2>
   <h3> <%= @activity.name %> </h3>
-  <h3> <%= @activity.start_date %></h3>
+  <h3> <%= @activity.start_date %> </h3>
   <h3> <%= @activity.start_time - @activity.end_time %> </h3>
   <h3> <%= @activity.location %> </h3>
   <%= simple_form_for [@activity, @booking] do |f| %>

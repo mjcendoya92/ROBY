@@ -5,3 +5,5 @@ class Booking < ApplicationRecord
   validates :number_people, numericality: { only_integer: true }
   validates :number_dogs, numericality: { only_integer: true }
 end
+
+
