@@ -27,7 +27,7 @@
       <% else %>
         <div class="activity-show-users-container">
           <% @activity.bookings.each do |booked| %>
-            <%= link_to profile_path do %>
+            <%= link_to user_path(booked.user.id) do %>
               <div class= activity-show-attendees-avatar-box>
                 <% if booked.user.photo.attached? %>
                   <%= cl_image_tag booked.user.photo.key, class:"rounded-circle image-avatar-show" %>
