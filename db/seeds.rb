@@ -5,10 +5,6 @@ Category.destroy_all
 puts "database_clean"
 require "open-uri"
 
-general = Chatroom.new(name: "General chat")
-
-general.save
-
 gonzalo = User.new({ name: "Gonzalo",
   location: "Legazpi",
   bio: "I love exploring the city with my family and dog!",
@@ -16,23 +12,23 @@ gonzalo = User.new({ name: "Gonzalo",
   password: "123456"
   })
 
-gonzalo.save
-puts gonzalo.email
+  gonzalo.save
+  puts gonzalo.email
 
-daniel = User.new({ name: "Daniel",
-  location: "Concepcion",
-  bio: "I just moved to Madrid and I am hoping to find social events to
-  attend with my dog",
+  daniel = User.new({ name: "Daniel",
+    location: "Concepcion",
+    bio: "I just moved to Madrid and I am hoping to find social events to
+    attend with my dog",
   email: "dani@roby.com",
   password: "123456"
   })
 
-daniel.save
-puts daniel.email
+  daniel.save
+  puts daniel.email
 
-gloria = User.new({ name: "Gloria",
-  location: "Guzman el Bueno",
-  bio: "I just moved to Madrid with my search and rescue dog and I am looking for all
+  gloria = User.new({ name: "Gloria",
+    location: "Guzman el Bueno",
+    bio: "I just moved to Madrid with my search and rescue dog and I am looking for all
   types of activities with my dog and to meet new people",
   email: "gloria@roby.com",
   password: "123456"
@@ -49,8 +45,8 @@ chus = User.new({ name: "Chus",
   password: "123456"
   })
 
-chus.save
-puts chus.email
+  chus.save
+  puts chus.email
 
 felipe = User.new({ name: "Felipe",
   location: "Cruz del Rayo",
@@ -59,51 +55,51 @@ felipe = User.new({ name: "Felipe",
   password: "123456"
   })
 
-felipe.save
-puts felipe.email
+  felipe.save
+  puts felipe.email
 
-emi = User.new({ name: "Emi",
+  emi = User.new({ name: "Emi",
   location: "Sainz de Baranda",
   bio: "Looking for nearby dog owners to join me and my dog on evening walks.",
   email: "Emi@roby.com",
   password: "123456"
   })
 
-emi.save
-puts emi.email
+  emi.save
+  puts emi.email
 
-grace = User.new({ name: "Grace",
-  location: "Estrecho",
-  bio: "Searching for social activites around the city for my dog and I to attend.",
-  email: "Grace@roby.com",
-  password: "123456",
-  })
+  grace = User.new({ name: "Grace",
+    location: "Estrecho",
+    bio: "Searching for social activites around the city for my dog and I to attend.",
+    email: "Grace@roby.com",
+    password: "123456",
+    })
 
-grace.save
-puts grace.email
+    grace.save
+    puts grace.email
 
-marcos = User.new({ name: "Marcos",
-  location: "Moncloa",
-  bio: "I miss spending time around dogs so I am looking for social events so I can make
+    marcos = User.new({ name: "Marcos",
+      location: "Moncloa",
+      bio: "I miss spending time around dogs so I am looking for social events so I can make
   friends and also spend time with dogs.",
   email: "Marcos@roby.com",
   password: "123456"
   })
 
-marcos.save
-puts marcos.email
+  marcos.save
+  puts marcos.email
 
-juan = User.new({ name: "Juan",
+  juan = User.new({ name: "Juan",
   location: "Arguelles",
   bio: "I just got a puppy and I am looking for training events to meet other puppies",
   email: "Juan@roby.com",
   password: "123456"
   })
 
-juan.save
-puts juan.email
+  juan.save
+  puts juan.email
 
-fanny = User.new({ name: "Fanny",
+  fanny = User.new({ name: "Fanny",
   location: "Cuatro Caminos",
   bio: "I don't have a dog but I love being around them,
   so I am looking for social events to make friends with dogs!",
@@ -134,18 +130,18 @@ jager = Dog.new({ name: "Jager",
   sex: "male",
   })
 
-jager.save
-puts jager.name
+  jager.save
+  puts jager.name
 
-roby = Dog.new({ name: "Roby",
-  breed: "Schnauzer",
-  description: "Very energetic dog who sometimes gets nervous around other dogs.",
-  user_id: daniel.id,
-  age: 5,
-  sex: "male"
-  })
+  roby = Dog.new({ name: "Roby",
+    breed: "Schnauzer",
+    description: "Very energetic dog who sometimes gets nervous around other dogs.",
+    user_id: daniel.id,
+    age: 5,
+    sex: "male"
+    })
 
-roby.save
+    roby.save
 puts roby.name
 
 golfo = Dog.new({ name: "Golfo",
@@ -157,45 +153,45 @@ golfo = Dog.new({ name: "Golfo",
   sex: "male"
   })
 
-golfo.save
-puts golfo.name
+  golfo.save
+  puts golfo.name
 
-jack = Dog.new({ name: "Jack",
-  breed: "Australian Shepherd",
-  description: "Very energetic and loves being outside and hiking.",
-  user_id: chus.id,
-  age: 3,
-  sex: "male"
-  })
+  jack = Dog.new({ name: "Jack",
+    breed: "Australian Shepherd",
+    description: "Very energetic and loves being outside and hiking.",
+    user_id: chus.id,
+    age: 3,
+    sex: "male"
+    })
 
-jack.save
-puts jack.name
+    jack.save
+    puts jack.name
 
-paco = Dog.new({ name: "Paco",
-  breed: "Golden Retriever",
-  description: "Sporty and friendly dog.",
-  user_id: felipe.id,
-  age: 2,
-  sex: "male",
-  })
+    paco = Dog.new({ name: "Paco",
+      breed: "Golden Retriever",
+      description: "Sporty and friendly dog.",
+      user_id: felipe.id,
+      age: 2,
+      sex: "male",
+      })
 
-paco.save
-puts paco.name
+      paco.save
+      puts paco.name
 
-carlota = Dog.new({ name: "Carlota",
-  breed: "Yorkshire Terrier Mix",
-  description: "She is a very small dog who loves food. She sometimes is nervous
-  around new dogs and people but is friendly once she is used to them. She loves going
-  on short walks around the city.",
+      carlota = Dog.new({ name: "Carlota",
+        breed: "Yorkshire Terrier Mix",
+        description: "She is a very small dog who loves food. She sometimes is nervous
+        around new dogs and people but is friendly once she is used to them. She loves going
+        on short walks around the city.",
   user_id: emi.id,
   age: 5,
   sex: "female",
   })
 
-carlota.save
-puts carlota.name
+  carlota.save
+  puts carlota.name
 
-chloe = Dog.new({ name: "Chloe",
+  chloe = Dog.new({ name: "Chloe",
   breed: "mutt",
   description: "She is a shelter rescue dog who is still getting used to being around
   other people and dogs. She is not mean, but also not friendly. Please be patient with her.",
@@ -204,51 +200,51 @@ chloe = Dog.new({ name: "Chloe",
   sex: "female"
   })
 
-chloe.save
-puts chloe.name
+  chloe.save
+  puts chloe.name
 
-chata = Dog.new({ name: "Chata",
-  breed: "Beagle",
-  description: "She is a puppy who is very energetic, but has not been around other dogs
-  much yet.",
-  user_id: juan.id,
+  chata = Dog.new({ name: "Chata",
+    breed: "Beagle",
+    description: "She is a puppy who is very energetic, but has not been around other dogs
+    much yet.",
+    user_id: juan.id,
   age: 0,
-  sex: "female"
-})
-
-chata.save
-puts chata.name
-
-lola = Dog.new({ name: "Lola",
-  breed: "Poodle",
-  description: "She is an older dog who loves going on walks and attending social events.
-  She is friendly with other dogs but is sometimes scared of dogs who are bigger than her.",
-  user_id: fanny.id,
-  age: 8,
   sex: "female"
   })
 
-lola.save
-puts lola.name
+  chata.save
+  puts chata.name
 
-benji = Dog.new({ name: "Benji",
-  breed: "Dachsund",
-  description: "Benji is a friendly puppy and loves playing fetch and meeting other dogs.",
-  user_id: maria.id,
-  age: 0,
-  sex: "male"
-})
+  lola = Dog.new({ name: "Lola",
+    breed: "Poodle",
+    description: "She is an older dog who loves going on walks and attending social events.
+    She is friendly with other dogs but is sometimes scared of dogs who are bigger than her.",
+    user_id: fanny.id,
+    age: 8,
+    sex: "female"
+    })
 
-benji.save
-puts benji.name
+    lola.save
+    puts lola.name
 
-Category.create!([{ name: "Small dogs" }])
-Category.create!([{ name: "Big Dogs" }])
-Category.create!([{ name: "Competition dogs" }])
-Category.create!([{ name: "Puppies" }])
-puts "Created categories"
+    benji = Dog.new({ name: "Benji",
+      breed: "Dachsund",
+      description: "Benji is a friendly puppy and loves playing fetch and meeting other dogs.",
+      user_id: maria.id,
+      age: 0,
+      sex: "male"
+      })
 
-activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662457578/pawtography-perth-yLIJSH2OlNI-unsplash_ngkfqh.jpg")
+      benji.save
+      puts benji.name
+
+      Category.create!([{ name: "Small dogs" }])
+      Category.create!([{ name: "Big Dogs" }])
+      Category.create!([{ name: "Competition dogs" }])
+      Category.create!([{ name: "Puppies" }])
+      puts "Created categories"
+
+activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662466314/duncan-kidd-fEAvhbvZX40-unsplash_durqna.jpg")
 activity = Activity.create!({ name: "Puppy Birthday",
   category: Category.all.sample.name,
   location: "Retiro Park, Madrid",
@@ -284,7 +280,7 @@ activity = Activity.create!({ name: "Agility Training",
   })
 activity.photo.attach(io: activity_image_url, filename: "agility.png", content_type: "image/png")
 activity.save
-  puts "second activity"
+puts "second activity"
 
 
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
@@ -304,7 +300,7 @@ activity = Activity.create!({ name: "Coffees and Canines",
   })
 activity.photo.attach(io: activity_image_url, filename: "coffees.png", content_type: "image/png")
 activity.save
-  puts "third activity"
+puts "third activity"
 
 
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/cocktails_djuxxk.jpg")
@@ -358,26 +354,26 @@ activity = Activity.create!({ name: "Perrito Party",
   price: 0,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "party.png", content_type: "image/png")
-activity.save
-puts "Sixth activity"
+  activity.photo.attach(io: activity_image_url, filename: "party.png", content_type: "image/png")
+  activity.save
+  puts "Sixth activity"
 
-Activity.create!({ name: "Puppy Obedience Training",
-  category: "Training",
-  location: "Casa de Campo, Madrid",
-  description: "Learn some basic obedience skills for you and your puppy with a
-  licensed trainer.",
-  start_date: "09/10/22",
-  end_date: "09/10/22",
-  start_time: "14:00",
-  end_time: "15:00",
-  dog_limit: 7,
-  people_limit: 7,
-  price: 20,
+  Activity.create!({ name: "Puppy Obedience Training",
+    category: "Training",
+    location: "Casa de Campo, Madrid",
+    description: "Learn some basic obedience skills for you and your puppy with a
+    licensed trainer.",
+    start_date: "09/10/22",
+    end_date: "09/10/22",
+    start_time: "14:00",
+    end_time: "15:00",
+    dog_limit: 7,
+    people_limit: 7,
+    price: 20,
   user: User.all.sample
   })
 
-puts "seventh activity"
+  puts "seventh activity"
 
 Activity.create!({ name: "Behavioral Dog Training",
   category: "Training",
@@ -394,25 +390,25 @@ Activity.create!({ name: "Behavioral Dog Training",
   user: User.all.sample
   })
 
-puts "eighth activity"
+  puts "eighth activity"
 
-Activity.create!([{ name: "Potty Training",
-  category: "Training",
-  location: "Parque del Oeste, Madrid",
-  description: "Learn potty training tips and skills and how to implement them with your dog.",
-  start_date: "16/09/22",
-  end_date: "16/09/22",
-  start_time: "10:00",
-  end_time: "11:00",
-  dog_limit: 15,
-  people_limit: 15,
-  price: 10,
-  user: User.all.sample
+  Activity.create!([{ name: "Potty Training",
+    category: "Training",
+    location: "Parque del Oeste, Madrid",
+    description: "Learn potty training tips and skills and how to implement them with your dog.",
+    start_date: "16/09/22",
+    end_date: "16/09/22",
+    start_time: "10:00",
+    end_time: "11:00",
+    dog_limit: 15,
+    people_limit: 15,
+    price: 10,
+    user: User.all.sample
   }])
 
-puts "ninth activity"
+  puts "ninth activity"
 
-Activity.create!([{ name: "Leash Training",
+  Activity.create!([{ name: "Leash Training",
   category: "Training",
   location: "San Isidro Park, Madrid",
   description: "Having trouble taking your dog on walks? This course is designed to help dogs and
@@ -427,28 +423,28 @@ Activity.create!([{ name: "Leash Training",
   user: User.all.sample
   }])
 
-puts "tenth activity"
+  puts "tenth activity"
 
-Activity.create!([{ name: "Circular Campo",
-  category: "Hike",
-  location: "Casa de Campo, Madrid",
-  description: "This hike is route around Casa de Campo of 11.7 km. There are many hills and rocky
-  terrain, not reccomended for small dogs.",
-  start_date: "20/09/22",
-  end_date: "20/09/22",
-  start_time: "10:00",
-  end_time: "16:00",
-  dog_limit: 15,
-  people_limit: 15,
-  price: 0,
-  user: User.all.sample
-  }])
+  Activity.create!([{ name: "Circular Campo",
+    category: "Hike",
+    location: "Casa de Campo, Madrid",
+    description: "This hike is route around Casa de Campo of 11.7 km. There are many hills and rocky
+    terrain, not reccomended for small dogs.",
+    start_date: "20/09/22",
+    end_date: "20/09/22",
+    start_time: "10:00",
+    end_time: "16:00",
+    dog_limit: 15,
+    people_limit: 15,
+    price: 0,
+    user: User.all.sample
+    }])
 
-puts "tenth activity"
+    puts "tenth activity"
 
-Activity.create!([{ name: "Seven Peaks",
-  category: "Hike",
-  location: "Parque Nacional de la Sierra de Guadarrama",
+    Activity.create!([{ name: "Seven Peaks",
+      category: "Hike",
+      location: "Parque Nacional de la Sierra de Guadarrama",
   description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
   from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
   start_date: "30/09/22",
@@ -461,30 +457,30 @@ Activity.create!([{ name: "Seven Peaks",
   user: User.all.sample
   }])
 
-puts "Eleventh activity"
+  puts "Eleventh activity"
 
-Activity.create!([{ name: "Seven Peaks",
-  category: "Hike",
-  location: "Parque Nacional de la Sierra de Guadarrama",
-  description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
-  from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
-  start_date: "28/10/22",
-  end_date: "28/10/22",
-  start_time: "09:00",
-  end_time: "18:00",
-  dog_limit: 7,
-  people_limit: 10,
-  price: 30,
-  user: User.all.sample
-  }])
+  Activity.create!([{ name: "Seven Peaks",
+    category: "Hike",
+    location: "Parque Nacional de la Sierra de Guadarrama",
+    description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
+    from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
+    start_date: "28/10/22",
+    end_date: "28/10/22",
+    start_time: "09:00",
+    end_time: "18:00",
+    dog_limit: 7,
+    people_limit: 10,
+    price: 30,
+    user: User.all.sample
+    }])
 
-puts "Eleventh activity"
+    puts "Eleventh activity"
 
-Activity.create!([{ name: "Camino de los Campamentos",
-  category: "Hike",
-  location: "Cercedilla",
-  description: "This easy trail is great for getting some fresh air outside of the city. Price Includes transportation
-  from the center of Madrid and a meal after the hike. It is reccomended to bring some healthy snacks for during the hike!.
+    Activity.create!([{ name: "Camino de los Campamentos",
+      category: "Hike",
+      location: "Cercedilla",
+      description: "This easy trail is great for getting some fresh air outside of the city. Price Includes transportation
+      from the center of Madrid and a meal after the hike. It is reccomended to bring some healthy snacks for during the hike!.
   challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
   from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
   start_date: "02/10/22",
@@ -497,14 +493,14 @@ Activity.create!([{ name: "Camino de los Campamentos",
   user: User.all.sample
   }])
 
-puts "Twelfth activity"
+  puts "Twelfth activity"
 
-Activity.create!([{ name: "Camino de los Campamentos",
-  category: "Hikes",
-  location: "Cercedilla",
-  description: "This easy trail is great for getting some fresh air outside of the city. Price Includes transportation
-  from the center of Madrid and a meal after the hike. It is reccomended to bring some healthy snacks for during the hike!.
-  challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
+  Activity.create!([{ name: "Camino de los Campamentos",
+    category: "Hikes",
+    location: "Cercedilla",
+    description: "This easy trail is great for getting some fresh air outside of the city. Price Includes transportation
+    from the center of Madrid and a meal after the hike. It is reccomended to bring some healthy snacks for during the hike!.
+    challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
   from the center of Madrid, breakfast and dinner after the hike. It is reccomended to bring your own lunches.",
   start_date: "02/10/22",
   end_date: "02/10/22",
@@ -516,50 +512,50 @@ Activity.create!([{ name: "Camino de los Campamentos",
   user: User.all.sample
   }])
 
-puts "12th activity"
+  puts "12th activity"
 
-Activity.create!([{ name: "Madrid Rio",
-  category: "Walk",
-  location: "Principe Pio, Madrid",
-  description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",
-  start_date: "07/10/22",
-  end_date: "07/10/22",
-  start_time: "18:00",
-  end_time: "19:00",
-  dog_limit: 10,
-  people_limit: 15,
-  price: 0,
-  user: User.all.sample
+  Activity.create!([{ name: "Madrid Rio",
+    category: "Walk",
+    location: "Principe Pio, Madrid",
+    description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",
+    start_date: "07/10/22",
+    end_date: "07/10/22",
+    start_time: "18:00",
+    end_time: "19:00",
+    dog_limit: 10,
+    people_limit: 15,
+    price: 0,
+    user: User.all.sample
   }])
 
-puts "13th activity"
+  puts "13th activity"
 
-Activity.create!([{ name: "Morning Retiro and Coffee Break",
-  category: "Walk",
-  location: "Principe Pio, Madrid",
-  description: "Take a walk around Parque de Retiro in the morning before work.
-  Coffee is included in the price.",
-  start_date: "13/09/22",
-  end_date: "13/09/22",
-  start_time: "08:00",
-  end_time: "09:00",
-  dog_limit: 10,
-  people_limit: 15,
-  price: 3,
-  user: User.all.sample
-  }])
+  Activity.create!([{ name: "Morning Retiro and Coffee Break",
+    category: "Walk",
+    location: "Principe Pio, Madrid",
+    description: "Take a walk around Parque de Retiro in the morning before work.
+    Coffee is included in the price.",
+    start_date: "13/09/22",
+    end_date: "13/09/22",
+    start_time: "08:00",
+    end_time: "09:00",
+    dog_limit: 10,
+    people_limit: 15,
+    price: 3,
+    user: User.all.sample
+    }])
 
-puts "14th activity"
+    puts "14th activity"
 
-Activity.create!([{ name: "Walk on Calle Bravo Murillo",
-  category: "Walk",
-  location: "Cuatro Caminos, Madrid",
-  description: "Take a stroll down the beautiful and peaceful Calle Bravo Murillo with us.",
-  start_date: "21/09/22",
-  end_date: "21/09/22",
-  start_time: "19:00",
-  end_time: "20:00",
-  dog_limit: 5,
+    Activity.create!([{ name: "Walk on Calle Bravo Murillo",
+      category: "Walk",
+      location: "Cuatro Caminos, Madrid",
+      description: "Take a stroll down the beautiful and peaceful Calle Bravo Murillo with us.",
+      start_date: "21/09/22",
+      end_date: "21/09/22",
+      start_time: "19:00",
+      end_time: "20:00",
+      dog_limit: 5,
   people_limit: 10,
   price: 0,
   user: User.all.sample
@@ -582,9 +578,9 @@ Activity.create!([{ name: "Sunset Stroll",
   user: User.all.sample
   }])
 
-puts "16th activity"
+  puts "16th activity"
 
-Activity.create!([{ name: "Morning Retiro and Coffee Break",
+  Activity.create!([{ name: "Morning Retiro and Coffee Break",
   category: "Walk",
   location: "Principe Pio, Madrid",
   description: "Take a walk around Parque de Retiro in the morning before work.
@@ -599,4 +595,8 @@ Activity.create!([{ name: "Morning Retiro and Coffee Break",
   user: User.all.sample
   }])
 
-puts "17th activity"
+  puts "17th activity"
+
+  puts "creating chatroom"
+  general = Chatroom.new(name: "General chat")
+  general.save
