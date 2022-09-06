@@ -72,9 +72,11 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    if @activity.user == current_user
+    if @activity.user.id == current_user.id
       @activity.destroy
       redirect_to home_path, status: :see_other
+    else
+      redirect_to home_path, status: :see_other, notice: "You are not allowed to do this"
     end
   end
 
