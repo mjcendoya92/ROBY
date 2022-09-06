@@ -34,7 +34,19 @@
         <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm profile-buttons" %>
       </div>
 
-    <div class = "info-cards-container">
+  <div class = "info-cards-container">
+    <div class ="index-cards">
+      <div class = "user-bio-card">
+        <h2><strong>Bio:</strong></h2>
+        <h3><%= current_user.bio %></h3>
+      </div>
+    </div>
+    <div class ="index-cards">
+      <div class = "user-location-card">
+        <h2><strong>Location:</strong></h2>
+        <h3><%= current_user.location %></h3>
+
+<div class = "info-cards-container">
       <div class ="index-cards">
         <div class = "user-bio-card">
           <h2><strong>Bio:</strong></h2>
