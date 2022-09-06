@@ -8,9 +8,17 @@
 
     <div class="activity-show-title">
       <h1> <strong><%= @activity.name %> </strong></h1>
-      <br>
-      <h3> <%= @activity.description %> </h3>
     </div>
+
+    <div class="activity-show-categories-container">
+      <% @activity.categories.each do |category| %>
+        <div class="activity-show-category-tag">
+          <p><%= category.name %> </p>
+        </div>
+      <% end %>
+    </div>
+
+    <h3> <%= @activity.description %> </h3>
 
     <div class="activity-show-attendees">
       <h2><strong>Attendees:</strong></h2>
@@ -35,33 +43,36 @@
       <% end %>
     </div>
 
-    <div class="activity-show-info-cards">
-      <h3><strong><%= @activity.start_date.strftime("%b %d") %> - <%= @activity.end_date.strftime("%b %d") %></strong></h3>
-      <p> <%= @activity.start_time.strftime("%H:%M") %> - <%= @activity.end_time.strftime("%H:%M") %> </p>
+    <div class="activity-show-info-card">
+
+      <div class="activity-show-info-description">
+        <h3><strong><%= @activity.start_date.strftime("%b %d") %> - <%= @activity.end_date.strftime("%b %d") %></strong></h3>
+        <p> <%= @activity.start_time.strftime("%H:%M") %> - <%= @activity.end_time.strftime("%H:%M") %> </p>
+      </div>
+
+      <div class="activity-show-info-description">
+        <h3><strong><%= @activity.location %>📍</strong> </h3>
+      </div>
+
+      <div class="activity-show-info-description">
+        <% if @activity.price == 0 %>
+          <h3><strong>Free</h3></strong>
+        <% else %>
+          $<%= @activity.price %></strong></h3>
+        <% end %>
+      </div>
+
+      <div class="activity-show-info-description">
+        <h3>People limit: <strong><%= @activity.people_limit %> </strong></h3>
+        <%# <% if @activity.people_limit =>  %>
+      </div>
+
     </div>
 
-    <div class="activity-show-info-cards">
-      <h3><strong>📍<%= @activity.location %></strong> </h3>
-    </div>
 
-    <div class="activity-show-info-cards">
-      <h3><strong>Price:</strong></h3>
-      <% if @activity.price == 0 %>
-        <h3>Free</h3>
-      <% else %>
-        $<%= @activity.price %></strong></h3>
-      <% end %>
-    </div>
 
-    <div class="activity-show-info-cards">
-      <h3>People limit: <strong><%= @activity.people_limit %> </strong></h3>
-    </div>
 
-    <div class="activity-show-info-cards">
-      <% @activity.categories.each do |category| %>
-        <h3><%= category.name %> </h3>
-      <% end %>
-    </div>
+
 
 
     <%#-------MAP------%>

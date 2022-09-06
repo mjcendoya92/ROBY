@@ -242,9 +242,12 @@ benji = Dog.new({ name: "Benji",
 benji.save
 puts benji.name
 
+Category.create!([{ name: "Walk" }])
+Category.create!([{ name: "Social" }])
+Category.create!([{ name: "Training" }])
 Category.create!([{ name: "Small dogs" }])
+Category.create!([{ name: "Medium dogs" }])
 Category.create!([{ name: "Big Dogs" }])
-Category.create!([{ name: "Competition dogs" }])
 Category.create!([{ name: "Puppies" }])
 puts "Created categories"
 
