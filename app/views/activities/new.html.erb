@@ -8,7 +8,7 @@
     input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"},
     wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
   <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
-  <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+  <%# <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %> 
   <%= f.input :start_time %>
   <%= f.input :end_time %>
   <%= f.input :dog_limit %>
@@ -16,7 +16,7 @@
   <%= f.input :price %>
   <%= f.input :photo, as: :file %>
   <%# <%= f.simple_fields_for :activity_categories do |p| %>
-      <%# <%= p.input :category_id, collection: Category.all, as: :check_boxes %> 
+      <%# <%= p.input :category_id, collection: Category.all, as: :check_boxes %>
   <%# <% end %>
 
 

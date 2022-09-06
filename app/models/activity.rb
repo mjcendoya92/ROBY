@@ -14,7 +14,7 @@ class Activity < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 15 }
   validates :location, presence: true
-  validates :start_date, :end_date, presence: true
+  validates :start_date, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true, comparison: { greater_than: :start_time }
   validates :dog_limit, presence: true, numericality: { only_integer: true }
