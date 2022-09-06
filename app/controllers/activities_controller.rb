@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
     end
 
     if params[:category].present?
-      @activities = @activities.joins(:activity_categories).where(activity_categories: { category_id: params[:category] })
+      @activities = @activities.joins(:activity_categories).where(activity_categories: { category_id: params[:category]})
     end
 
     @markers = @activities.geocoded.map do |activity|
