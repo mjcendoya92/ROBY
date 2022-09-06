@@ -23,10 +23,18 @@ class BookingsController < ApplicationController
     redirect_to activities_path(@activity)
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.user.id == current_user.id
+      @booking.destroy
+      redirect_to home_path, status: :see_other
+    end
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:number_people, :activity_id)
+    params.require(:booking).permit(:number_people, :number_dogs, :activity_id)
   end
 
   def set_activity

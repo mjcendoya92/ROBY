@@ -19,6 +19,7 @@
           <p> &#128205; <%= @activity.location %> </p> <br>
           <%= simple_form_for [@activity, @booking] do |f| %>
             <h3 class="booking-popup-titles"><%= f.input :number_people, label: "How many people are coming?" %> </h3>
+            <h3 class="booking-popup-titles"><%= f.input :number_dogs, label: "How many dogs are coming?" %> </h3>
             <div class="container-btn-form-popup">
               <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662369521/descarga_15_otn97c.jpg" alt="Happy dog" class="dog-image-popup">
               <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662374827/images_17_a91gme.jpg" alt="Confused dog" class="dog-image-popup">

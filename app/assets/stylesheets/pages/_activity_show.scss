@@ -30,6 +30,22 @@
   margin-top: 20px;
 }
 
+.activity-show-categories-container {
+  display: flex;
+  margin: 20px 0;
+}
+
+.activity-show-category-tag {
+  background-color: $yellow;
+  border-radius: 18px;
+  padding: 5px 10px;
+  font-size: 8px;
+  color: white;
+  margin-right: 6px;
+  width: auto;
+  margin-right: 10px;
+}
+
 .activity-show-attendees {
   margin-top: 35px;
 }
@@ -60,11 +76,15 @@
   margin-top: 5px;
 }
 
-.activity-show-info-cards {
+.activity-show-info-card {
   background-color: #fefefe;
   box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
   padding: 20px;
-  margin-top: 15px;
+  margin-top: 25px;
+}
+
+.activity-show-info-description {
+  margin-bottom: 15px;
 }
 
 .activity-show-comments {
