@@ -27,4 +27,12 @@
       margin-bottom: 0;
     }
   }
+
+}
+
+.chatroom-modal{
+  z-index: -1;
+  &.show{
+    z-index: 1000 !important;
+  }
 }
