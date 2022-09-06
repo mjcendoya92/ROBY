@@ -51,7 +51,7 @@
 .profile-names-container{
   height: 150px;
   width: 100%;
-  margin: 60px;
+  // margin: 60px;
   text-align: end;
 }
 
@@ -79,8 +79,7 @@
 }
 
 .profile-activities-container {
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 10px;
   }
 
 .friends-container h2 {
@@ -113,7 +112,7 @@ padding: 10px;
   display: flex;
   flex-direction: column;
   width: 200px;
-  height: 250px;
+  height: 230px;
   box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
   margin-right: 10px;
   padding: 10px;
@@ -122,16 +121,18 @@ padding: 10px;
   text-align: center;
 }
 
-.img-card-profile{
+.img-card-profile {
   margin-bottom: 15px;
+  height: 150px;
+  width: 150px;
 }
 
 .activity-profile-titles {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .dots {
   color: rgb(178, 178, 178);
   text-align: center;
-  margin-top: -40px;
+  margin-top: -15px;
 }
