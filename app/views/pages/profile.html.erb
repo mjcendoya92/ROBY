@@ -26,7 +26,7 @@
       <h3 class="profile-dog-name"><%= dog.name %></h3>
     <% end %>
   </div>
-  
+
   <div class = "profile-btns-container">
     <%= link_to "Edit Profile", "", class: "btn btn-primary btn-sm profile-buttons" %>
     <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm profile-buttons" %>
@@ -63,21 +63,6 @@
   <%= link_to "Create New Activity", new_activity_path, class: "btn btn-primary btn-sm profile-buttons" %>
 
   <div>
-    <h2 class = "activity-profile-titles"><strong> My activities:</strong></h2>
-    <div class = "activities-created-container">
-          <% @user_booking.each do |booking|%>
-          <div class= "profile-activities-cards">
-            <% if booking.activity.photo.attached? %>
-              <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
-              <h3><strong><%= booking.activity.name %></strong></h3>
-              <p><%= booking.activity.start_date.strftime("%b %d") %></p>
-            <% end %>
-          </div>
-          <% end %>
-    </div>
-    <h1 class = "dots">• • •</h1>
-  </div>
-
   <div>
     <h2 class = "activity-profile-titles"><strong>Attending activities:</strong></h2>
     <div class = "profile-activities-container">
@@ -90,6 +75,21 @@
           <% end %>
         </div>
       <% end %>
+    </div>
+    <h1 class = "dots">• • •</h1>
+  </div>
+
+    <h2 class = "activity-profile-titles"><strong> My activities:</strong></h2>
+    <div class = "activities-created-container">
+          <% @user_booking.each do |booking|%>
+          <div class= "profile-activities-cards">
+            <% if booking.activity.photo.attached? %>
+              <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
+              <h3><strong><%= booking.activity.name %></strong></h3>
+              <p><%= booking.activity.start_date.strftime("%b %d") %></p>
+            <% end %>
+          </div>
+          <% end %>
     </div>
     <h1 class = "dots">• • •</h1>
   </div>

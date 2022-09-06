@@ -50,6 +50,7 @@
     <%= simple_form_for(@dog) do |f| %>
       <%= f.input :extra_photos, as: :file, input_html: { multiple: true }, placeholder: "Add more photos of your dog"  %>
       <%= f.submit %>
+
     <% end %>
   <% end %>
 
