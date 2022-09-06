@@ -51,11 +51,11 @@
   <h2 class = "categories-cards-title"><strong>Top Categories for you:</strong></h2>
   <div class = "categories-container">
     <% Category.first(4).each do |category|%>
-      <%= link_to activities_path(params[category: category]) do %>
+      <%= link_to activities_path(category:category.id) do %>
         <div class = "categories-card-homepage">
           <%= cl_image_tag category.photo.key, class:"category-card-image"%>
           <div class="category-card-title">
-            <h3><strong><%= category.name %> </strong></h3>
+            <h3><strong><%= category.name %></strong></h3>
           </div>
         </div>
       <% end %>

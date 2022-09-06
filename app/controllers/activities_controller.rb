@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
       @activities = @activities.joins(:activity_categories).where(activity_categories: { category_id: params[:category]})
     end
 
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
