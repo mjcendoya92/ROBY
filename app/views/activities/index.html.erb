@@ -32,12 +32,29 @@
           </div>
           <div class="index-card-container-right">
             <div class="index-card-info">
-              <h3><strong><%= activity.name %></strong></h3>
-              <div class="date-and-location-index">
-                <p><%= activity.start_date.strftime("%b %d") %></p>
-                <p><%= activity.location %>📍</p>
+              <h3 class="index-card-title"><strong><%= activity.name %></strong></h3>
+              <div class="activity-index-users-container">
+                <% activity.bookings.each do |booked| %>
+                  <div class= activity-index-attendees-avatar-box>
+                    <% if booked.user.photo.attached? %>
+                      <%= cl_image_tag booked.user.photo.key, class:"rounded-circle image-avatar-index" %>
+                    <% else %>
+                      <img class="rounded-circle image-avatar-index" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="">
+                    <% end %>
+                  </div>
+                <% end %>
               </div>
-              <p><strong>$<%= activity.price %></strong></p>
+              <div class="date-and-location-index">
+                <p><%= activity.location %>📍</p>
+                <p><%= activity.start_date.strftime("%d/%m/%y") %></p>
+              </div>
+              <div class="activity-card-price">
+                <% if activity.price == 0 %>
+                  Free
+                <% else %>
+                  $<%= activity.price %>
+                <% end %>
+              </div>
               <%# <br>
               <%= activity.category %>
             </div>
