@@ -1,6 +1,10 @@
 
 <div class="show-container">
-  <div class="background-show-dog"></div>
+  <div class="background-show-dog">
+    <% if @dog.background_photo.attached? %>
+      <%= cl_image_tag @dog.background_photo.key, class:"background-show-dog"%>
+    <% end %>
+  </div>
   <div class="show-container-dog-header">
     <% if @dog.photo.attached? %>
       <%= cl_image_tag @dog.photo.key, class:"dog-avatar"%>
@@ -36,7 +40,7 @@
   </div>
 
   <%= simple_form_for(@dog) do |f| %>
-    <%= f.input :extra_photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :extra_photos, as: :file, input_html: { multiple: true }, placeholder: "Add more photos os your dog" %>
     <%= f.submit %>
   <% end %>
 
