@@ -1,18 +1,18 @@
 <div class = "profile-container">
   <div class="profile-banner-container">
-    <% if current_user.banner_photo.attached? %>
-      <%= cl_image_tag current_user.banner_photo.key, class: "profile-banner-img" %>
+    <% if @user.banner_photo.attached? %>
+      <%= cl_image_tag @user.banner_photo.key, class: "profile-banner-img" %>
     <% end %>
   </div>
 
     <div class="profile-imgs-names-container">
       <div class="profile-img-container">
         <%# profile user img %>
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class:"profile-user-img" %>
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class:"profile-user-img" %>
         <% end %>
         <%# profile user DOG img %>
-        <% current_user.dogs.each do |dog| %>
+        <% @user.dogs.each do |dog| %>
           <% if dog.photo.attached? %>
               <%= link_to dog_path(dog) do %>
                 <%= cl_image_tag dog.photo.key, crop: :fill, class: "profile-dog-img" %>
@@ -22,29 +22,25 @@
       </div>
 
       <div class ="profile-names-container">
-        <h1 class="profile-user-name"><%= current_user.name %></h1>
-        <% current_user.dogs.each do |dog| %>
+        <h1 class="profile-user-name"><%= @user.name %></h1>
+        <% @user.dogs.each do |dog| %>
           <h3 class="profile-dog-name"><%= dog.name %></h3>
         <% end %>
       </div>
     </div>
   </div>
-      <div class = "profile-btns-container">
-        <%= link_to "Edit Profile", "", class: "btn btn-primary btn-sm profile-buttons" %>
-        <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm profile-buttons" %>
-      </div>
 
     <div class = "info-cards-container">
       <div class ="index-cards">
         <div class = "user-bio-card">
           <h2><strong>Bio:</strong></h2>
-          <p><%= current_user.bio %></p>
+          <p><%= @user.bio %></p>
         </div>
       </div>
       <div class ="index-cards">
         <div class = "user-location-card">
           <h2><strong>Location:</strong></h2>
-          <p><%= current_user.location %></p>
+          <p><%= @user.location %></p>
         </div>
       </div>
     </div>
@@ -60,19 +56,4 @@
       </div>
     </div>
 
-    <%= link_to "Create New Activity", new_activity_path, class: "btn btn-primary btn-sm" %>
-
-    <h2><strong>Attending activities:</strong></h2>
-    <div class = "profile-activities-container">
-          <% @user_booking.each do |booking|%>
-          <div class= "profile-activities-cards">
-            <% if booking.activity.photo.attached? %>
-              <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
-              <h3><strong><%= booking.activity.name %></strong></h3>
-              <p><%= booking.activity.start_date.strftime("%b %d") %></p>
-            <% end %>
-          </div>
-          <% end %>
-      </div>
-    <h1 class = "dots">• • •</h1>
 </div>
