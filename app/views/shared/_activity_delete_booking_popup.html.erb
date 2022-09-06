@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary bg-danger activity-show-btn" data-bs-toggle="modal" data-bs-target="#deleteActivity"><strong>Delete activity</strong>
+<button type="button" class="btn btn-primary bg-danger activity-show-btn" data-bs-toggle="modal" data-bs-target="#deleteActivity"><strong>Delete booking</strong>
 </button>
 
 <!-- Modal -->
@@ -12,7 +12,7 @@
       </div>
 
       <div class="modal-footer">
-        <%= link_to activity_path(@activity), data: { turbo: true, "turbo-method": :delete } do %>
+        <%= link_to booking_path(@user_booking), data: { turbo: true, "turbo-method": :delete } do %>
           <button type="button" class="btn btn-primary bg-danger">Delete</button>
         <% end %>
       </div>
