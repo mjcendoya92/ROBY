@@ -1,22 +1,21 @@
 <div class = "profile-container">
-  <div class="profile-banner-container">
-    <% if current_user.banner_photo.attached? %>
-      <%= cl_image_tag current_user.banner_photo.key, class: "profile-banner-img" %>
-    <% end %>
-  </div>
+<div class="profile-banner-container">
+  <% if current_user.banner_photo.attached? %>
+    <%= cl_image_tag current_user.banner_photo.key, class: "profile-banner-img" %>
+  <% end %>
+</div>
 
-    <div class="profile-imgs-names-container">
-      <div class="profile-img-container">
-        <%# profile user img %>
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class:"profile-user-img" %>
-        <% end %>
-        <%# profile user DOG img %>
-        <% current_user.dogs.each do |dog| %>
-          <% if dog.photo.attached? %>
-              <%= link_to dog_path(dog) do %>
-                <%= cl_image_tag dog.photo.key, crop: :fill, class: "profile-dog-img" %>
-            <% end %>
+  <div class="profile-imgs-names-container">
+    <div class="profile-img-container">
+      <%# profile user img %>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class:"profile-user-img" %>
+      <% end %>
+      <%# profile user DOG img %>
+      <% current_user.dogs.each do |dog| %>
+        <% if dog.photo.attached? %>
+            <%= link_to dog_path(dog) do %>
+              <%= cl_image_tag dog.photo.key, crop: :fill, class: "profile-dog-img" %>
           <% end %>
         <% end %>
       <% end %>
@@ -36,83 +35,44 @@
     </div>
 
   <div class = "info-cards-container">
-    <div class ="index-cards">
+    <div class ="index-cards profile-cards">
       <div class = "user-bio-card">
         <h2><strong>Bio:</strong></h2>
         <h3><%= current_user.bio %></h3>
       </div>
     </div>
-    <div class ="index-cards">
+    <div class ="index-cards profile-cards">
       <div class = "user-location-card">
         <h2><strong>Location:</strong></h2>
         <h3><%= current_user.location %></h3>
-      </div>
-
-      <div class ="profile-names-container">
-        <h1 class="profile-user-name"><%= current_user.name %></h1>
-        <% current_user.dogs.each do |dog| %>
-          <h3 class="profile-dog-name"><%= dog.name %></h3>
-        <% end %>
-
       </div>
     </div>
   </div>
-      <div class = "profile-btns-container">
-        <%= link_to "Edit Profile", "", class: "btn btn-primary btn-sm profile-buttons" %>
-        <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm profile-buttons" %>
-      </div>
 
-  <div class = "info-cards-container">
-    <div class ="index-cards">
-      <div class = "user-bio-card">
-        <h2><strong>Bio:</strong></h2>
-        <h3><%= current_user.bio %></h3>
-      </div>
+<div class = "friends-container">
+  <h2><strong>Friends:</strong></h2>
+  <div class = "friends-container-imgs">
+    <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
+    <img class ="friends-pic" src = "https://res.cloudinary.com/dbksvt70i/image/upload/v1662368560/71086635_10156517273123513_1258792263769653248_n_qe31uw.jpg" />
+    <img class ="friends-pic" src = "https://res.cloudinary.com/dlanz/image/upload/v1662380770/production/ud7lj5pisqlcbjhnru1t.jpg" />
+    <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
+    <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
     </div>
-    <div class ="index-cards">
-      <div class = "user-location-card">
-        <h2><strong>Location:</strong></h2>
-        <h3><%= current_user.location %></h3>
+  </div>
 
-<div class = "info-cards-container">
-      <div class ="index-cards">
-        <div class = "user-bio-card">
-          <h2><strong>Bio:</strong></h2>
-          <p><%= current_user.bio %></p>
-        </div>
-      </div>
-      <div class ="index-cards">
-        <div class = "user-location-card">
-          <h2><strong>Location:</strong></h2>
-          <p><%= current_user.location %></p>
-        </div>
-      </div>
-    </div>
+  <%= link_to "Create New Activity", new_activity_path, class: "btn btn-primary btn-sm" %>
 
-  <div class = "friends-container">
-    <h2><strong>Friends:</strong></h2>
-    <div class = "friends-container-imgs">
-      <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/dbksvt70i/image/upload/v1662368560/71086635_10156517273123513_1258792263769653248_n_qe31uw.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/dlanz/image/upload/v1662380770/production/ud7lj5pisqlcbjhnru1t.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
-      </div>
-    </div>
-
-    <%= link_to "Create New Activity", new_activity_path, class: "btn btn-primary btn-sm" %>
-
-    <h2><strong>Attending activities:</strong></h2>
-    <div class = "profile-activities-container">
-          <% @user_booking.each do |booking|%>
-          <div class= "profile-activities-cards">
-            <% if booking.activity.photo.attached? %>
-              <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
-              <h3><strong><%= booking.activity.name %></strong></h3>
-              <p><%= booking.activity.start_date.strftime("%b %d") %></p>
-            <% end %>
-          </div>
+  <h2><strong>Attending activities:</strong></h2>
+  <div class = "profile-activities-container">
+        <% @user_booking.each do |booking|%>
+        <div class= "profile-activities-cards">
+          <% if booking.activity.photo.attached? %>
+            <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
+            <h3><strong><%= booking.activity.name %></strong></h3>
+            <p><%= booking.activity.start_date.strftime("%b %d") %></p>
           <% end %>
-      </div>
-    <h1 class = "dots">• • •</h1>
-</div>
+        </div>
+        <% end %>
+    </div>
+  <h1 class = "dots">• • •</h1>
+  </div>
