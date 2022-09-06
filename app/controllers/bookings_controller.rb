@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:number_people, :activity_id)
+    params.require(:booking).permit(:number_people, :number_dogs, :activity_id)
   end
 
   def set_activity

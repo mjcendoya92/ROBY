@@ -44,6 +44,12 @@
   </div>
 
 
+  <% if @dog.user.id == current_user.id %>
+      <%= simple_form_for(@dog) do |f| %>
+        <%= f.input :extra_photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit %>
+      <% end %>
+
   <h2>Album:</h2>
 
   <% if @dog.user.id == current_user.id %>
