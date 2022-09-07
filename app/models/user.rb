@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :sent_follows, class_name: :Follow, foreign_key: :follower_id
+  has_many :received_follows, class_name: :Follow, foreign_key: :followee_id
+  has_many :that_they_follow, through: :sent_follows, source: :followee
+  has_many :that_follow_them, through: :received_follows, source: :follower
 
   validates :name, presence: true, length: { minimum: 3 }
   validates :location, presence: true
