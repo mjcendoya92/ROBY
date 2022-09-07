@@ -191,18 +191,6 @@ golfo = Dog.new({ name: "Golfo",
   carlota.save
   puts carlota.name
 
-  chloe = Dog.new({ name: "Chloe",
-  breed: "mutt",
-  description: "She is a shelter rescue dog who is still getting used to being around
-  other people and dogs. She is not mean, but also not friendly. Please be patient with her.",
-  user_id: grace.id,
-  age: 4,
-  sex: "female"
-  })
-
-  chloe.save
-  puts chloe.name
-
   chata = Dog.new({ name: "Chata",
     breed: "Beagle",
     description: "She is a puppy who is very energetic, but has not been around other dogs
