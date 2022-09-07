@@ -28,7 +28,7 @@
   </div>
 
   <div class = "profile-btns-container">
-    <%= link_to "Edit Profile", "", class: "btn btn-primary btn-sm profile-buttons" %>
+    <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-primary btn-sm profile-buttons" %>
     <%= link_to "Add Dog", new_dog_path, class: "btn btn-primary btn-sm profile-buttons" %>
   </div>
 
@@ -81,13 +81,15 @@
 
     <h2 class = "activity-profile-titles"><strong> My activities:</strong></h2>
     <div class = "activities-created-container">
-          <% @user_booking.each do |booking|%>
+          <% @user_activities.each do |activity|%>
           <div class= "profile-activities-cards">
-            <% if booking.activity.photo.attached? %>
-              <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
-              <h3><strong><%= booking.activity.name %></strong></h3>
-              <p><%= booking.activity.start_date.strftime("%b %d") %></p>
+            <% if activity.photo.attached? %>
+              <%= cl_image_tag activity.photo.key, class:"img-card-profile"%>
+            <% else %>
+            <img class ="img-card-profile" src="https://img.freepik.com/free-photo/side-view-owner-walking-with-dog_23-2149457838.jpg?w=2000">
             <% end %>
+              <h3><strong><%= activity.name %></strong></h3>
+              <p><%= activity.start_date.strftime("%b %d") %></p>
           </div>
           <% end %>
     </div>
