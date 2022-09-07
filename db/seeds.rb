@@ -297,7 +297,6 @@ activity.photo.attach(io: activity_image_url, filename: "agility.png", content_t
 activity.save
 puts "second activity"
 
-
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
 activity = Activity.create!({ name: "Coffees and Canines",
   category: Category.all.sample.name,
@@ -317,10 +316,9 @@ activity.photo.attach(io: activity_image_url, filename: "coffees.png", content_t
 activity.save
 puts "third activity"
 
-
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561224/roby/dogdrink_szgxiv.jpg")
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
-  category: Category.all.sample.name,
+  categories: [name: "Walk"],
   location: "Antonio López Street, Madrid",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
