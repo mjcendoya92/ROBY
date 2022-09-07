@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:edit, :update, :destroy]
   resources :dogs, only: [:show, :create, :new, :edit, :update]
-  resources :users, only: [:show]
-
+  resources :users, only: [:show] do
+    resources :follows, only: [:create]
+  end
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
