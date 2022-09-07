@@ -4,6 +4,10 @@
 
 .booking-popup-titles{
   font-weight: 900;
+  input {
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+  }
 }
 
 .booking-btn{
@@ -21,14 +25,19 @@
 .container-btn-form-popup{
   margin-top: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr ;
   grid-template-rows: 130px 60px;
   justify-items: center;
   gap: 10px
 }
 
 .btns-booking{
-  // width: 90%;
+  width: 100%;
   border-radius: 10px;
   margin: 10px;
+}
+
+.x-btn{
+  width: 40px;
+  margin-left: 86%;
 }
