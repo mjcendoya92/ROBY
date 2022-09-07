@@ -109,13 +109,14 @@ display: flex;
 overflow-x: scroll;
 text-overflow: ellipsis;
 padding: 10px;
+margin-bottom: 15px;
 }
 
 .profile-activities-cards {
   display: flex;
   flex-direction: column;
   width: 200px;
-  height: 230px;
+  height: 250px;
   box-shadow: rgba(99, 99, 99, 0.4) 0px 2px 8px 0px;
   margin-right: 10px;
   border-radius: 4px;
