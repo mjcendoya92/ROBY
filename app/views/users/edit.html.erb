@@ -1,0 +1,9 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :bio %>
+  <%= f.input :location %>
+  <%= f.input :photo, as: :file  %>
+  <%= f.input :banner_photo, as: :file  %>
+  <%= f.submit %>
+<% end %>
+

@@ -18,6 +18,7 @@ class PagesController < ApplicationController
     @dogs = current_user.dogs
     #@activity = Activity.find(params[:id])
     @user_booking = Booking.where(user: current_user)
+    @user_activities = Activity.where(user: current_user)
   end
 
   def landing
