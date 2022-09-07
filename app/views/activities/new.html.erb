@@ -1,21 +1,23 @@
-<div class="title">
-  <h3><strong>Create a new activity</strong></h3>
+<div class="create-activity-container">
+  <div class="title">
+    <h3><strong>Create a new activity</strong></h3>
+  </div>
+  <%= simple_form_for(@activity) do |f| %>
+    <%= f.input :name, label: "Name of the activity" %>
+    <%= f.input :description, label: "Describe your activity" %>
+    <%= f.input :location,
+      input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"}, label: "Enter location",
+      wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+    <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}, label: "Date" %>
+    <%# <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.input :dog_limit, label: "Maximun number of dogs allowed" %>
+    <%= f.input :people_limit, label: "Maximun number of people allowed" %>
+    <%= f.input :price, placeholder: "€" %>
+    <%= f.input :photo, as: :file, label: "Select a photo for your activity" %>
+    <%= f.association :categories, as: :check_boxes, label: "Select a category" %>
 </div>
-<%= simple_form_for(@activity) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :location,
-    input_html: {data: {location_autocomplete_target: "location"}, class: "d-none"},
-    wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
-  <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
-  <%# <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %> 
-  <%= f.input :start_time %>
-  <%= f.input :end_time %>
-  <%= f.input :dog_limit %>
-  <%= f.input :people_limit %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.association :categories, as: :check_boxes %>
 
   <div class="d-grid gap-2 show-dog-btn">
     <%= f.submit class:"btn btn-primary btn-lg" %>

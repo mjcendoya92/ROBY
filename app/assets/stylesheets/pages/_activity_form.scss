@@ -2,3 +2,32 @@
   margin-top: 40px;
   margin-bottom: 15px;
 }
+
+.create-activity-container{
+  font-family: $headers-font;
+  margin: 20px;
+}
+
+.suggestions{
+  margin: 30px;
+  list-style: none;
+  li {
+    margin-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+}
+
+.mapboxgl-ctrl-geocoder{
+  svg {
+  display: none;
+  }
+  input {
+    width: 100%;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+.mapboxgl-ctrl-geocoder--pin-right{
+  display: none;
+}
