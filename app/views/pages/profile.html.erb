@@ -67,32 +67,34 @@
     <h2 class = "activity-profile-titles"><strong>Attending activities:</strong></h2>
     <div class = "profile-activities-container">
       <% @user_booking.each do |booking|%>
-        <div class= "profile-activities-cards">
-          <% if booking.activity.photo.attached? %>
-            <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
-            <h3><strong><%= booking.activity.name %></strong></h3>
-            <p><%= booking.activity.start_date.strftime("%b %d") %></p>
-          <% end %>
-        </div>
+        <%= link_to activity_path(booking.activity_id) do %>
+          <div class= "profile-activities-cards">
+            <% if booking.activity.photo.attached? %>
+              <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
+              <h3><strong><%= booking.activity.name %></strong></h3>
+              <p><%= booking.activity.start_date.strftime("%b %d") %></p>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
-    <h1 class = "dots">• • •</h1>
   </div>
 
     <h2 class = "activity-profile-titles"><strong> My activities:</strong></h2>
     <div class = "activities-created-container">
           <% @user_activities.each do |activity|%>
-          <div class= "profile-activities-cards">
-            <% if activity.photo.attached? %>
-              <%= cl_image_tag activity.photo.key, class:"img-card-profile"%>
-            <% else %>
-            <img class ="img-card-profile" src="https://img.freepik.com/free-photo/side-view-owner-walking-with-dog_23-2149457838.jpg?w=2000">
+            <%= link_to activity_path(activity) do %>
+              <div class= "profile-activities-cards">
+                <% if activity.photo.attached? %>
+                  <%= cl_image_tag activity.photo.key, class:"img-card-profile"%>
+                <% else %>
+                <img class ="img-card-profile" src="https://img.freepik.com/free-photo/side-view-owner-walking-with-dog_23-2149457838.jpg?w=2000">
+                <% end %>
+                  <h3><strong><%= activity.name %></strong></h3>
+                  <p><%= activity.start_date.strftime("%b %d") %></p>
+              </div>
             <% end %>
-              <h3><strong><%= activity.name %></strong></h3>
-              <p><%= activity.start_date.strftime("%b %d") %></p>
-          </div>
-          <% end %>
+         <% end %>
     </div>
-    <h1 class = "dots">• • •</h1>
   </div>
 </div>
