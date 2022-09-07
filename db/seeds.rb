@@ -238,10 +238,30 @@ golfo = Dog.new({ name: "Golfo",
       benji.save
       puts benji.name
 
-      Category.create!([{ name: "Walk" }])
-      Category.create!([{ name: "Social" }])
-      Category.create!([{ name: "Training" }])
-      Category.create!([{ name: "Small dogs" }])
+category_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1661346560/cld-sample.jpg")
+category = Category.create!({ name: "Walk" })
+category.photo.attach(io: category_image_url, filename: "cld-sample.png", content_type: "image/png")
+category.save
+puts "walk category with image created"
+
+category_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662477636/dogs_social_nbnaag.jpg")
+category = Category.create!({ name: "Social" })
+category.photo.attach(io: category_image_url, filename: "dogs_social_nbnaag.png", content_type: "image/png")
+category.save
+puts "social category with image created"
+
+category_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662477638/dog_training_d28rwh.jpg")
+category = Category.create!({ name: "Training" })
+category.photo.attach(io: category_image_url, filename: "dog_training_d28rwh.png", content_type: "image/png")
+category.save
+puts "training category with image created"
+
+category_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662477629/small_dogs_de05sg.jpg")
+category = Category.create!({ name: "Small dogs" })
+category.photo.attach(io: category_image_url, filename: "small_dogs_de05sg.png", content_type: "image/png")
+category.save
+puts "small dogs category with image created"
+
       Category.create!([{ name: "Medium dogs" }])
       Category.create!([{ name: "Big Dogs" }])
       Category.create!([{ name: "Puppies" }])
