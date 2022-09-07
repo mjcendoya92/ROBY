@@ -1,2 +1,4 @@
-<h3><strong><%= activity.name %></strong></h3>
-<p>📍<%= activity.location %></p>
+<%= link_to activity_path(activity) do %>
+  <h3><strong><%= activity.name %></strong></h3>
+  <p>📍<%= activity.location %></p>
+<% end %>
