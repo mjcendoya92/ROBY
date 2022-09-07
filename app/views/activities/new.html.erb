@@ -2,7 +2,7 @@
   <div class="title">
     <h3><strong>Create a new activity</strong></h3>
   </div>
-  <%= simple_form_for(@activity) do |f| %>
+  <%= simple_form_for(@activity, data: { turbo: false }) do |f| %>
     <%= f.input :name, label: "Name of the activity" %>
     <%= f.input :description, label: "Describe your activity" %>
     <%= f.input :location,
@@ -17,7 +17,7 @@
     <%= f.input :price, placeholder: "€" %>
     <%= f.input :photo, as: :file, label: "Select a photo for your activity" %>
     <%= f.association :categories, as: :check_boxes, label: "Select a category" %>
-</div>
+  </div>
 
   <div class="d-grid gap-2 show-dog-btn">
     <%= f.submit class:"btn btn-primary btn-lg" %>
