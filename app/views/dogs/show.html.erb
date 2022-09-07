@@ -42,18 +42,15 @@
       <%= link_to "Visit owner profile", user_path(@dog.user), class:"btn btn-primary btn-lg" %>
     <% end %>
   </div>
+  <br>
 
-
-  <h2>Album:</h2>
 
   <% if @dog.user.id == current_user.id %>
     <%= simple_form_for(@dog) do |f| %>
-      <%= f.input :extra_photos, as: :file, input_html: { multiple: true }, placeholder: "Add more photos of your dog"  %>
-      <%= f.submit %>
-
+      <%= f.input :extra_photos, as: :file, input_html: { multiple: true }, label: "Add more photos of your dog"  %>
+      <%= f.submit class:"btn btn-primary btn-sm", value: "Upload photos" %>
     <% end %>
   <% end %>
-
 
   <div class="photo-dog-card-doble">
     <% @dog.extra_photos.each do |extra_photo| %>
@@ -62,6 +59,5 @@
       </div>
     <% end %>
   </div>
-
 
 </div>
