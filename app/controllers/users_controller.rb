@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @dogs = @user.dogs
+    @follow = Follow.find_by(follower_id: current_user, followee_id: @user)
   end
 
   def edit
