@@ -7,6 +7,8 @@
 <div class="modal fade booking-popup" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
+      <button type="button" class="btn btn-primary btns-booking x-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+
       <div class="modal-header">
         <h2 class="modal-title booking-popup-titles" id="bookingModalLabel">Do you want to join this activity?</h2>
       </div>
@@ -22,9 +24,7 @@
             <h3 class="booking-popup-titles"><%= f.input :number_dogs, label: "How many dogs are coming?" %> </h3>
             <div class="container-btn-form-popup">
               <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662369521/descarga_15_otn97c.jpg" alt="Happy dog" class="dog-image-popup">
-              <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662374827/images_17_a91gme.jpg" alt="Confused dog" class="dog-image-popup">
               <%= f.submit class: "btn btn-primary booking-btn btns-booking", data: {bs_dismiss: "modal"}%>
-              <button type="button" class="btn btn-primary btns-booking " data-bs-dismiss="modal" aria-label="Close">Maybe later</button>
             </div>
           <% end %>
         </div>

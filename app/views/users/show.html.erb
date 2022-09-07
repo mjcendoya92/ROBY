@@ -21,7 +21,7 @@
         <% end %>
       </div>
 
-      <div class ="profile-names-container">
+      <div class ="profile-names-container profile-names-user">
         <h1 class="profile-user-name"><%= @user.name %></h1>
         <% @user.dogs.each do |dog| %>
           <h3 class="profile-dog-name"><%= dog.name %></h3>
@@ -31,16 +31,18 @@
   </div>
 
     <div class = "info-cards-container">
-      <div class ="index-cards">
+      <div class ="index-cards profile-cards">
         <div class = "user-bio-card">
           <h2><strong>Bio:</strong></h2>
-          <p><%= @user.bio %></p>
+          <br>
+          <h3><%= @user.bio %></h3>
         </div>
       </div>
-      <div class ="index-cards">
+      <div class ="index-cards profile-cards">
         <div class = "user-location-card">
           <h2><strong>Location:</strong></h2>
-          <p><%= @user.location %></p>
+          <br>
+          <h3><%= @user.location %></h3>
         </div>
       </div>
     </div>
