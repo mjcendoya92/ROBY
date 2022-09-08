@@ -318,7 +318,7 @@ puts "third activity"
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561224/roby/dogdrink_szgxiv.jpg")
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
-  categories: [name: "Walk"],
+  activity_categories: [name: "Walk"],
   location: "Antonio López Street, Madrid",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
