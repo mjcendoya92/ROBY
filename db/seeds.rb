@@ -12,31 +12,34 @@ gonzalo = User.new({ name: "Gonzalo",
   password: "123456"
   })
 
-  gonzalo.save
-  puts gonzalo.email
+gonzalo.save
+puts gonzalo.email
 
-  daniel = User.new({ name: "Daniel",
-    location: "Concepcion",
-    bio: "I just moved to Madrid and I am hoping to find social events to
+user_image_url = URI.open("https://res.cloudinary.com/dlanz/image/upload/v1662380770/production/ud7lj5pisqlcbjhnru1t.jpg")
+daniel = User.new({ name: "Daniel",
+  location: "Concepcion",
+  bio: "I just moved to Madrid and I am hoping to find social events to
     attend with my dog",
   email: "dani@roby.com",
   password: "123456"
   })
+daniel.photo.attach(io: user_image_url, filename: "ud7lj5pisqlcbjhnru1t.png", content_type: "image/png")
+daniel.save
+puts daniel.email
 
-  daniel.save
-  puts daniel.email
-
-  gloria = User.new({ name: "Gloria",
-    location: "Guzman el Bueno",
-    bio: "I just moved to Madrid with my search and rescue dog and I am looking for all
+user_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662368560/71086635_10156517273123513_1258792263769653248_n_qe31uw.jpg")
+gloria = User.new({ name: "Gloria",
+  location: "Guzman el Bueno",
+  bio: "I just moved to Madrid with my search and rescue dog and I am looking for all
   types of activities with my dog and to meet new people",
   email: "gloria@roby.com",
   password: "123456"
   })
-
+gloria.photo.attach(io: user_image_url, filename: "71086635_10156517273123513_1258792263769653248_n_qe31uw.png", content_type: "image/png")
 gloria.save
 puts gloria.email
 
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg")
 chus = User.new({ name: "Chus",
   location: "Usera",
   bio: "I live with my dog in Usera and we love going on hikes together in the
@@ -44,68 +47,69 @@ chus = User.new({ name: "Chus",
   email: "chus@roby.com",
   password: "123456"
   })
+chus.photo.attach(io: user_image_url, filename: "1636971979752_t6bakf.png", content_type: "image/png")
+chus.save
+puts chus.email
 
-  chus.save
-  puts chus.email
-
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662368591/PME_6068-3_ndd7us.jpg")
 felipe = User.new({ name: "Felipe",
   location: "Cruz del Rayo",
   bio: "I am looking for agility trainers to prepare my dog for an upcoming competition.",
   email: "felipe@roby.com",
   password: "123456"
   })
+felipe.photo.attach(io: user_image_url, filename: "PME_6068-3_ndd7us.png", content_type: "image/png")
+felipe.save
+puts felipe.email
 
-  felipe.save
-  puts felipe.email
-
-  emi = User.new({ name: "Emi",
+emi = User.new({ name: "Emi",
   location: "Sainz de Baranda",
   bio: "Looking for nearby dog owners to join me and my dog on evening walks.",
   email: "Emi@roby.com",
   password: "123456"
   })
 
-  emi.save
-  puts emi.email
+emi.save
+puts emi.email
 
-  grace = User.new({ name: "Grace",
-    location: "Estrecho",
-    bio: "Searching for social activites around the city for my dog and I to attend.",
-    email: "Grace@roby.com",
-    password: "123456",
-    })
+user_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662564950/roby/me_gfl0ox.png")
+grace = User.new({ name: "Grace",
+  location: "Estrecho",
+  bio: "Searching for social activites around the city for my dog and I to attend.",
+  email: "Grace@roby.com",
+  password: "123456",
+  })
+grace.photo.attach(io: user_image_url, filename: "me_gfl0ox.png", content_type: "image/png")
+grace.save
+puts grace.email
 
-    grace.save
-    puts grace.email
-
-    marcos = User.new({ name: "Marcos",
-      location: "Moncloa",
-      bio: "I miss spending time around dogs so I am looking for social events so I can make
+marcos = User.new({ name: "Marcos",
+  location: "Moncloa",
+  bio: "I miss spending time around dogs so I am looking for social events so I can make
   friends and also spend time with dogs.",
   email: "Marcos@roby.com",
   password: "123456"
   })
 
-  marcos.save
-  puts marcos.email
+marcos.save
+puts marcos.email
 
-  juan = User.new({ name: "Juan",
+juan = User.new({ name: "Juan",
   location: "Arguelles",
   bio: "I just got a puppy and I am looking for training events to meet other puppies",
   email: "Juan@roby.com",
   password: "123456"
   })
 
-  juan.save
-  puts juan.email
+juan.save
+puts juan.email
 
-  fanny = User.new({ name: "Fanny",
+fanny = User.new({ name: "Fanny",
   location: "Cuatro Caminos",
   bio: "I don't have a dog but I love being around them,
   so I am looking for social events to make friends with dogs!",
   email: "fanny@roby.com",
   password: "123456"
-
   })
 
 fanny.save
@@ -130,18 +134,18 @@ jager = Dog.new({ name: "Jager",
   sex: "male",
   })
 
-  jager.save
-  puts jager.name
+jager.save
+puts jager.name
 
-  roby = Dog.new({ name: "Roby",
-    breed: "Schnauzer",
-    description: "Very energetic dog who sometimes gets nervous around other dogs.",
-    user_id: daniel.id,
-    age: 5,
-    sex: "male"
-    })
+roby = Dog.new({ name: "Roby",
+  breed: "Schnauzer",
+  description: "Very energetic dog who sometimes gets nervous around other dogs.",
+  user_id: daniel.id,
+  age: 5,
+  sex: "male"
+  })
 
-    roby.save
+roby.save
 puts roby.name
 
 golfo = Dog.new({ name: "Golfo",
@@ -153,78 +157,78 @@ golfo = Dog.new({ name: "Golfo",
   sex: "male"
   })
 
-  golfo.save
-  puts golfo.name
+golfo.save
+puts golfo.name
 
-  jack = Dog.new({ name: "Jack",
-    breed: "Australian Shepherd",
-    description: "Very energetic and loves being outside and hiking.",
-    user_id: chus.id,
-    age: 3,
-    sex: "male"
-    })
+jack = Dog.new({ name: "Jack",
+  breed: "Australian Shepherd",
+  description: "Very energetic and loves being outside and hiking.",
+  user_id: chus.id,
+  age: 3,
+  sex: "male"
+  })
 
-    jack.save
-    puts jack.name
+jack.save
+puts jack.name
 
-    paco = Dog.new({ name: "Paco",
-      breed: "Golden Retriever",
-      description: "Sporty and friendly dog.",
-      user_id: felipe.id,
-      age: 2,
-      sex: "male",
-      })
+paco = Dog.new({ name: "Paco",
+  breed: "Golden Retriever",
+  description: "Sporty and friendly dog.",
+  user_id: felipe.id,
+  age: 2,
+  sex: "male",
+  })
 
-      paco.save
-      puts paco.name
+paco.save
+puts paco.name
 
-      carlota = Dog.new({ name: "Carlota",
-        breed: "Yorkshire Terrier Mix",
-        description: "She is a very small dog who loves food. She sometimes is nervous
-        around new dogs and people but is friendly once she is used to them. She loves going
-        on short walks around the city.",
+carlota = Dog.new({ name: "Carlota",
+  breed: "Yorkshire Terrier Mix",
+  description: "She is a very small dog who loves food. She sometimes is nervous
+  around new dogs and people but is friendly once she is used to them. She loves going
+  on short walks around the city.",
   user_id: emi.id,
   age: 5,
   sex: "female",
   })
 
-  carlota.save
-  puts carlota.name
+carlota.save
+puts carlota.name
 
-  chata = Dog.new({ name: "Chata",
-    breed: "Beagle",
-    description: "She is a puppy who is very energetic, but has not been around other dogs
-    much yet.",
-    user_id: juan.id,
+chata = Dog.new({ name: "Chata",
+  breed: "Beagle",
+  description: "She is a puppy who is very energetic, but has not been around other dogs
+  much yet.",
+  user_id: juan.id,
   age: 0,
   sex: "female"
   })
 
-  chata.save
-  puts chata.name
+chata.save
+puts chata.name
 
-  lola = Dog.new({ name: "Lola",
-    breed: "Poodle",
-    description: "She is an older dog who loves going on walks and attending social events.
-    She is friendly with other dogs but is sometimes scared of dogs who are bigger than her.",
-    user_id: fanny.id,
-    age: 8,
-    sex: "female"
-    })
+lola = Dog.new({ name: "Lola",
+  breed: "Poodle",
+  description: "She is an older dog who loves going on walks and attending social events.
+  She is friendly with other dogs but is sometimes scared of dogs who are bigger than her.",
+  user_id: fanny.id,
+  age: 8,
+  sex: "female"
+  })
 
-    lola.save
-    puts lola.name
+lola.save
+puts lola.name
 
-    benji = Dog.new({ name: "Benji",
-      breed: "Dachsund",
-      description: "Benji is a friendly puppy and loves playing fetch and meeting other dogs.",
-      user_id: maria.id,
-      age: 0,
-      sex: "male"
-      })
+benji = Dog.new({ name: "Benji",
+  breed: "Dachsund",
+  description: "Benji is a friendly puppy and loves playing fetch and meeting other dogs.",
+  user_id: maria.id,
+  age: 0,
+  sex: "male"
+  })
 
-      benji.save
-      puts benji.name
+benji.save
+puts benji.name
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561428/roby/dogwalk_ea9mo3.jpg")
 category = Category.create!({ name: "Walks" })
@@ -293,7 +297,6 @@ activity.photo.attach(io: activity_image_url, filename: "agility.png", content_t
 activity.save
 puts "second activity"
 
-
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
 activity = Activity.create!({ name: "Coffees and Canines",
   category: Category.all.sample.name,
@@ -313,10 +316,9 @@ activity.photo.attach(io: activity_image_url, filename: "coffees.png", content_t
 activity.save
 puts "third activity"
 
-
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561224/roby/dogdrink_szgxiv.jpg")
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
-  category: Category.all.sample.name,
+  activity_categories: [name: "Walk"],
   location: "Antonio López Street, Madrid",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
