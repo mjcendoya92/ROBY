@@ -1,10 +1,19 @@
-<div id="message-<%= message.id %>">
-  <small>
-    <% if message.user.photo.attached? %>
-      <%= cl_image_tag message.user.photo.key, class:"profile-user-img", id:"chat-img" %>
-    <% end %>
-    <strong><%= message.user.name %>---<%= message.user.email %></strong>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
-  <p><%= message.content %></p>
-</div>
+<div id="message-box"<%= message.id %>">
+  <div class="chat-message-container">
+    <div class="chat-picture-container">
+      <div class="picture-container">
+        <% if message.user.photo.attached? %>
+          <%= cl_image_tag message.user.photo.key, class:"profile-user-img", id:"chat-img" %>
+        <% end %>
+      </div>
+      <div>
+        <strong><%= message.user.name %> <br> <%= message.user.email %></strong> <br>
+        <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </div>
+    </div>
+  </div>
+  <div class="message-content">
+    <p>"<%= message.content %>"</p>
+  </div>
+ </div>
+
