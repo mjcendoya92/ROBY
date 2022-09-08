@@ -8,12 +8,12 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="commentModalLabel">Leave your comment here:</h5>
+        <h5 class="modal-title" id="commentModalLabel"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <%= simple_form_for [@activity, @comment] do |f| %>
-          <h3><%= f.input :content, label: " " %> </h3>
+          <h3><%= f.input :content, label: "Add your comment:" %> </h3>
           <%= f.submit class: "btn btn-primary btn-lg", data: {bs_dismiss: "modal"}%>
         <% end %>
       </div>

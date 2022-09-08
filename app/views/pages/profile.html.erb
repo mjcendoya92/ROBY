@@ -77,12 +77,12 @@
               <% if booking.activity.photo.attached? %>
                 <%= cl_image_tag booking.activity.photo.key, class:"img-card-profile"%>
                 <h3><strong><%= booking.activity.name %></strong></h3>
-                <p><%= booking.activity.start_date.strftime("%b %d") %></p>
+                <p><%= booking.activity.start_date.strftime("%d/%b/%y") %></p>
               <% else %>
                 <img class="index-image-cards" src="https://www.helpguide.org/wp-content/uploads/dog-owner-walking-on-trail.jpg" alt="">
                 <h3><strong><%= booking.activity.name %></strong></h3>
                 <br>
-                <p><%= booking.activity.start_date.strftime("%b %d") %></p>
+                <p><%= booking.activity.start_date.strftime("%d/%b/%y") %></p>
               <% end %>
             </div>
           <% end %>

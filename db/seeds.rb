@@ -214,11 +214,11 @@ puts jack.name
 
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662627945/DOGS%20PICTURES/Felipe_dog_1_xmwhe3.jpg")
 puka = Dog.new({ name: "Puka",
-  breed: "Golden Retriever",
-  description: "Sporty and friendly dog.",
+  breed: "Pug",
+  description: "Fat but lovely",
   user_id: felipe.id,
-  age: 2,
-  sex: "male",
+  age: 12,
+  sex: "female",
   })
 puka.photo.attach(io: user_image_url, filename: "Felipe_dog_1_xmwhe3.png", content_type: "image/png")
 puka.save
@@ -347,7 +347,7 @@ activity1.photo.attach(io: activity_image_url, filename: "puppybd.png", content_
 activity1.save
 puts "first activity"
 
-ActivityCategory.create(activity: activity1, category: category1)
+ActivityCategory.create(activity: activity1, category: category2)
 ActivityCategory.create(activity: activity1, category: category4)
 ActivityCategory.create(activity: activity1, category: category7)
 

@@ -58,19 +58,3 @@
 
 <%# ------------------USER FOLLOWS--------------------%>
 
-<div class = "friends-container">
-    <h2><strong>Friends:</strong></h2>
-    <div class = "friends-container-imgs">
-      <% current_user.sent_follows.each do |followee| %>
-      <% user = User.find_by(id:followee.followee_id) %>
-        <% if user.photo.attached? %>
-          <%= link_to user_path(user) do %>
-            <%= cl_image_tag user.photo.key, class:"friends-pic" %>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-
-</div>
