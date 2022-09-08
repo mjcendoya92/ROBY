@@ -269,8 +269,8 @@ activity1 = Activity.create!({ name: "Puppy Birthday",
   end_date: "12/11/2022",
   start_time: "11:00",
   end_time: "15:00",
-  dog_limit: "10",
-  people_limit: "20",
+  dog_limit: 10,
+  people_limit: 20,
   price: 0,
   user: User.all.sample
   })
