@@ -25,7 +25,6 @@
       <% if @activity.bookings.empty? %>
         There are no attendees confirmed yet.
       <% else %>
-
         <div class="activity-show-users-container">
           <% @activity.bookings.each do |booked| %>
             <% if booked.user.id == current_user.id %>
@@ -110,7 +109,6 @@
       <%= render "shared/edit_activity" %>
       <%= render "shared/delete_activity" %>
     <% end %>
-
 
 
     <%# <button class="btn btn-danger activity-show-btn"><%= link_to "Delete activity", home_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
