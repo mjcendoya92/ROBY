@@ -104,12 +104,11 @@
 
 .profile-activities-container, .activities-created-container {
 width: 100%;
-height: 270px;
+height: auto;
 display: flex;
 overflow-x: scroll;
 text-overflow: ellipsis;
 padding: 10px;
-margin-bottom: 15px;
 }
 
 .profile-activities-cards {
@@ -122,6 +121,12 @@ margin-bottom: 15px;
   border-radius: 4px;
   background-color: #fefefe;
   text-align: center;
+
+}
+
+.profile-activities-cards h3 {
+  padding: 8px;
+  margin-top: -10px;
 }
 
 .img-card-profile {
