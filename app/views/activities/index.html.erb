@@ -34,7 +34,7 @@
             <div class="index-card-info">
               <h2 class="index-card-title"><strong><%= activity.name %></strong></h2>
               <div class="index-card-categories-container">
-                <% activity.categories.each do |category| %>
+                <% activity.categories.first(3).each do |category| %>
                   <h3 class="index-card-category-tag"><%= category.name %> </h3>
                 <% end %>
               </div>

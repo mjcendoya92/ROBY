@@ -120,15 +120,19 @@
   display: flex;
   // justify-content: center;
   margin-top: 10px;
+  height: auto;
+  flex-wrap: wrap;
 }
 
 .index-card-category-tag {
   background-color: $yellow;
   border-radius: 20px;
   padding: 5px 10px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
   color: black;
   margin-right: 6px;
   width: auto;
+  height: 20px;
+  margin-bottom: 5px;
 }
