@@ -4,6 +4,7 @@
   justify-content: center;
   flex-direction: column;
   margin-top: 30px;
+
 }
 
 .activity-show-info-container {
@@ -15,9 +16,10 @@
 }
 
 .activity-show-image-banner {
-  height: 270px;
-  width: 390px;
+  height: 250px;
+  width: 100%;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .activity-show-btn {

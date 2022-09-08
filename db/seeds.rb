@@ -269,8 +269,8 @@ activity1 = Activity.create!({ name: "Puppy Birthday",
   end_date: "12/11/2022",
   start_time: "11:00",
   end_time: "15:00",
-  dog_limit: "10",
-  people_limit: "20",
+  dog_limit: 10,
+  people_limit: 20,
   price: 0,
   user: User.all.sample
   })
@@ -319,7 +319,7 @@ puts "third activity"
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561224/roby/dogdrink_szgxiv.jpg")
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
-  location: "Antonio López Street, Madrid",
+  location: "Barbara Ann, Madrid",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
   start_date: "15/10/22",
@@ -526,7 +526,7 @@ activity.save
 puts "14th activity"
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558423/roby/dogrio_y02wbf.jpg")
-activity = Activity.create!({ name: "Madrid Rio",
+activity = Activity.create!({ name: "Walk along Madrid Rio",
   category: "Walk",
   location: "Principe Pio, Madrid",
   description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",

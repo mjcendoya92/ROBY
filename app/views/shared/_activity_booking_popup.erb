@@ -18,13 +18,13 @@
           <p> <%= @activity.start_date.strftime("%b %d") %></p>
           <%# <h3><%= @activity.end_date.strftime("End date: %b %d")  </h3> %>
           <p> <%= @activity.start_time.strftime("%H:%M") %> - <%= @activity.end_time.strftime("%H:%M") %> </p>
-          <p> &#128205; <%= @activity.location %> </p> <br>
+          <p> &#128205; <%= @activity.location %> </p> <br/>
           <%= simple_form_for [@activity, @booking] do |f| %>
             <h3 class="booking-popup-titles"><%= f.input :number_people, label: "How many people are coming?" %> </h3>
             <h3 class="booking-popup-titles"><%= f.input :number_dogs, label: "How many dogs are coming?" %> </h3>
             <div class="container-btn-form-popup">
               <img src="https://res.cloudinary.com/dbksvt70i/image/upload/v1662369521/descarga_15_otn97c.jpg" alt="Happy dog" class="dog-image-popup">
-              <%= f.submit class: "btn btn-primary booking-btn btns-booking", data: {bs_dismiss: "modal"}%>
+              <%= f.submit "I want to go!", class: "btn btn-primary booking-btn btns-booking", data: {bs_dismiss: "modal"} %>
             </div>
           <% end %>
         </div>
