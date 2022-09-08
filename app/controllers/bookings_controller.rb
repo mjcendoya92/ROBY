@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to activities_path(@activity)
+    redirect_to activity_path(@booking.activity_id)
   end
 
   def destroy
