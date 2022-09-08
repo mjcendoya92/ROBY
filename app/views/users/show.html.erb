@@ -48,21 +48,9 @@
     </div>
 <%# ------------------USER FOLLOWS--------------------%>
 <% if !@follow %>
-  <%= button_to "Follow this person", user_follows_path(@user), method: :post %>
+  <%= button_to "Follow", user_follows_path(@user), method: :post %>
 <%else%>
-  <%= "You're following this person!" %>
+  <%= "Following" %>
 <% end %>
-<%# ------------------USER FOLLOWS--------------------%>
-
-  <div class = "friends-container">
-    <h2><strong>Friends:</strong></h2>
-    <div class = "friends-container-imgs">
-      <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/dbksvt70i/image/upload/v1662368560/71086635_10156517273123513_1258792263769653248_n_qe31uw.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/dlanz/image/upload/v1662380770/production/ud7lj5pisqlcbjhnru1t.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
-      <img class ="friends-pic" src = "https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg" />
-      </div>
-    </div>
 
 </div>
