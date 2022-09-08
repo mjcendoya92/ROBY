@@ -121,9 +121,9 @@
       <% else %>
         <% @activity.comments.each do |comment| %>
           <div class="activity-show-comment-card">
-            <h3>"<%= comment.content %>"</h3>
+            <h3><strong><%= comment.user.name %></strong><h3>
             <br>
-            <p>- <%= comment.user.name %><p>
+            <p>"<%= comment.content %>"</p>
           </div>
         <% end %>
       <% end %>
