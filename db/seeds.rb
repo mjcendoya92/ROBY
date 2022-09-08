@@ -231,9 +231,9 @@ benji.save
 puts benji.name
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561428/roby/dogwalk_ea9mo3.jpg")
-category = Category.create!({ name: "Walks" })
-category.photo.attach(io: category_image_url, filename: "cld-sample.png", content_type: "image/png")
-category.save
+category1 = Category.create!({ name: "Walks" })
+category1.photo.attach(io: category_image_url, filename: "cld-sample.png", content_type: "image/png")
+category1.save
 puts "walk category with image created"
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561614/roby/dogsocial_fvcpat.jpg")
@@ -260,7 +260,7 @@ puts "small dogs category with image created"
       puts "Created categories"
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561075/roby/dogbday_mfbxsh.jpg")
-activity = Activity.create!({ name: "Puppy Birthday",
+activity1 = Activity.create!({ name: "Puppy Birthday",
   category: Category.all.sample.name,
   location: "Retiro Park, Madrid",
   description: "Come join Rex while celebrating his 2nd birthday!
@@ -274,10 +274,11 @@ activity = Activity.create!({ name: "Puppy Birthday",
   price: 0,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "puppybd.png", content_type: "image/png")
-activity.save
+activity1.photo.attach(io: activity_image_url, filename: "puppybd.png", content_type: "image/png")
+activity1.save
 puts "first activity"
 
+ActivityCategory.create(activity: activity1, category: category1)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109734/agility_u4j8im.jpg")
 activity = Activity.create!({ name: "Agility Training",
@@ -318,7 +319,6 @@ puts "third activity"
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561224/roby/dogdrink_szgxiv.jpg")
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
-  activity_categories: [name: "Walk"],
   location: "Antonio López Street, Madrid",
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
