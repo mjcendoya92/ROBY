@@ -227,7 +227,7 @@ golfo = Dog.new({ name: "Golfo",
       puts benji.name
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561428/roby/dogwalk_ea9mo3.jpg")
-category = Category.create!({ name: "Walks" })
+category1 = Category.create!({ name: "Walks" })
 category.photo.attach(io: category_image_url, filename: "cld-sample.png", content_type: "image/png")
 category.save
 puts "walk category with image created"
@@ -256,7 +256,7 @@ puts "small dogs category with image created"
       puts "Created categories"
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561075/roby/dogbday_mfbxsh.jpg")
-activity = Activity.create!({ name: "Puppy Birthday",
+activity1 = Activity.create!({ name: "Puppy Birthday",
   category: Category.all.sample.name,
   location: "Retiro Park, Madrid",
   description: "Come join Rex while celebrating his 2nd birthday!
@@ -293,6 +293,7 @@ activity.photo.attach(io: activity_image_url, filename: "agility.png", content_t
 activity.save
 puts "second activity"
 
+ActivityCategory.create(activity: activity1, category: category1)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
 activity = Activity.create!({ name: "Coffees and Canines",
