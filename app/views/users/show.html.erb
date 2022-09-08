@@ -47,14 +47,14 @@
       </div>
     </div>
 
-<%# ------------------USER FOLLOWS--------------------%>
-<% if !@follow %>
+  <%# ------------------USER FOLLOWS--------------------%>
+  <% if !@follow %>
 
-  <%= button_to "Follow this person", user_follows_path(@user), method: :post, class: "profile-buttons follow-button" %>
+    <%= button_to "Follow this person", user_follows_path(@user), method: :post, class: "profile-buttons follow-button" %>
 
-<%else%>
-  <%= "Following" %>
-<% end %>
+  <%else%>
+    <%= "Following" %>
+  <% end %>
 
-<%# ------------------USER FOLLOWS--------------------%>
-
+  <%# ------------------USER FOLLOWS--------------------%>
+</div>
