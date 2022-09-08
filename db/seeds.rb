@@ -5,18 +5,23 @@ Category.destroy_all
 puts "database_clean"
 require "open-uri"
 
+
+#------------------------------USERS----------------------------------#
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662623529/gonzalo_pic_n7mhmc.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662630849/DOGS%20PICTURES/BACKGROUND_PIC_2_raroc7.jpg")
 gonzalo = User.new({ name: "Gonzalo",
   location: "Legazpi",
   bio: "I love exploring the city with my family and dog!",
   email: "gonzalo@roby.com",
   password: "123456"
   })
+gonzalo.banner_photo.attach(io: banner_photo_image_url, filename: "BACKGROUND_PIC_2_raroc7.png", content_type: "image/png")
 gonzalo.photo.attach(io: user_image_url, filename: "gonzalo_pic_n7mhmc.png", content_type: "image/png")
 gonzalo.save
 puts gonzalo.email
 
 user_image_url = URI.open("https://res.cloudinary.com/dlanz/image/upload/v1662380770/production/ud7lj5pisqlcbjhnru1t.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662631310/DOGS%20PICTURES/BACKGROUND_PIC_3_yplsuo.jpg")
 daniel = User.new({ name: "Daniel",
   location: "Concepcion",
   bio: "I just moved to Madrid and I am hoping to find social events to
@@ -24,11 +29,14 @@ daniel = User.new({ name: "Daniel",
   email: "dani@roby.com",
   password: "123456"
   })
+daniel.banner_photo.attach(io: banner_photo_image_url, filename: "BACKGROUND_PIC_3_yplsuo.png", content_type: "image/png")
 daniel.photo.attach(io: user_image_url, filename: "ud7lj5pisqlcbjhnru1t.png", content_type: "image/png")
 daniel.save
 puts daniel.email
 
+
 user_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662368560/71086635_10156517273123513_1258792263769653248_n_qe31uw.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662630593/DOGS%20PICTURES/IMG_0062_ub8uye.jpg")
 gloria = User.new({ name: "Gloria",
   location: "Guzman el Bueno",
   bio: "I just moved to Madrid with my search and rescue dog and I am looking for all
@@ -36,11 +44,13 @@ gloria = User.new({ name: "Gloria",
   email: "gloria@roby.com",
   password: "123456"
   })
+gloria.banner_photo.attach(io: banner_photo_image_url, filename: "IMG_0062_ub8uye.png", content_type: "image/png")
 gloria.photo.attach(io: user_image_url, filename: "71086635_10156517273123513_1258792263769653248_n_qe31uw.png", content_type: "image/png")
 gloria.save
 puts gloria.email
 
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1661521609/1636971979752_t6bakf.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662631310/DOGS%20PICTURES/BACKGROUND_PIC_3_yplsuo.jpg")
 chus = User.new({ name: "Chus",
   location: "Usera",
   bio: "I live with my dog in Usera and we love going on hikes together in the
@@ -48,44 +58,54 @@ chus = User.new({ name: "Chus",
   email: "chus@roby.com",
   password: "123456"
   })
+chus.banner_photo.attach(io: banner_photo_image_url, filename: "BACKGROUND_PIC_3_yplsuo.png", content_type: "image/png")
 chus.photo.attach(io: user_image_url, filename: "1636971979752_t6bakf.png", content_type: "image/png")
 chus.save
 puts chus.email
 
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662368591/PME_6068-3_ndd7us.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662632002/background_pic_7_h1nvno.jpg")
 felipe = User.new({ name: "Felipe",
   location: "Cruz del Rayo",
   bio: "I am looking for agility trainers to prepare my dog for an upcoming competition.",
   email: "felipe@roby.com",
   password: "123456"
   })
+felipe.banner_photo.attach(io: banner_photo_image_url, filename: "background_pic_7_h1nvno.png", content_type: "image/png")
 felipe.photo.attach(io: user_image_url, filename: "PME_6068-3_ndd7us.png", content_type: "image/png")
 felipe.save
 puts felipe.email
 
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662623598/emi_pic_agukpb.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662630849/DOGS%20PICTURES/BACKGROUND_PIC_2_raroc7.jpg")
 emi = User.new({ name: "Emi",
   location: "Sainz de Baranda",
   bio: "Looking for nearby dog owners to join me and my dog on evening walks.",
   email: "Emi@roby.com",
   password: "123456"
   })
+emi.banner_photo.attach(io: banner_photo_image_url, filename: "BACKGROUND_PIC_2_raroc7.png", content_type: "image/png")
 emi.photo.attach(io: user_image_url, filename: "emi_pic_agukpb.png", content_type: "image/png")
 emi.save
 puts emi.email
 
+
 user_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662564950/roby/me_gfl0ox.png")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662631310/DOGS%20PICTURES/BACKGROUND_PIC_3_yplsuo.jpg")
 grace = User.new({ name: "Grace",
   location: "Estrecho",
   bio: "Searching for social activites around the city for my dog and I to attend.",
   email: "Grace@roby.com",
   password: "123456",
   })
+grace.banner_photo.attach(io: banner_photo_image_url, filename: "BACKGROUND_PIC_3_yplsuo.png", content_type: "image/png")
 grace.photo.attach(io: user_image_url, filename: "me_gfl0ox.png", content_type: "image/png")
 grace.save
 puts grace.email
 
+
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662623529/marcos_pic_zsjkv0.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662631726/background_pic_5_edcpgx.jpg")
 marcos = User.new({ name: "Marcos",
   location: "Moncloa",
   bio: "I miss spending time around dogs so I am looking for social events so I can make
@@ -93,10 +113,12 @@ marcos = User.new({ name: "Marcos",
   email: "Marcos@roby.com",
   password: "123456"
   })
+marcos.banner_photo.attach(io: banner_photo_image_url, filename: "background_pic_5_edcpgx.png", content_type: "image/png")
 marcos.photo.attach(io: user_image_url, filename: "me_gfl0ox.png", content_type: "image/png")
 marcos.save
 puts marcos.email
 
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662631287/DOGS%20PICTURES/BACKGROUND_PIC_4_iuhxic.jpg")
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662623529/juan_pic_b3a0xh.jpg")
 juan = User.new({ name: "Juan",
   location: "Arguelles",
@@ -104,11 +126,13 @@ juan = User.new({ name: "Juan",
   email: "Juan@roby.com",
   password: "123456"
   })
+juan.banner_photo.attach(io: banner_photo_image_url, filename: "BACKGROUND_PIC_4_iuhxic.png", content_type: "image/png")
 juan.photo.attach(io: user_image_url, filename: "juan_pic_b3a0xh.png", content_type: "image/png")
 juan.save
 puts juan.email
 
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662623598/fanny_pic_tc2x2d.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662630849/DOGS%20PICTURES/BACKGROUND_PIC_2_raroc7.jpg")
 fanny = User.new({ name: "Fanny",
   location: "Cuatro Caminos",
   bio: "I don't have a dog but I love being around them,
@@ -116,11 +140,13 @@ fanny = User.new({ name: "Fanny",
   email: "fanny@roby.com",
   password: "123456"
   })
+fanny.banner_photo.attach(io: banner_photo_image_url, filename: "BACKGROUND_PIC_2_raroc7.png", content_type: "image/png")
 fanny.photo.attach(io: user_image_url, filename: "fanny_pic_tc2x2d.png", content_type: "image/png")
 fanny.save
 puts fanny.email
 
 user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662623529/maria_pic_by3v1a.jpg")
+banner_photo_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662631960/background_pic_6_c5bkvf.jpg")
 maria = User.new({ name: "Maria",
   location: "Tetuan",
   bio: "I just moved to Madrid with my dog and we love going on walks and going to
@@ -128,10 +154,16 @@ maria = User.new({ name: "Maria",
   email: "maria@roby.com",
   password: "123456"
   })
+maria.banner_photo.attach(io: banner_photo_image_url, filename: "background_pic_6_c5bkvf.png", content_type: "image/png")
 maria.photo.attach(io: user_image_url, filename: "maria_pic_by3v1a.png", content_type: "image/png")
 maria.save
 puts maria.email
 
+#------------------------------USERS----------------------------------#
+
+#------------------------------DOGS----------------------------------#
+
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662628443/DOGS%20PICTURES/Gonzalo_pic_exlqng.png")
 jager = Dog.new({ name: "Jager",
   breed: "Ratonero Bodeguero Andaluz",
   description: "He is a very friendly, social and active dog.",
@@ -139,10 +171,11 @@ jager = Dog.new({ name: "Jager",
   age: 2,
   sex: "male",
   })
-
+jager.photo.attach(io: user_image_url, filename: "Gonzalo_pic_exlqng.png", content_type: "image/png")
 jager.save
 puts jager.name
 
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662628029/DOGS%20PICTURES/Dani_Dog_ut3a6c.jpg")
 roby = Dog.new({ name: "Roby",
   breed: "Schnauzer",
   description: "Very energetic dog who sometimes gets nervous around other dogs.",
@@ -150,10 +183,11 @@ roby = Dog.new({ name: "Roby",
   age: 5,
   sex: "male"
   })
-
+roby.photo.attach(io: user_image_url, filename: "Dani_Dog_ut3a6c.png", content_type: "image/png")
 roby.save
 puts roby.name
 
+user_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662628028/images_37_kdfy4a.jpg")
 golfo = Dog.new({ name: "Golfo",
   breed: "Dalmation",
   description: "Sporty and friendly dog who love hikes and activities. Gets along
@@ -162,10 +196,11 @@ golfo = Dog.new({ name: "Golfo",
   age: 1,
   sex: "male"
   })
-
+golfo.photo.attach(io: user_image_url, filename: "images_37_kdfy4a.png", content_type: "image/png")
 golfo.save
 puts golfo.name
 
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662627737/DOGS%20PICTURES/photo_2022-09-08_10-58-31_md5d2s.jpg")
 jack = Dog.new({ name: "Jack",
   breed: "Australian Shepherd",
   description: "Very energetic and loves being outside and hiking.",
@@ -173,21 +208,23 @@ jack = Dog.new({ name: "Jack",
   age: 3,
   sex: "male"
   })
-
+jack.photo.attach(io: user_image_url, filename: "photo_2022-09-08_10-58-31_md5d2s.png", content_type: "image/png")
 jack.save
 puts jack.name
 
-paco = Dog.new({ name: "Paco",
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662627945/DOGS%20PICTURES/Felipe_dog_1_xmwhe3.jpg")
+puka = Dog.new({ name: "Puka",
   breed: "Golden Retriever",
   description: "Sporty and friendly dog.",
   user_id: felipe.id,
   age: 2,
   sex: "male",
   })
+puka.photo.attach(io: user_image_url, filename: "Felipe_dog_1_xmwhe3.png", content_type: "image/png")
+puka.save
+puts puka.name
 
-paco.save
-puts paco.name
-
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662629765/DOGS%20PICTURES/emi_dog_w42wow.png")
 carlota = Dog.new({ name: "Carlota",
   breed: "Yorkshire Terrier Mix",
   description: "She is a very small dog who loves food. She sometimes is nervous
@@ -197,22 +234,24 @@ carlota = Dog.new({ name: "Carlota",
   age: 5,
   sex: "female",
   })
-
+carlota.photo.attach(io: user_image_url, filename: "emi_dog_w42wow.png", content_type: "image/png")
 carlota.save
 puts carlota.name
 
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662629273/DOGS%20PICTURES/juan_dog_rhcj2c.jpg")
 chata = Dog.new({ name: "Chata",
-  breed: "Beagle",
+  breed: "Yorkshire Terrier",
   description: "She is a puppy who is very energetic, but has not been around other dogs
   much yet.",
   user_id: juan.id,
   age: 0,
   sex: "female"
   })
-
+chata.photo.attach(io: user_image_url, filename: "juan_dog_rhcj2c.png", content_type: "image/png")
 chata.save
 puts chata.name
 
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662629071/DOGS%20PICTURES/fanny_dog_xzpaow.jpg")
 lola = Dog.new({ name: "Lola",
   breed: "Poodle",
   description: "She is an older dog who loves going on walks and attending social events.
@@ -221,20 +260,38 @@ lola = Dog.new({ name: "Lola",
   age: 8,
   sex: "female"
   })
-
+lola.photo.attach(io: user_image_url, filename: "fanny_dog_xzpaow.png", content_type: "image/png")
 lola.save
 puts lola.name
 
+user_image_url = URI.open("https://res.cloudinary.com/mlutterb/image/upload/v1662628499/IMG-20220704-WA0002_nbc44p.jpg")
+guga = Dog.new({ name: "Guga",
+  breed: "Shibu Inu",
+  description: "He is an older dog who loves going on walks and attending social events.
+  She is friendly with other dogs but is sometimes scared of dogs who are bigger than her.",
+  user_id: marcos.id,
+  age: 8,
+  sex: "male"
+  })
+guga.photo.attach(io: user_image_url, filename: "IMG-20220704-WA0002_nbc44p.png", content_type: "image/png")
+guga.save
+puts guga.name
+
+user_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662629782/DOGS%20PICTURES/maria_dog_nw3dfk.jpg")
 benji = Dog.new({ name: "Benji",
-  breed: "Dachsund",
-  description: "Benji is a friendly puppy and loves playing fetch and meeting other dogs.",
+  breed: "Collie",
+  description: "Benji is a friendly dog and loves playing fetch and meeting other dogs.",
   user_id: maria.id,
   age: 0,
   sex: "male"
   })
-
+benji.photo.attach(io: user_image_url, filename: "maria_dog_nw3dfk.png", content_type: "image/png")
 benji.save
 puts benji.name
+
+#------------------------------DOGS----------------------------------#
+
+#------------------------------CATEGORIES----------------------------------#
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561428/roby/dogwalk_ea9mo3.jpg")
 category1 = Category.create!({ name: "Walks" })
@@ -265,6 +322,10 @@ puts "small dogs category with image created"
       Category.create!([{ name: "Puppies" }])
       puts "Created categories"
 
+#------------------------------CATEGORIES----------------------------------#
+
+
+#------------------------------ACTIVITIES----------------------------------#
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561075/roby/dogbday_mfbxsh.jpg")
 activity1 = Activity.create!({ name: "Puppy Birthday",
   category: Category.all.sample.name,
