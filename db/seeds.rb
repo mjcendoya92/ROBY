@@ -294,36 +294,38 @@ puts benji.name
 #------------------------------CATEGORIES----------------------------------#
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561428/roby/dogwalk_ea9mo3.jpg")
-category1 = Category.create!({ name: "Walks" })
+category1 = Category.create!({ name: "Walk" })
 category1.photo.attach(io: category_image_url, filename: "cld-sample.png", content_type: "image/png")
 category1.save
 puts "walk category with image created"
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561614/roby/dogsocial_fvcpat.jpg")
-category = Category.create!({ name: "Social" })
-category.photo.attach(io: category_image_url, filename: "dogs_social_nbnaag.png", content_type: "image/png")
-category.save
+category2 = Category.create!({ name: "Social" })
+category2.photo.attach(io: category_image_url, filename: "dogs_social_nbnaag.png", content_type: "image/png")
+category2.save
 puts "social category with image created"
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561754/roby/dogtrain_qumh1c.jpg")
-category = Category.create!({ name: "Training" })
-category.photo.attach(io: category_image_url, filename: "dog_training_d28rwh.png", content_type: "image/png")
-category.save
+category3 = Category.create!({ name: "Training" })
+category3.photo.attach(io: category_image_url, filename: "dog_training_d28rwh.png", content_type: "image/png")
+category3.save
 puts "training category with image created"
 
 category_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662562046/roby/smalldogs_gveoxm.jpg")
-category = Category.create!({ name: "Small dogs" })
-category.photo.attach(io: category_image_url, filename: "small_dogs_de05sg.png", content_type: "image/png")
-category.save
+category4 = Category.create!({ name: "Small dogs" })
+category4.photo.attach(io: category_image_url, filename: "small_dogs_de05sg.png", content_type: "image/png")
+category4.save
 puts "small dogs category with image created"
 
-      Category.create!([{ name: "Medium dogs" }])
-      Category.create!([{ name: "Big Dogs" }])
-      Category.create!([{ name: "Puppies" }])
-      puts "Created categories"
+category5 = Category.create!({ name: "Medium dogs" })
+category5.save
+category6 = Category.create!({ name: "Big Dogs" })
+category6.save
+category7 = Category.create!({ name: "Puppies" })
+category7.save
+puts "Created categories"
 
 #------------------------------CATEGORIES----------------------------------#
-
 
 #------------------------------ACTIVITIES----------------------------------#
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561075/roby/dogbday_mfbxsh.jpg")
@@ -346,9 +348,11 @@ activity1.save
 puts "first activity"
 
 ActivityCategory.create(activity: activity1, category: category1)
+ActivityCategory.create(activity: activity1, category: category4)
+ActivityCategory.create(activity: activity1, category: category7)
 
-activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109734/agility_u4j8im.jpg")
-activity = Activity.create!({ name: "Agility Training",
+activity_image_url = URI.open("https://res.cloudinary.com/mariacend1910/image/upload/v1662640437/Dog-agility-tire-jump_resized_bsyoft.jpg")
+activity2 = Activity.create!({ name: "Agility Training",
   category: Category.all.sample.name,
   location: "Berlin Park, Madrid",
   description: "Meet with experienced trainers and learn some new agility skills!",
@@ -361,12 +365,16 @@ activity = Activity.create!({ name: "Agility Training",
   price: 50,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "agility.png", content_type: "image/png")
-activity.save
+activity2.photo.attach(io: activity_image_url, filename: "agility.png", content_type: "image/png")
+activity2.save
 puts "second activity"
 
+ActivityCategory.create(activity: activity2, category: category3)
+ActivityCategory.create(activity: activity2, category: category5)
+ActivityCategory.create(activity: activity2, category: category6)
+
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/coffe_fyq1oi.jpg")
-activity = Activity.create!({ name: "Coffees and Canines",
+activity3 = Activity.create!({ name: "Coffees and Canines",
   category: Category.all.sample.name,
   location: "Cafe Federal, Madrid",
   description: "Join us at this cafe with your dogs and enjoy some
@@ -380,13 +388,22 @@ activity = Activity.create!({ name: "Coffees and Canines",
   price: 3,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "coffees.png", content_type: "image/png")
-activity.save
+activity3.photo.attach(io: activity_image_url, filename: "coffees.png", content_type: "image/png")
+activity3.save
 puts "third activity"
 
+ActivityCategory.create(activity: activity3, category: category2)
+ActivityCategory.create(activity: activity3, category: category4)
+ActivityCategory.create(activity: activity3, category: category5)
+
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662561224/roby/dogdrink_szgxiv.jpg")
+<<<<<<< HEAD
 activity = Activity.create!({ name: "Cocktails and Wagging Tails",
   location: "Barbara Ann, Madrid",
+=======
+activity4 = Activity.create!({ name: "Cocktails and Wagging Tails",
+  location: "Antonio López Street, Madrid",
+>>>>>>> 5527dfe... finish all seeeeeeeeeeeeds
   description: "Join us for a night out at a dog-friendly cocktail bar.
   Dress code: formal. One cocktail included with price.",
   start_date: "15/10/22",
@@ -398,12 +415,16 @@ activity = Activity.create!({ name: "Cocktails and Wagging Tails",
   price: 10,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "cocktails.png", content_type: "image/png")
-activity.save
+activity4.photo.attach(io: activity_image_url, filename: "cocktails.png", content_type: "image/png")
+activity4.save
 puts "fourth activity"
 
+ActivityCategory.create(activity: activity4, category: category2)
+ActivityCategory.create(activity: activity4, category: category4)
+ActivityCategory.create(activity: activity4, category: category5)
+
 activity_image_url = URI.open("https://res.cloudinary.com/dbksvt70i/image/upload/v1662109733/pups_in_the_park_pzcvps.jpg")
-activity = Activity.create!({ name: "Pups in the Park",
+activity5 = Activity.create!({ name: "Pups in the Park",
   category: "Social",
   location: "Royal Botanical Garden, Madrid",
   description: "Enjoy your sunday with other dogs and dog lovers in the park.",
@@ -416,12 +437,16 @@ activity = Activity.create!({ name: "Pups in the Park",
   price: 0,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "pupspark.png", content_type: "image/png")
-activity.save
+activity5.photo.attach(io: activity_image_url, filename: "pupspark.png", content_type: "image/png")
+activity5.save
 puts "fifth activity"
 
+ActivityCategory.create(activity: activity5, category: category1)
+ActivityCategory.create(activity: activity5, category: category2)
+ActivityCategory.create(activity: activity5, category: category7)
+
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662557196/roby/perritoparty_wcttgy.jpg")
-activity = Activity.create!({ name: "Perrito Party",
+activity6 = Activity.create!({ name: "Perrito Party",
   category: "Social",
   location: "Madrid Rio",
   description: "This is an outdoor social event for small dogs.",
@@ -434,12 +459,16 @@ activity = Activity.create!({ name: "Perrito Party",
   price: 0,
   user: User.all.sample
   })
-  activity.photo.attach(io: activity_image_url, filename: "party.png", content_type: "image/png")
-  activity.save
-  puts "Sixth activity"
+activity6.photo.attach(io: activity_image_url, filename: "party.png", content_type: "image/png")
+activity6.save
+puts "Sixth activity"
+
+ActivityCategory.create(activity: activity6, category: category2)
+ActivityCategory.create(activity: activity6, category: category4)
+
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662546445/roby/puppytrain_y3gfe9.jpg")
-activity=Activity.create!({ name: "Puppy Obedience Training",
+activity7 = Activity.create!({ name: "Puppy Obedience Training",
     category: "Training",
     location: "Casa de Campo, Madrid",
     description: "Learn some basic obedience skills for you and your puppy with a
@@ -453,13 +482,14 @@ activity=Activity.create!({ name: "Puppy Obedience Training",
     price: 20,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "puptrain.png", content_type: "image/png")
-activity.save
+activity7.photo.attach(io: activity_image_url, filename: "puptrain.png", content_type: "image/png")
+activity7.save
 puts "seventh activity"
-
+ActivityCategory.create(activity: activity7, category: category3)
+ActivityCategory.create(activity: activity7, category: category7)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662557380/roby/behtrain_fmxpdb.jpg")
-activity=Activity.create!({ name: "Behavioral Dog Training",
+activity8 = Activity.create!({ name: "Behavioral Dog Training",
   category: "Training",
   location: "Retiro Park, Madrid",
   description: "Unlearn bad habits such as diggging, excessive barking or
@@ -473,12 +503,15 @@ activity=Activity.create!({ name: "Behavioral Dog Training",
   price: 50,
   user: User.all.sample
   })
-  activity.photo.attach(io: activity_image_url, filename: "behtrain.png", content_type: "image/png")
-  activity.save
-  puts "eighth activity"
+activity8.photo.attach(io: activity_image_url, filename: "behtrain.png", content_type: "image/png")
+activity8.save
+puts "eighth activity"
+ActivityCategory.create(activity: activity8, category: category3)
+ActivityCategory.create(activity: activity8, category: category4)
+ActivityCategory.create(activity: activity8, category: category5)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662557657/roby/pottytrain_y92nbo.jpg")
-activity=Activity.create!({ name: "Potty Training",
+activity9 = Activity.create!({ name: "Potty Training",
   category: "Training",
   location: "Parque del Oeste, Madrid",
   description: "Learn potty training tips and skills and how to implement them with your dog.",
@@ -491,12 +524,14 @@ activity=Activity.create!({ name: "Potty Training",
   price: 10,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "pottytrain.png", content_type: "image/png")
-activity.save
+activity9.photo.attach(io: activity_image_url, filename: "pottytrain.png", content_type: "image/png")
+activity9.save
 puts "ninth activity"
+ActivityCategory.create(activity: activity9, category: category3)
+ActivityCategory.create(activity: activity9, category: category7)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662557802/roby/leashtrain_ftfbxw.jpg")
-activity = Activity.create!({ name: "Leash Training",
+activity10 = Activity.create!({ name: "Leash Training",
   category: "Training",
   location: "San Isidro Park, Madrid",
   description: "Having trouble taking your dog on walks? This course is designed to help dogs and
@@ -510,12 +545,17 @@ activity = Activity.create!({ name: "Leash Training",
   price: 20,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "leashtrain.png", content_type: "image/png")
-activity.save
+activity10.photo.attach(io: activity_image_url, filename: "leashtrain.png", content_type: "image/png")
+activity10.save
 puts "tenth activity"
+ActivityCategory.create(activity: activity10, category: category3)
+ActivityCategory.create(activity: activity10, category: category4)
+ActivityCategory.create(activity: activity10, category: category5)
+ActivityCategory.create(activity: activity10, category: category6)
+ActivityCategory.create(activity: activity10, category: category7)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662557923/roby/casadecampodog_jtbjhb.jpg")
-activity = Activity.create!({ name: "Circular Campo",
+activity11 = Activity.create!({ name: "Circular Campo",
   category: "Hike",
   location: "Casa de Campo, Madrid",
   description: "This hike is route around Casa de Campo of 11.7 km. There are many hills and rocky
@@ -529,12 +569,15 @@ activity = Activity.create!({ name: "Circular Campo",
   price: 0,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "casadecampodog.png", content_type: "image/png")
-activity.save
+activity11.photo.attach(io: activity_image_url, filename: "casadecampodog.png", content_type: "image/png")
+activity11.save
 puts "eleventh activity"
+ActivityCategory.create(activity: activity11, category: category1)
+ActivityCategory.create(activity: activity11, category: category5)
+ActivityCategory.create(activity: activity11, category: category6)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558093/roby/sevenpeaksdog_hwfyth.jpg")
-activity = Activity.create!({ name: "Seven Peaks",
+activity12 = Activity.create!({ name: "Seven Peaks",
   category: "Hike",
   location: "Parque Nacional de la Sierra de Guadarrama",
   description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
@@ -548,12 +591,15 @@ activity = Activity.create!({ name: "Seven Peaks",
   price: 30,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "sevenpeaksdog.png", content_type: "image/png")
-activity.save
+activity12.photo.attach(io: activity_image_url, filename: "sevenpeaksdog.png", content_type: "image/png")
+activity12.save
 puts "twelfth activity"
+ActivityCategory.create(activity: activity12, category: category1)
+ActivityCategory.create(activity: activity12, category: category5)
+ActivityCategory.create(activity: activity12, category: category6)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558179/roby/doghike_yq5bkf.jpg")
-activity = Activity.create!({ name: "Sierra de Guadarrama Hike",
+activity13 = Activity.create!({ name: "Sierra de Guadarrama Hike",
   category: "Hike",
   location: "Parque Nacional de la Sierra de Guadarrama",
   description: "This challenging trail with great views of the Sierra de Guadarrama. Price Includes transportation
@@ -567,12 +613,15 @@ activity = Activity.create!({ name: "Sierra de Guadarrama Hike",
   price: 30,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "doghike1.png", content_type: "image/png")
-activity.save
+activity13.photo.attach(io: activity_image_url, filename: "doghike1.png", content_type: "image/png")
+activity13.save
 puts "13th activity"
+ActivityCategory.create(activity: activity13, category: category1)
+ActivityCategory.create(activity: activity13, category: category5)
+ActivityCategory.create(activity: activity13, category: category6)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558501/roby/doghike2_rptajf.jpg")
-activity = Activity.create!({ name: "Camino de los Campamentos",
+activity14 = Activity.create!({ name: "Camino de los Campamentos",
   category: "Hike",
   location: "Cercedilla",
   description: "This easy trail is great for getting some fresh air outside of the city. Price Includes transportation
@@ -588,12 +637,15 @@ activity = Activity.create!({ name: "Camino de los Campamentos",
   price: 30,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "doghike2.png", content_type: "image/png")
-activity.save
+activity14.photo.attach(io: activity_image_url, filename: "doghike2.png", content_type: "image/png")
+activity14.save
 puts "14th activity"
+ActivityCategory.create(activity: activity14, category: category1)
+ActivityCategory.create(activity: activity14, category: category5)
+ActivityCategory.create(activity: activity14, category: category6)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558423/roby/dogrio_y02wbf.jpg")
-activity = Activity.create!({ name: "Madrid Rio",
+activity15 = Activity.create!({ name: "Madrid Rio",
   category: "Walk",
   location: "Principe Pio, Madrid",
   description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",
@@ -606,12 +658,16 @@ activity = Activity.create!({ name: "Madrid Rio",
   price: 0,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "dogrio.png", content_type: "image/png")
-activity.save
+activity15.photo.attach(io: activity_image_url, filename: "dogrio.png", content_type: "image/png")
+activity15.save
 puts "15th activity"
+ActivityCategory.create(activity: activity15, category: category1)
+ActivityCategory.create(activity: activity15, category: category4)
+ActivityCategory.create(activity: activity15, category: category5)
+ActivityCategory.create(activity: activity15, category: category6)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662559150/roby/dogcoffee_mwwhot.jpg")
-activity = Activity.create!({ name: "Morning Walk and Coffee Break",
+activity16 = Activity.create!({ name: "Morning Walk and Coffee Break",
   category: "Walk",
   location: "Principe Pio, Madrid",
   description: "Take a walk around Parque de Retiro in the morning before work.
@@ -625,12 +681,16 @@ activity = Activity.create!({ name: "Morning Walk and Coffee Break",
   price: 3,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "morningwalk.png", content_type: "image/png")
-activity.save
+activity16.photo.attach(io: activity_image_url, filename: "morningwalk.png", content_type: "image/png")
+activity16.save
 puts "16th activity"
+ActivityCategory.create(activity: activity16, category: category1)
+ActivityCategory.create(activity: activity16, category: category2)
+ActivityCategory.create(activity: activity16, category: category4)
+ActivityCategory.create(activity: activity16, category: category5)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558751/roby/groupdogwalk_ytu3r1.jpg")
-activity = Activity.create!({ name: "Walk on Calle Bravo Murillo",
+activity17 = Activity.create!({ name: "Walk on Calle Bravo Murillo",
   category: "Walk",
   location: "Cuatro Caminos, Madrid",
   description: "Take a stroll down the beautiful and peaceful Calle Bravo Murillo with us.",
@@ -643,12 +703,15 @@ activity = Activity.create!({ name: "Walk on Calle Bravo Murillo",
   price: 0,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "groupwalk.png", content_type: "image/png")
-activity.save
+activity17.photo.attach(io: activity_image_url, filename: "groupwalk.png", content_type: "image/png")
+activity17.save
 puts "17th activity"
+ActivityCategory.create(activity: activity17, category: category1)
+ActivityCategory.create(activity: activity17, category: category4)
+ActivityCategory.create(activity: activity17, category: category5)
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558973/roby/sunsetdog_potezp.jpg")
-activity = Activity.create!({ name: "Sunset Stroll",
+activity18 = Activity.create!({ name: "Sunset Stroll",
   category: "Walk",
   location: "Cerro de Tio Pio, Madrid",
   description: "Take a walk around Cerro de Tio Pio park with us, and then walk up
@@ -662,9 +725,12 @@ activity = Activity.create!({ name: "Sunset Stroll",
   price: 0,
   user: User.all.sample
   })
-activity.photo.attach(io: activity_image_url, filename: "sunsetwalk.png", content_type: "image/png")
-activity.save
+activity18.photo.attach(io: activity_image_url, filename: "sunsetwalk.png", content_type: "image/png")
+activity18.save
 puts "18th activity"
+ActivityCategory.create(activity: activity18, category: category1)
+ActivityCategory.create(activity: activity18, category: category4)
+ActivityCategory.create(activity: activity18, category: category5)
 
   puts "creating chatroom"
   general = Chatroom.new(name: "General chat")
