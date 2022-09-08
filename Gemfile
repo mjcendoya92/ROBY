@@ -15,8 +15,6 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-gem "dotenv-rails", groups: [:development, :test]
-
 gem "cloudinary"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
@@ -31,10 +29,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem "devise"
-
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -83,4 +79,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
