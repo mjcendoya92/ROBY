@@ -16,12 +16,13 @@
   .messages {
     height: 100%;
     overflow: scroll;
-    padding: 1rem;
+    padding: 5px;
+    width: 150%;
   }
 
   #new_message {
     border-top: 1px solid $gray-200;
-    padding: 1rem;
+    padding: 5px;
 
     .form-group {
       margin-bottom: 0;

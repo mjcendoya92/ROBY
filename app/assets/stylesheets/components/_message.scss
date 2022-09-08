@@ -2,3 +2,31 @@
   width: 60px;
   height: 60px;
 }
+
+.chat-picture-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.chat-message-container{
+  width: 100%;
+}
+
+.picture-container{
+  padding: 5px;
+}
+
+.message-content{
+  padding: 15px;
+}
+
+#message-box{
+  position:relative;
+  width: 65%;
+  height: fit-content;
+  background-color:rgba(252,203,98,0.3);
+  margin-top: 30px;
+  border-radius: 15px;
+}
