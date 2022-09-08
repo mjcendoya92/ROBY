@@ -526,7 +526,7 @@ activity.save
 puts "14th activity"
 
 activity_image_url = URI.open("https://res.cloudinary.com/dfbhewkkh/image/upload/v1662558423/roby/dogrio_y02wbf.jpg")
-activity = Activity.create!({ name: "Madrid Rio",
+activity = Activity.create!({ name: "Walk along Madrid Rio",
   category: "Walk",
   location: "Principe Pio, Madrid",
   description: "Take a stroll along Madrid Rio in the evening. Great for all types of dogs!",
