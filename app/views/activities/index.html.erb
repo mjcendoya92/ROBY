@@ -32,7 +32,12 @@
           </div>
           <div class="index-card-container-right">
             <div class="index-card-info">
-              <h3 class="index-card-title"><strong><%= activity.name %></strong></h3>
+              <h2 class="index-card-title"><strong><%= activity.name %></strong></h2>
+              <div class="index-card-categories-container">
+                <% activity.categories.each do |category| %>
+                  <h3 class="index-card-category-tag"><%= category.name %> </h3>
+                <% end %>
+              </div>
               <div class="activity-index-users-container">
                 <% activity.bookings.each do |booked| %>
                   <div class= activity-index-attendees-avatar-box>
@@ -45,19 +50,14 @@
                 <% end %>
               </div>
               <div class="date-and-location-index">
-                <p><%= activity.location %></p>
-                <p><%= activity.start_date.strftime("%d/%m/%y") %></p>
+                <p>📍<%= activity.location %></p>
+                <p class="date-and-location-index-text"><%= activity.start_date.strftime("%d/%m/%y") %></p>
               </div>
-              <div class="activity-card-price">
+              <div class="activity-card-price-container">
                 <% if activity.price == 0 %>
-                  <h3><strong>Free</h3></strong>
+                  <h3 class="activity-card-price">Free</h3>
                 <% else %>
-                  <h3><strong>$<%= activity.price %></h3></strong>
-                <% end %>
-              </div>
-              <div class="index-card-categories-container">
-                <% activity.categories.each do |category| %>
-                  <h3 class="index-card-category-tag"><%= category.name %> </h3>
+                  <h3 class="activity-card-price">$<%= activity.price %></h3>
                 <% end %>
               </div>
             </div>
