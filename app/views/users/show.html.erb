@@ -49,10 +49,13 @@
 
 <%# ------------------USER FOLLOWS--------------------%>
 <% if !@follow %>
+
   <%= button_to "Follow this person", user_follows_path(@user), method: :post, class: "profile-buttons follow-button" %>
+
 <%else%>
-  <%= "You're following this person!" %>
+  <%= "Following" %>
 <% end %>
+
 <%# ------------------USER FOLLOWS--------------------%>
 
 <div class = "friends-container">
@@ -68,5 +71,6 @@
       <% end %>
     </div>
   </div>
+
 
 </div>
